@@ -876,3 +876,143 @@ body.fundraising-page .fundpage-side-card--alt{
   body.fundraising-page .fundpage-carousel-btn{ display:none; }
   body.fundraising-page .fundpage-carousel-track{ height: 220px; }
 }
+
+/* =========================================================
+   ABOUT PAGE + SITEWIDE COUNTDOWN (ADD-ON)
+   Paste at bottom of main.js
+========================================================= */
+
+/* 1) About page accordion (safe) */
+(() => {
+  const accord = document.querySelector("[data-accordion]");
+  if (!accord) return;
+
+  const buttons = accord.querySelectorAll(".about-acc-btn");
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const expanded = btn.getAttribute("aria-expanded") === "true";
+      const panel = btn.nextElementSibling;
+
+      // close others for a cleaner “interactive” feel
+      buttons.forEach((b) => {
+        if (b !== btn) {
+          b.setAttribute("aria-expanded", "false");
+          const p = b.nextElementSibling;
+          if (p) p.hidden = true;
+          const plus = b.querySelector(".about-acc-plus");
+          if (plus) plus.textContent = "+";
+        }
+      });
+
+      btn.setAttribute("aria-expanded", String(!expanded));
+      if (panel) panel.hidden = expanded;
+
+      const plus = btn.querySelector(".about-acc-plus");
+      if (plus) plus.textContent = expanded ? "+" : "—";
+    });
+  });
+})();
+
+/* 2) Count-up animation (safe, runs once when visible) */
+(() => {
+  const els = document.querySelectorAll("[data-countup]");
+  if (!els.length) return;
+
+  const prefersReduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const run = (el) => {
+    const target = Number(el.getAttribute("data-countup") || "0");
+    if (!Number.isFinite(target)) return;
+
+    if (prefersReduced) {
+      el.textContent = String(target);
+      return;
+    }
+
+    const start = 0;
+    const duration = 900; // ms
+    const startTime = performance.now();
+
+    const step = (now) => {
+      const t = Math.min(1, (now - startTime) / duration);
+      const val = Math.round(start + (target - start) * (1 - Math.pow(1 - t, 3)));
+      el.textContent = String(val);
+      if (t < 1) requestAnimationFrame(step);
+    };
+
+    requestAnimationFrame(step);
+  };
+
+  const seen = new WeakSet();
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        if (seen.has(el)) return;
+        seen.add(el);
+        run(el);
+      });
+    },
+    { threshold: 0.35 }
+  );
+
+  els.forEach((el) => io.observe(el));
+})();
+
+/* 3) Sitewide: Countdown to July 4th (safe) */
+(() => {
+  const root = document.querySelector("[data-july-countdown]");
+  if (!root) return;
+
+  const dEl = root.querySelector("[data-july-days]");
+  const hEl = root.querySelector("[data-july-hours]");
+  const mEl = root.querySelector("[data-july-mins]");
+  const sEl = root.querySelector("[data-july-secs]");
+
+  const pad2 = (n) => String(n).padStart(2, "0");
+
+  const getTarget = () => {
+    const now = new Date();
+    const yearMode = root.getAttribute("data-year-mode") || "auto";
+
+    // default: upcoming July 4th (if past July 4 this year, use next year)
+    let y = now.getFullYear();
+    const july4ThisYear = new Date(y, 6, 4, 0, 0, 0, 0); // month is 0-based; 6 = July
+    if (yearMode === "auto" && now > july4ThisYear) y = y + 1;
+
+    return new Date(y, 6, 4, 0, 0, 0, 0);
+  };
+
+  let target = getTarget();
+
+  const tick = () => {
+    const now = new Date();
+    const diff = target.getTime() - now.getTime();
+
+    if (diff <= 0) {
+      if (dEl) dEl.textContent = "0";
+      if (hEl) hEl.textContent = "00";
+      if (mEl) mEl.textContent = "00";
+      if (sEl) sEl.textContent = "00";
+
+      // if it’s “auto” mode, after July 4 passes we roll to next year
+      target = getTarget();
+      return;
+    }
+
+    const totalSeconds = Math.floor(diff / 1000);
+    const days = Math.floor(totalSeconds / 86400);
+    const hours = Math.floor((totalSeconds % 86400) / 3600);
+    const mins = Math.floor((totalSeconds % 3600) / 60);
+    const secs = totalSeconds % 60;
+
+    if (dEl) dEl.textContent = String(days);
+    if (hEl) hEl.textContent = pad2(hours);
+    if (mEl) mEl.textContent = pad2(mins);
+    if (sEl) sEl.textContent = pad2(secs);
+  };
+
+  tick();
+  setInterval(tick, 1000);
+})();
