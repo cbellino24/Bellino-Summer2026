@@ -13,50 +13,46 @@
 <body class="about-page">
 
   <!-- =====================================================
-       JULY 4 TOP TICKER (put this on EVERY page at top)
-       - counts down to next July 4 automatically
-       - animated runner + pulsing digits
+       JULY 4 COUNTDOWN STRIP (SITEWIDE)
+       IMPORTANT:
+       Your CSS styles .july-countdown + .july-* classes
+       So this HTML MUST use those classes to look right.
   ====================================================== -->
-  <section class="top-ticker" data-july-ticker aria-label="Countdown to July 4th">
-    <div class="wrap top-ticker-row">
-      <div class="tt-left">
-        <span class="tt-badge">Countdown to July 4th</span>
-        <div class="tt-title">Beat the rush — plan your visit.</div>
+  <section class="july-countdown" data-july-ticker aria-label="Countdown to July 4th">
+    <div class="wrap july-row">
+      <div>
+        <span class="july-badge">Countdown to July 4th</span>
+        <div class="july-title">Beat the rush — plan your visit.</div>
+        <div class="july-sub">Locations fill up fast near the holiday.</div>
       </div>
 
-      <div class="tt-mid" aria-live="polite">
-        <div class="tt-box">
-          <div class="tt-num" data-tt-days>—</div>
-          <div class="tt-lbl">Days</div>
+      <div class="july-right" aria-live="polite">
+        <div class="july-box">
+          <div class="july-num" data-tt-days>—</div>
+          <div class="july-lbl">Days</div>
         </div>
-        <div class="tt-box">
-          <div class="tt-num" data-tt-hours>—</div>
-          <div class="tt-lbl">Hours</div>
+        <div class="july-box">
+          <div class="july-num" data-tt-hours>—</div>
+          <div class="july-lbl">Hours</div>
         </div>
-        <div class="tt-box">
-          <div class="tt-num" data-tt-mins>—</div>
-          <div class="tt-lbl">Mins</div>
+        <div class="july-box">
+          <div class="july-num" data-tt-mins>—</div>
+          <div class="july-lbl">Mins</div>
         </div>
-        <div class="tt-box">
-          <div class="tt-num" data-tt-secs>—</div>
-          <div class="tt-lbl">Secs</div>
+        <div class="july-box">
+          <div class="july-num" data-tt-secs>—</div>
+          <div class="july-lbl">Secs</div>
         </div>
       </div>
 
-      <div class="tt-right">
-        <a class="btn btn-buy tt-cta" href="locations.html">Find a Location</a>
-      </div>
-
-      <!-- decorative runner -->
-      <div class="tt-runner" aria-hidden="true">
-        <span class="tt-spark"></span>
+      <div class="july-cta">
+        <a class="btn btn-buy" href="locations.html">Find a Location</a>
       </div>
     </div>
   </section>
 
   <!-- =========================
-       HEADER
-       If your index header is different, copy/paste that header here instead.
+       HEADER (matches site CSS)
   ========================= -->
   <header class="header">
     <div class="wrap header-row">
@@ -75,14 +71,18 @@
         <span class="dot">•</span>
         <a class="nav-link" href="fundraising.html">Fundraising</a>
         <span class="dot">•</span>
-        <a class="nav-link is-active" href="about.html">About</a>
+        <a class="nav-link is-active" href="about.html" aria-current="page">About</a>
 
         <div class="nav-social" aria-label="Social links">
           <a class="icon-link" href="#" aria-label="Facebook">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.56 9.88v-7H8v-2.88h2.44V9.8c0-2.4 1.43-3.73 3.62-3.73 1.05 0 2.15.19 2.15.19v2.36h-1.21c-1.2 0-1.57.74-1.57 1.5v1.8H16.9L16.5 14.88h-2v7A10 10 0 0 0 22 12z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M22 12a10 10 0 1 0-11.56 9.88v-7H8v-2.88h2.44V9.8c0-2.4 1.43-3.73 3.62-3.73 1.05 0 2.15.19 2.15.19v2.36h-1.21c-1.2 0-1.57.74-1.57 1.5v1.8H16.9L16.5 14.88h-2v7A10 10 0 0 0 22 12z"/>
+            </svg>
           </a>
           <a class="icon-link" href="#" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9Zm4.5 4.2a3.8 3.8 0 1 1 0 7.6 3.8 3.8 0 0 1 0-7.6Zm0 2a1.8 1.8 0 1 0 0 3.6 1.8 1.8 0 0 0 0-3.6ZM18 6.7a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9Zm4.5 4.2a3.8 3.8 0 1 1 0 7.6 3.8 3.8 0 0 1 0-7.6Zm0 2a1.8 1.8 0 1 0 0 3.6 1.8 1.8 0 0 0 0-3.6ZM18 6.7a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/>
+            </svg>
           </a>
         </div>
 
@@ -326,10 +326,14 @@
 
       <div class="foot-social">
         <a class="icon-link" href="#" aria-label="Facebook">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.56 9.88v-7H8v-2.88h2.44V9.8c0-2.4 1.43-3.73 3.62-3.73 1.05 0 2.15.19 2.15.19v2.36h-1.21c-1.2 0-1.57.74-1.57 1.5v1.8H16.9L16.5 14.88h-2v7A10 10 0 0 0 22 12z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M22 12a10 10 0 1 0-11.56 9.88v-7H8v-2.88h2.44V9.8c0-2.4 1.43-3.73 3.62-3.73 1.05 0 2.15.19 2.15.19v2.36h-1.21c-1.2 0-1.57.74-1.57 1.5v1.8H16.9L16.5 14.88h-2v7A10 10 0 0 0 22 12z"/>
+          </svg>
         </a>
         <a class="icon-link" href="#" aria-label="Instagram">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9Zm4.5 4.2a3.8 3.8 0 1 1 0 7.6 3.8 3.8 0 0 1 0-7.6Zm0 2a1.8 1.8 0 1 0 0 3.6 1.8 1.8 0 0 0 0-3.6ZM18 6.7a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9Zm4.5 4.2a3.8 3.8 0 1 1 0 7.6 3.8 3.8 0 0 1 0-7.6Zm0 2a1.8 1.8 0 1 0 0 3.6 1.8 1.8 0 0 0 0-3.6ZM18 6.7a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/>
+          </svg>
         </a>
       </div>
     </div>
