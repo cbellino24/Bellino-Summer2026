@@ -4,487 +4,337 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>About Bellino Fireworks | Family-Owned. Midwest-Wide. Safety-First.</title>
-  <meta name="description" content="Bellino Fireworks is a hands-on, family-owned company founded in Papillion, Nebraska — now serving 300+ locations across 8 states. Safety-tested products, operator training, and fundraising programs that work." />
+  <title>About Bellino Fireworks | Family Built. Midwest Strong.</title>
+  <meta name="description" content="Bellino Fireworks is a family-built, hands-on fireworks company with 35+ years of growth across the Midwest and beyond. Safety-tested products, serious support, and a commitment to community fundraising." />
 
-  <link rel="canonical" href="https://bellinofireworks.com/about/" />
-  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body class="about-page">
 
-  <!-- =========================================================
-       TOP TICKER (site-wide reusable)
-       Place this at the very top of BODY on every page.
-  ========================================================= -->
-  <div class="top-ticker" role="region" aria-label="Countdown to July 4th">
-    <div class="top-ticker__bg"></div>
-
-    <div class="wrap top-ticker__row">
-      <div class="top-ticker__left">
-        <span class="top-ticker__badge">Countdown</span>
-        <span class="top-ticker__headline">
-          July 4th is coming — plan your run early
-        </span>
+  <!-- =====================================================
+       JULY 4 TOP TICKER (put this on EVERY page at top)
+       - counts down to next July 4 automatically
+       - animated runner + pulsing digits
+  ====================================================== -->
+  <section class="top-ticker" data-july-ticker aria-label="Countdown to July 4th">
+    <div class="wrap top-ticker-row">
+      <div class="tt-left">
+        <span class="tt-badge">Countdown to July 4th</span>
+        <div class="tt-title">Beat the rush — plan your visit.</div>
       </div>
 
-      <div class="top-ticker__timer" data-july-countdown aria-label="Time until July 4th">
+      <div class="tt-mid" aria-live="polite">
         <div class="tt-box">
-          <div class="tt-num" data-july-days>0</div>
-          <div class="tt-lab">Days</div>
+          <div class="tt-num" data-tt-days>—</div>
+          <div class="tt-lbl">Days</div>
         </div>
-        <div class="tt-sep" aria-hidden="true">:</div>
         <div class="tt-box">
-          <div class="tt-num" data-july-hours>0</div>
-          <div class="tt-lab">Hours</div>
+          <div class="tt-num" data-tt-hours>—</div>
+          <div class="tt-lbl">Hours</div>
         </div>
-        <div class="tt-sep" aria-hidden="true">:</div>
         <div class="tt-box">
-          <div class="tt-num" data-july-mins>0</div>
-          <div class="tt-lab">Min</div>
+          <div class="tt-num" data-tt-mins>—</div>
+          <div class="tt-lbl">Mins</div>
         </div>
-        <div class="tt-sep" aria-hidden="true">:</div>
         <div class="tt-box">
-          <div class="tt-num" data-july-secs>0</div>
-          <div class="tt-lab">Sec</div>
+          <div class="tt-num" data-tt-secs>—</div>
+          <div class="tt-lbl">Secs</div>
         </div>
       </div>
 
-      <!-- Fun “moving sparkline” -->
-      <div class="top-ticker__marquee" aria-hidden="true">
-        <div class="marquee-track">
-          <span>🔥 Find your closest Bellino location</span>
-          <span>•</span>
-          <span>🎇 Stock up early for the best selection</span>
-          <span>•</span>
-          <span>🚩 Look for Huge Inflatables + Bellino Flags</span>
-          <span>•</span>
-          <span>💥 Fundraising programs that perform</span>
-
-          <span class="dup">🔥 Find your closest Bellino location</span>
-          <span class="dup">•</span>
-          <span class="dup">🎇 Stock up early for the best selection</span>
-          <span class="dup">•</span>
-          <span class="dup">🚩 Look for Huge Inflatables + Bellino Flags</span>
-          <span class="dup">•</span>
-          <span class="dup">💥 Fundraising programs that perform</span>
-        </div>
+      <div class="tt-right">
+        <a class="btn btn-buy tt-cta" href="locations.html">Find a Location</a>
       </div>
 
-      <div class="top-ticker__cta">
-        <a class="tt-link" href="/locations/">Find a Location</a>
-        <a class="tt-link tt-link--solid" href="/fundraising/">Start a Fundraiser</a>
+      <!-- decorative runner -->
+      <div class="tt-runner" aria-hidden="true">
+        <span class="tt-spark"></span>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- =========================
-       Header (keep your existing header if you have one)
+       HEADER
+       If your index header is different, copy/paste that header here instead.
   ========================= -->
   <header class="header">
-    <div class="wrap">
-      <div class="header-row">
-        <a class="logo" href="/" aria-label="Bellino Fireworks Home">
-          <img src="/assets/logo.png" alt="Bellino Fireworks">
-        </a>
+    <div class="wrap header-row">
+      <a class="logo" href="index.html" aria-label="Bellino Fireworks Home">
+        <img src="images/logo.png" alt="Bellino Fireworks" />
+      </a>
 
-        <nav class="nav" aria-label="Primary navigation">
-          <a class="nav-link" href="/">Home</a>
-          <span class="dot">•</span>
-          <a class="nav-link" href="/locations/">Locations</a>
-          <span class="dot">•</span>
-          <a class="nav-link" href="/fundraising/">Fundraising</a>
-          <span class="dot">•</span>
-          <a class="nav-link is-active" href="/about/">About</a>
-          <span class="dot">•</span>
-          <a class="nav-link" href="/contact/">Contact</a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
 
-          <div class="nav-social" aria-label="Social links">
-            <a class="icon-link" href="#" aria-label="Instagram">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 4a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm6.5-.9a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0z"/></svg>
-            </a>
-            <a class="icon-link" href="#" aria-label="Facebook">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 22v-8h3l1-4h-4V7.8c0-1.1.3-1.8 1.9-1.8H17V2.2C16.6 2.1 15.4 2 14 2c-2.9 0-5 1.8-5 5.1V10H6v4h3v8h4z"/></svg>
-            </a>
-          </div>
-        </nav>
+      <nav class="nav" aria-label="Primary">
+        <a class="nav-link" href="index.html">Home</a>
+        <span class="dot">•</span>
+        <a class="nav-link" href="locations.html">Locations</a>
+        <span class="dot">•</span>
+        <a class="nav-link" href="fundraising.html">Fundraising</a>
+        <span class="dot">•</span>
+        <a class="nav-link is-active" href="about.html">About</a>
 
-        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
+        <div class="nav-social" aria-label="Social links">
+          <a class="icon-link" href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.56 9.88v-7H8v-2.88h2.44V9.8c0-2.4 1.43-3.73 3.62-3.73 1.05 0 2.15.19 2.15.19v2.36h-1.21c-1.2 0-1.57.74-1.57 1.5v1.8H16.9L16.5 14.88h-2v7A10 10 0 0 0 22 12z"/></svg>
+          </a>
+          <a class="icon-link" href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9Zm4.5 4.2a3.8 3.8 0 1 1 0 7.6 3.8 3.8 0 0 1 0-7.6Zm0 2a1.8 1.8 0 1 0 0 3.6 1.8 1.8 0 0 0 0-3.6ZM18 6.7a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/></svg>
+          </a>
+        </div>
 
-        <a class="btn btn-buy" href="/pricing/">Get Pricing</a>
-      </div>
+        <a class="btn btn-buy" href="locations.html">Find a Location</a>
+      </nav>
     </div>
   </header>
 
   <!-- =========================
-       ABOUT HERO (red-forward / warm)
+       ABOUT HERO
   ========================= -->
   <section class="about-hero">
-    <div class="about-hero-bg"></div>
-    <div class="about-hero-shade"></div>
+    <div class="about-hero-bg" aria-hidden="true"></div>
+    <div class="about-hero-shade" aria-hidden="true"></div>
 
     <div class="wrap about-hero-inner">
       <div class="about-hero-grid">
-        <div>
-          <span class="about-pill">Family-owned • Operator-supported • Safety-first</span>
+        <div class="about-hero-left">
+          <span class="about-pill">Family-built • 35+ years • Midwest strong</span>
 
           <h1 class="about-h1">
-            From <span class="about-accent">one stand</span> in Papillion<br>
-            to a Midwest-wide summer tradition.
+            Built in <span class="about-accent">Papillion</span>.
+            Grown across <span class="about-accent">8 states</span>.
           </h1>
 
           <p class="about-sub">
-            Bellino Fireworks has been hands-on and family-run for over 35 years — built on doing things the right way:
-            dependable support, fair pricing, and products we’re proud to stand behind.
+            Bellino Fireworks is a hands-on, family-owned company that started with a single location in Papillion, Nebraska.
+            Today we serve communities across the Midwest and beyond — with a focus on safe, tested products, real operator support,
+            and fundraising programs that actually produce results.
           </p>
 
           <div class="about-hero-actions">
-            <a class="btn btn-cta" href="/locations/">Find a Location</a>
-            <a class="btn btn-outline" href="/fundraising/">Start a Fundraiser</a>
+            <a class="btn btn-cta" href="locations.html">Find a Location</a>
+            <a class="btn btn-outline" href="fundraising.html">Start a Fundraiser</a>
           </div>
 
-          <div class="about-mini">
-            <div class="about-mini-card">
-              <div class="about-mini-top">Founded</div>
-              <div class="about-mini-bot">Papillion, Nebraska</div>
+          <div class="about-mini-stats" data-countup>
+            <div class="about-mini">
+              <div class="about-mini-top">Years in business</div>
+              <div class="about-mini-num" data-count="35">35+</div>
             </div>
-            <div class="about-mini-card">
-              <div class="about-mini-top">Footprint</div>
-              <div class="about-mini-bot">300+ locations</div>
+            <div class="about-mini">
+              <div class="about-mini-top">Retail locations</div>
+              <div class="about-mini-num" data-count="300">300+</div>
             </div>
-            <div class="about-mini-card">
-              <div class="about-mini-top">Focus</div>
-              <div class="about-mini-bot">Safety + support</div>
+            <div class="about-mini">
+              <div class="about-mini-top">States served</div>
+              <div class="about-mini-num" data-count="8">8</div>
             </div>
           </div>
         </div>
 
-        <aside class="about-hero-card">
-          <div class="about-hero-badge">What we’re about</div>
-          <h2 class="about-hero-card-h">Big footprint. Family mindset.</h2>
-          <p class="about-hero-card-p">
-            We may be large — but we operate like we’re local. Training, standards, and real support
-            so every season runs smoother.
-          </p>
+        <div class="about-hero-right">
+          <div class="about-hero-card">
+            <div class="about-card-badge">What we’re known for</div>
 
-          <ul class="about-checks">
-            <li><span class="about-check" aria-hidden="true"></span> Training + manuals for operators</li>
-            <li><span class="about-check" aria-hidden="true"></span> Tested products + compliance focus</li>
-            <li><span class="about-check" aria-hidden="true"></span> Fundraising programs that perform</li>
-          </ul>
+            <div class="about-card-list">
+              <div class="about-card-item">
+                <span class="about-dot"></span>
+                <div>
+                  <div class="about-card-title">Safety-first, tested products</div>
+                  <div class="about-card-sub">Independent lab testing + compliance-focused sourcing.</div>
+                </div>
+              </div>
 
-          <div class="about-hero-note">
-            <span class="dot-bullet" aria-hidden="true"></span>
-            <div>
-              <strong>In the wild:</strong> Look for <strong>Huge Inflatables</strong> + <strong>Bellino Flags</strong>.
-            </div>
-          </div>
-        </aside>
-      </div>
-    </div>
-  </section>
+              <div class="about-card-item">
+                <span class="about-dot"></span>
+                <div>
+                  <div class="about-card-title">Operator training + support</div>
+                  <div class="about-card-sub">We don’t just ship product — we help you run a great stand.</div>
+                </div>
+              </div>
 
-  <!-- Decorative states strip -->
-  <section class="about-states-strip" aria-label="States we serve">
-    <div class="about-states-glow"></div>
-    <div class="wrap">
-      <div class="about-states-top">
-        <div class="about-states-title">Serving 8 states across the Midwest + beyond</div>
-        <div class="about-states-sub">Tap a state for local info, regulations, or location details.</div>
-      </div>
-
-      <div class="about-state-ribbon" role="list">
-        <a class="about-state-chip" href="/states/nebraska/" role="listitem"><span class="chip-dot"></span>Nebraska</a>
-        <a class="about-state-chip" href="/states/iowa/" role="listitem"><span class="chip-dot"></span>Iowa</a>
-        <a class="about-state-chip" href="/states/kansas/" role="listitem"><span class="chip-dot"></span>Kansas</a>
-        <a class="about-state-chip" href="/states/missouri/" role="listitem"><span class="chip-dot"></span>Missouri</a>
-        <a class="about-state-chip" href="/states/south-dakota/" role="listitem"><span class="chip-dot"></span>South Dakota</a>
-        <a class="about-state-chip" href="/states/texas/" role="listitem"><span class="chip-dot"></span>Texas</a>
-        <a class="about-state-chip" href="/states/oklahoma/" role="listitem"><span class="chip-dot"></span>Oklahoma</a>
-        <a class="about-state-chip" href="/states/arizona/" role="listitem"><span class="chip-dot"></span>Arizona</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Local pages section -->
-  <section class="section about-localband">
-    <div class="wrap">
-      <div class="about-local-head">
-        <h2 class="about-h2">Local pages + nearby support</h2>
-        <p class="about-p">
-          We build our pages to match how people search: <strong>fireworks + state</strong> (and sometimes city).
-          That helps customers find the right info fast — and helps operators get support that actually feels local.
-        </p>
-      </div>
-
-      <div class="about-local-grid">
-        <div class="about-local-card">
-          <h3>States we cover</h3>
-          <p class="about-local-sub">State pages include key dates, quick FAQs, and location info.</p>
-
-          <ul class="about-local-list">
-            <li><a href="/states/nebraska/">Nebraska Fireworks Info</a></li>
-            <li><a href="/states/iowa/">Iowa Fireworks Info</a></li>
-            <li><a href="/states/kansas/">Kansas Fireworks Info</a></li>
-            <li><a href="/states/missouri/">Missouri Fireworks Info</a></li>
-            <li><a href="/states/south-dakota/">South Dakota Fireworks Info</a></li>
-            <li><a href="/states/texas/">Texas Fireworks Info</a></li>
-            <li><a href="/states/oklahoma/">Oklahoma Fireworks Info</a></li>
-            <li><a href="/states/arizona/">Arizona Fireworks Info</a></li>
-          </ul>
-
-          <div class="about-local-note">
-            These pages help customers search smarter — and help support local rankings over time.
-          </div>
-        </div>
-
-        <div class="about-local-card about-local-card--lift">
-          <h3>What we typically help with</h3>
-          <ul class="about-help-list">
-            <li><span class="help-dot"></span> Product guidance + “what to buy” help</li>
-            <li><span class="help-dot"></span> Location info (hours, directions, availability)</li>
-            <li><span class="help-dot"></span> Fundraising setup + promotion tips</li>
-            <li><span class="help-dot"></span> Operator training + season playbooks</li>
-          </ul>
-
-          <a class="btn btn-outline" href="/contact/">Talk to a Team</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Timeline + Stats -->
-  <section class="section about-timeline">
-    <div class="about-timeline-bg"></div>
-    <div class="wrap">
-      <div class="about-head">
-        <span class="about-kicker">Our story</span>
-        <h2 class="about-h2 dark">A family company that grew the right way</h2>
-        <p class="about-p dark">
-          Bellino started with one location and a simple goal: make it easy for people to celebrate, safely —
-          and make it easy for operators to run strong seasons.
-        </p>
-      </div>
-
-      <div class="about-story-grid">
-        <div class="about-tabs" data-tabs>
-          <div class="about-tabbar" role="tablist" aria-label="Company timeline">
-            <button class="about-tab is-active" type="button" data-tab="start" role="tab" aria-selected="true">The Start</button>
-            <button class="about-tab" type="button" data-tab="grow" role="tab" aria-selected="false">Growth</button>
-            <button class="about-tab" type="button" data-tab="today" role="tab" aria-selected="false">Today</button>
-            <button class="about-tab" type="button" data-tab="next" role="tab" aria-selected="false">What’s Next</button>
-          </div>
-
-          <div class="about-panels">
-            <div class="about-panel is-active" data-panel="start" role="tabpanel">
-              <h3>One stand. One promise.</h3>
-              <p>
-                Founded in <strong>Papillion, Nebraska</strong>, Bellino grew from a single location into something bigger —
-                without losing the hands-on mindset.
-              </p>
-              <div class="about-panel-points">
-                <span>Hands-on ownership</span>
-                <span>Fair pricing</span>
-                <span>Quality control</span>
+              <div class="about-card-item">
+                <span class="about-dot"></span>
+                <div>
+                  <div class="about-card-title">Fundraising that delivers</div>
+                  <div class="about-card-sub">Schools, churches, teams, clubs — built to raise real money.</div>
+                </div>
               </div>
             </div>
 
-            <div class="about-panel" data-panel="grow" role="tabpanel">
-              <h3>Expansion with standards.</h3>
-              <p>
-                As we added locations, we built training programs and manuals that answer real questions —
-                so operators aren’t guessing.
-              </p>
-              <div class="about-panel-points">
-                <span>Operator playbooks</span>
-                <span>Better logistics</span>
-                <span>Stronger training</span>
-              </div>
-            </div>
-
-            <div class="about-panel" data-panel="today" role="tabpanel">
-              <h3>300+ locations. Same mindset.</h3>
-              <p>
-                Today, Bellino spans <strong>8 states</strong> with <strong>300+ locations</strong>.
-                We’re still focused on safety and reliable support.
-              </p>
-              <div class="about-panel-points">
-                <span>Customer-first</span>
-                <span>Safety-first</span>
-                <span>Support-driven</span>
-              </div>
-            </div>
-
-            <div class="about-panel" data-panel="next" role="tabpanel">
-              <h3>More clarity. More convenience.</h3>
-              <p>
-                We’re improving state info pages, location tools, and operator resources —
-                so it’s easier to shop, operate, and fundraise.
-              </p>
-              <div class="about-panel-points">
-                <span>Better state pages</span>
-                <span>Better training</span>
-                <span>Better customer tools</span>
-              </div>
+            <div class="about-card-actions">
+              <a class="btn btn-buywide" href="fundraising.html">Learn About Fundraising</a>
             </div>
           </div>
         </div>
-
-        <aside class="about-stats" data-countup>
-          <div class="about-stat-card">
-            <div class="about-stat-num" data-count="35">0</div>
-            <div class="about-stat-label">Years in business</div>
-          </div>
-          <div class="about-stat-card">
-            <div class="about-stat-num" data-count="300">0</div>
-            <div class="about-stat-label">Locations (and growing)</div>
-          </div>
-          <div class="about-stat-card">
-            <div class="about-stat-num" data-count="8">0</div>
-            <div class="about-stat-label">States served</div>
-          </div>
-
-          <div class="about-stat-note">
-            <span class="dot-bullet" aria-hidden="true"></span>
-            <div>
-              We aim for <strong>consistent product performance</strong> and <strong>reliable support</strong>.
-            </div>
-          </div>
-        </aside>
       </div>
     </div>
   </section>
 
-  <!-- Standards / Safety -->
-  <section class="section section-light about-standards">
+  <!-- =========================
+       STATES STRIP (decorative + links)
+  ========================= -->
+  <section class="about-states" aria-label="States we serve">
     <div class="wrap">
-      <div class="about-head">
-        <span class="about-kicker lite">Standards</span>
-        <h2 class="about-h2">Safety isn’t a slogan — it’s a system</h2>
-        <p class="about-p">
-          We go the extra mile to ensure items are safe and perform at a superior level.
-          That includes product testing, compliance, and standing behind what we sell.
-        </p>
+      <div class="about-states-row">
+        <a class="about-state" href="nebraska.html"><span class="ab-spark"></span><span>Nebraska</span></a>
+        <a class="about-state" href="iowa.html"><span class="ab-spark"></span><span>Iowa</span></a>
+        <a class="about-state" href="kansas.html"><span class="ab-spark"></span><span>Kansas</span></a>
+        <a class="about-state" href="missouri.html"><span class="ab-spark"></span><span>Missouri</span></a>
+        <a class="about-state" href="south-dakota.html"><span class="ab-spark"></span><span>South Dakota</span></a>
+        <a class="about-state" href="texas.html"><span class="ab-spark"></span><span>Texas</span></a>
+        <a class="about-state" href="oklahoma.html"><span class="ab-spark"></span><span>Oklahoma</span></a>
+        <a class="about-state" href="arizona.html"><span class="ab-spark"></span><span>Arizona</span></a>
       </div>
 
-      <div class="about-standards-grid">
-        <div class="about-standards-card">
-          <h3>Affiliations + credibility</h3>
-          <p>Bellino Fireworks is affiliated with several national, highly respected organizations:</p>
-          <ul class="about-bullets">
-            <li><span class="help-dot"></span> American Pyrotechnics Association (APA)</li>
-            <li><span class="help-dot"></span> National Fireworks Association (NFA)</li>
-            <li><span class="help-dot"></span> Nebraska Retail Fireworks Association (NRFA)</li>
-          </ul>
-
-          <div class="about-divider"></div>
-
-          <h3>Testing + approvals</h3>
-          <p>
-            We employ <strong>AFSL</strong>, an independent testing laboratory, to confirm products meet government regulations.
-            Products are also approved by the <strong>United States Consumer Product Safety Commission (CPSC)</strong>.
-          </p>
-        </div>
-
-        <div class="about-standards-card about-standards-card--faq">
-          <h3>Quick answers</h3>
-
-          <details class="about-faq" open>
-            <summary>Do you stand behind the merchandise?</summary>
-            <div class="about-faq-body">
-              Yes — we believe in high-quality products at a fair price, and we stand behind our merchandise guarantee.
-            </div>
-          </details>
-
-          <details class="about-faq">
-            <summary>What makes Bellino “different” at scale?</summary>
-            <div class="about-faq-body">
-              Even with hundreds of locations, we keep the family mindset: training, standards, and support operators can rely on.
-            </div>
-          </details>
-
-          <details class="about-faq">
-            <summary>Who do your fundraising programs work for?</summary>
-            <div class="about-faq-body">
-              Schools, teams, churches, youth clubs, chambers, colleges, individuals, and for-profit companies —
-              many groups say it’s their strongest annual fundraiser.
-            </div>
-          </details>
-        </div>
+      <div class="about-states-note">
+        These pages tell the local Bellino story by state — where we started, how we grew, and what to expect this season.
       </div>
     </div>
   </section>
 
-  <!-- Proof band -->
-  <section class="section about-proof">
-    <div class="about-proof-bg"></div>
+  <!-- =========================
+       TIMELINE (interactive)
+  ========================= -->
+  <section class="section section-light about-story">
     <div class="wrap">
-      <div class="about-proof-grid">
-        <div>
-          <span class="about-pill">Fundraising that actually performs</span>
-          <h2 class="about-h2 dark">Built for real-world results</h2>
-          <p class="about-p dark">
-            Over the years, we’ve worked with hundreds of organizations —
-            and our programs consistently become their strongest annual fundraiser.
-          </p>
+      <div class="section-head">
+        <h2 class="section-title">Our story — the short version</h2>
+        <p class="section-sub">Built like a local business. Operated like a real company. Still hands-on.</p>
+      </div>
 
-          <div class="about-proof-points">
-            <div class="about-proof-point"><span class="proof-dot"></span> Clear program structure + support</div>
-            <div class="about-proof-point"><span class="proof-dot"></span> Training + operator manuals included</div>
-            <div class="about-proof-point"><span class="proof-dot"></span> Proven track record across many org types</div>
+      <div class="about-timeline">
+        <details class="about-step" open>
+          <summary>
+            <span class="step-chip">Start</span>
+            <span class="step-h">Papillion, Nebraska — one location</span>
+            <span class="step-mini">Where it all began</span>
+          </summary>
+          <div class="step-body">
+            We started with one goal: do it right — good product, fair pricing, and customers who leave happy.
+            That “hands-on” mindset still drives how we operate today.
           </div>
+        </details>
 
-          <div class="about-proof-actions">
-            <a class="btn btn-cta" href="/fundraising/">See Fundraising</a>
-            <a class="btn btn-outline" href="/contact/">Talk With Us</a>
+        <details class="about-step">
+          <summary>
+            <span class="step-chip">Grow</span>
+            <span class="step-h">Expanding across the Midwest</span>
+            <span class="step-mini">More locations, same standards</span>
+          </summary>
+          <div class="step-body">
+            As demand grew, our footprint grew — but we kept the same expectation: clean stands, trained operators,
+            and support that actually answers the phone.
           </div>
-        </div>
+        </details>
 
-        <div class="about-proof-card">
-          <div class="about-proof-badge">Operator Support</div>
-          <h3>Training that removes guesswork</h3>
-          <p>
-            We provide an extensive training program and manual to operators to answer day-to-day questions
-            and improve service and consistency year after year.
-          </p>
-          <ul class="about-bullets">
-            <li><span class="help-dot"></span> Setup + operations</li>
-            <li><span class="help-dot"></span> Customer experience tips</li>
-            <li><span class="help-dot"></span> Season problem-solving</li>
-          </ul>
-        </div>
+        <details class="about-step">
+          <summary>
+            <span class="step-chip">Scale</span>
+            <span class="step-h">300+ locations & fundraising programs</span>
+            <span class="step-mini">Built to perform year after year</span>
+          </summary>
+          <div class="step-body">
+            We’ve worked with hundreds of organizations — schools, youth clubs, churches, chambers, colleges, and more —
+            helping them run what is often their most successful fundraiser of the year.
+          </div>
+        </details>
       </div>
     </div>
   </section>
 
-  <!-- Footer (keep your existing footer) -->
+  <!-- =========================
+       WHAT WE DO (tabs)
+  ========================= -->
+  <section class="about-tabs">
+    <div class="about-tabs-bg" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="about-tabs-head">
+        <span class="about-pill about-pill--lite">What we do</span>
+        <h2 class="about-h2">Three things we obsess over</h2>
+        <p class="about-p">Click around. This is the “how we operate” part — made simple.</p>
+      </div>
+
+      <div class="tabs" data-tabs>
+        <div class="tabs-nav" role="tablist" aria-label="About tabs">
+          <button class="tab-btn is-active" type="button" role="tab" aria-selected="true" data-tab="safety">Safety & Testing</button>
+          <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab="support">Operator Support</button>
+          <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab="fundraising">Fundraising</button>
+        </div>
+
+        <div class="tabs-panels">
+          <div class="tab-panel is-active" role="tabpanel" data-panel="safety">
+            <h3>Safety-first isn’t a slogan — it’s a process.</h3>
+            <ul>
+              <li>We use independent lab testing (AFSL) to confirm products meet applicable requirements.</li>
+              <li>Products are compliant with applicable U.S. consumer safety standards and oversight.</li>
+              <li>We focus on consistent performance — what you see is what you get.</li>
+            </ul>
+          </div>
+
+          <div class="tab-panel" role="tabpanel" data-panel="support">
+            <h3>We help you run a stand people come back to.</h3>
+            <ul>
+              <li>Training + an operator manual built from real experience.</li>
+              <li>Support that keeps things moving when it’s busy.</li>
+              <li>Stand standards: clean, organized, and customer-first.</li>
+            </ul>
+          </div>
+
+          <div class="tab-panel" role="tabpanel" data-panel="fundraising">
+            <h3>Fundraising that’s built to produce.</h3>
+            <ul>
+              <li>Programs used by schools, churches, teams, clubs, and community groups.</li>
+              <li>Clear steps + proven playbooks for your operators.</li>
+              <li>Designed to be the most income-producing event of the year.</li>
+            </ul>
+
+            <div class="tab-cta">
+              <a class="btn btn-cta" href="fundraising.html">See Fundraising Options</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-badges">
+        <div class="about-badge">Affiliations: APA</div>
+        <div class="about-badge">NFA</div>
+        <div class="about-badge">NRFA</div>
+        <div class="about-badge">Independent Testing: AFSL</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
   <footer class="footer">
     <div class="wrap footer-row">
       <div class="foot-left">
-        <img src="/assets/logo.png" alt="Bellino Fireworks">
-        <div class="copy">© <span id="year"></span> Bellino Fireworks, Inc. All rights reserved.</div>
+        <img src="images/logo-mark.png" alt="Bellino Fireworks" />
+        <div class="copy">© <span id="year"></span> Bellino Fireworks, Inc.</div>
       </div>
 
       <div class="foot-right">
-        <a href="/locations/">Locations</a>
-        <a href="/fundraising/">Fundraising</a>
-        <a href="/about/">About</a>
-        <a href="/contact/">Contact</a>
+        <a href="about.html">About</a>
+        <a href="fundraising.html">Fundraising</a>
+        <a href="locations.html">Locations</a>
       </div>
 
       <div class="foot-social">
-        <a class="icon-link" href="#" aria-label="Instagram">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 4a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm6.5-.9a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0z"/></svg>
-        </a>
         <a class="icon-link" href="#" aria-label="Facebook">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 22v-8h3l1-4h-4V7.8c0-1.1.3-1.8 1.9-1.8H17V2.2C16.6 2.1 15.4 2 14 2c-2.9 0-5 1.8-5 5.1V10H6v4h3v8h4z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.56 9.88v-7H8v-2.88h2.44V9.8c0-2.4 1.43-3.73 3.62-3.73 1.05 0 2.15.19 2.15.19v2.36h-1.21c-1.2 0-1.57.74-1.57 1.5v1.8H16.9L16.5 14.88h-2v7A10 10 0 0 0 22 12z"/></svg>
+        </a>
+        <a class="icon-link" href="#" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9Zm4.5 4.2a3.8 3.8 0 1 1 0 7.6 3.8 3.8 0 0 1 0-7.6Zm0 2a1.8 1.8 0 1 0 0 3.6 1.8 1.8 0 0 0 0-3.6ZM18 6.7a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/></svg>
         </a>
       </div>
     </div>
   </footer>
 
-  <script src="/main.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
