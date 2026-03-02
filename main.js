@@ -878,141 +878,71 @@ body.fundraising-page .fundpage-side-card--alt{
 }
 
 /* =========================================================
-   ABOUT PAGE + SITEWIDE COUNTDOWN (ADD-ON)
+   ABOUT PAGE: Tabs + Count-up (safe)
    Paste at bottom of main.js
 ========================================================= */
 
-/* 1) About page accordion (safe) */
 (() => {
-  const accord = document.querySelector("[data-accordion]");
-  if (!accord) return;
+  // Tabs
+  const tabsRoot = document.querySelector("[data-tabs]");
+  if (tabsRoot) {
+    const btns = Array.from(tabsRoot.querySelectorAll("[data-tab]"));
+    const panels = Array.from(tabsRoot.querySelectorAll("[data-panel]"));
 
-  const buttons = accord.querySelectorAll(".about-acc-btn");
-  buttons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const expanded = btn.getAttribute("aria-expanded") === "true";
-      const panel = btn.nextElementSibling;
-
-      // close others for a cleaner “interactive” feel
-      buttons.forEach((b) => {
-        if (b !== btn) {
-          b.setAttribute("aria-expanded", "false");
-          const p = b.nextElementSibling;
-          if (p) p.hidden = true;
-          const plus = b.querySelector(".about-acc-plus");
-          if (plus) plus.textContent = "+";
-        }
+    const setActive = (key) => {
+      btns.forEach(b => {
+        const on = b.getAttribute("data-tab") === key;
+        b.classList.toggle("is-active", on);
+        b.setAttribute("aria-selected", on ? "true" : "false");
       });
-
-      btn.setAttribute("aria-expanded", String(!expanded));
-      if (panel) panel.hidden = expanded;
-
-      const plus = btn.querySelector(".about-acc-plus");
-      if (plus) plus.textContent = expanded ? "+" : "—";
-    });
-  });
-})();
-
-/* 2) Count-up animation (safe, runs once when visible) */
-(() => {
-  const els = document.querySelectorAll("[data-countup]");
-  if (!els.length) return;
-
-  const prefersReduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  const run = (el) => {
-    const target = Number(el.getAttribute("data-countup") || "0");
-    if (!Number.isFinite(target)) return;
-
-    if (prefersReduced) {
-      el.textContent = String(target);
-      return;
-    }
-
-    const start = 0;
-    const duration = 900; // ms
-    const startTime = performance.now();
-
-    const step = (now) => {
-      const t = Math.min(1, (now - startTime) / duration);
-      const val = Math.round(start + (target - start) * (1 - Math.pow(1 - t, 3)));
-      el.textContent = String(val);
-      if (t < 1) requestAnimationFrame(step);
+      panels.forEach(p => p.classList.toggle("is-active", p.getAttribute("data-panel") === key));
     };
 
-    requestAnimationFrame(step);
-  };
+    btns.forEach(b => b.addEventListener("click", () => setActive(b.getAttribute("data-tab"))));
+  }
 
-  const seen = new WeakSet();
-  const io = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        const el = entry.target;
-        if (seen.has(el)) return;
-        seen.add(el);
-        run(el);
+  // Count-up (only runs if elements exist)
+  const wrap = document.querySelector("[data-countup]");
+  if (wrap) {
+    const els = Array.from(wrap.querySelectorAll("[data-count]"));
+    const reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    const animate = () => {
+      els.forEach(el => {
+        const target = parseInt(el.getAttribute("data-count") || "0", 10);
+        if (!target) return;
+
+        if (reduceMotion) {
+          el.textContent = target >= 100 ? `${target}+` : String(target);
+          return;
+        }
+
+        const start = 0;
+        const dur = 900;
+        const t0 = performance.now();
+
+        const step = (t) => {
+          const p = Math.min(1, (t - t0) / dur);
+          const val = Math.floor(start + (target - start) * p);
+          el.textContent = target >= 100 ? `${val}+` : String(val);
+          if (p < 1) requestAnimationFrame(step);
+        };
+
+        requestAnimationFrame(step);
       });
-    },
-    { threshold: 0.35 }
-  );
+    };
 
-  els.forEach((el) => io.observe(el));
-})();
+    // run once when visible-ish
+    let ran = false;
+    const io = new IntersectionObserver((entries) => {
+      if (ran) return;
+      if (entries.some(e => e.isIntersecting)) {
+        ran = true;
+        animate();
+        io.disconnect();
+      }
+    }, { threshold: 0.2 });
 
-/* 3) Sitewide: Countdown to July 4th (safe) */
-(() => {
-  const root = document.querySelector("[data-july-countdown]");
-  if (!root) return;
-
-  const dEl = root.querySelector("[data-july-days]");
-  const hEl = root.querySelector("[data-july-hours]");
-  const mEl = root.querySelector("[data-july-mins]");
-  const sEl = root.querySelector("[data-july-secs]");
-
-  const pad2 = (n) => String(n).padStart(2, "0");
-
-  const getTarget = () => {
-    const now = new Date();
-    const yearMode = root.getAttribute("data-year-mode") || "auto";
-
-    // default: upcoming July 4th (if past July 4 this year, use next year)
-    let y = now.getFullYear();
-    const july4ThisYear = new Date(y, 6, 4, 0, 0, 0, 0); // month is 0-based; 6 = July
-    if (yearMode === "auto" && now > july4ThisYear) y = y + 1;
-
-    return new Date(y, 6, 4, 0, 0, 0, 0);
-  };
-
-  let target = getTarget();
-
-  const tick = () => {
-    const now = new Date();
-    const diff = target.getTime() - now.getTime();
-
-    if (diff <= 0) {
-      if (dEl) dEl.textContent = "0";
-      if (hEl) hEl.textContent = "00";
-      if (mEl) mEl.textContent = "00";
-      if (sEl) sEl.textContent = "00";
-
-      // if it’s “auto” mode, after July 4 passes we roll to next year
-      target = getTarget();
-      return;
-    }
-
-    const totalSeconds = Math.floor(diff / 1000);
-    const days = Math.floor(totalSeconds / 86400);
-    const hours = Math.floor((totalSeconds % 86400) / 3600);
-    const mins = Math.floor((totalSeconds % 3600) / 60);
-    const secs = totalSeconds % 60;
-
-    if (dEl) dEl.textContent = String(days);
-    if (hEl) hEl.textContent = pad2(hours);
-    if (mEl) mEl.textContent = pad2(mins);
-    if (sEl) sEl.textContent = pad2(secs);
-  };
-
-  tick();
-  setInterval(tick, 1000);
+    io.observe(wrap);
+  }
 })();
