@@ -1,6 +1,7 @@
 /* =========================================================
    main.js — site-wide, safe-by-default
    - Only runs features when matching DOM exists
+   - Matches CSS mobile nav: .nav.is-open
 ========================================================= */
 (() => {
   "use strict";
@@ -20,59 +21,63 @@
   })();
 
   /* -------------------------
-     Mobile nav toggle (supports .nav or .mobile-nav patterns)
+     Mobile nav toggle (CSS expects .nav.is-open on mobile)
   ------------------------- */
   (() => {
     const toggle = $(".nav-toggle");
-    if (!toggle) return;
+    const nav = $(".nav");
+    if (!toggle || !nav) return;
 
-    // Some pages may use .mobile-nav, others just .nav
-    const nav = $(".mobile-nav") || $(".nav");
-    if (!nav) return;
+    const mq = window.matchMedia("(max-width: 900px)");
 
-    const open = () => {
-      toggle.setAttribute("aria-expanded", "true");
-      document.documentElement.classList.add("nav-open");
-      nav.hidden = false;
-    };
-
-    const close = () => {
+    const setClosed = () => {
       toggle.setAttribute("aria-expanded", "false");
-      document.documentElement.classList.remove("nav-open");
-      // Only hide if element supports "hidden" behavior
-      nav.hidden = true;
+      nav.classList.remove("is-open");
     };
 
-    // Initialize hidden state safely
-    // (If your CSS handles visibility, this won't hurt.)
-    if (toggle.getAttribute("aria-expanded") !== "true") {
-      nav.hidden = true;
-    }
+    const setOpen = () => {
+      toggle.setAttribute("aria-expanded", "true");
+      nav.classList.add("is-open");
+    };
+
+    // Ensure correct initial state on load for mobile
+    const syncToViewport = () => {
+      if (mq.matches) setClosed();
+      else {
+        // desktop: nav is always visible via CSS; remove mobile class
+        nav.classList.remove("is-open");
+        toggle.setAttribute("aria-expanded", "false");
+      }
+    };
+
+    syncToViewport();
+    mq.addEventListener?.("change", syncToViewport);
 
     toggle.addEventListener("click", () => {
-      const isOpen = toggle.getAttribute("aria-expanded") === "true";
-      if (isOpen) close();
-      else open();
+      const isOpen = nav.classList.contains("is-open");
+      if (isOpen) setClosed();
+      else setOpen();
     });
 
-    // Close on link click (mobile)
+    // Close on link click (mobile only)
     nav.addEventListener("click", (e) => {
+      if (!mq.matches) return;
       const link = e.target.closest("a");
       if (!link) return;
-      close();
+      setClosed();
     });
 
     // Close on Escape
     window.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") close();
+      if (e.key === "Escape") setClosed();
     });
   })();
 
   /* -------------------------
-     July 4 Top Ticker Countdown
+     July 4 Countdown (sitewide)
      Markup expects:
-     <section class="top-ticker" data-july-ticker>
-       ... [data-tt-days] [data-tt-hours] [data-tt-mins] [data-tt-secs]
+     [data-july-ticker]
+       [data-tt-days] [data-tt-hours] [data-tt-mins] [data-tt-secs]
   ------------------------- */
   (() => {
     const ticker = $("[data-july-ticker]");
@@ -82,7 +87,6 @@
     const hEl = $("[data-tt-hours]", ticker);
     const mEl = $("[data-tt-mins]", ticker);
     const sEl = $("[data-tt-secs]", ticker);
-
     if (!dEl || !hEl || !mEl || !sEl) return;
 
     const pad2 = (n) => String(n).padStart(2, "0");
@@ -91,22 +95,29 @@
       const now = new Date();
       const year = now.getFullYear();
 
-      // Local time July 4 @ 00:00
+      // July 4 @ 00:00 local time
       let target = new Date(year, 6, 4, 0, 0, 0, 0); // month 6 = July
 
-      // If we're already past July 4 (end of day), count to next year
-      // Safer: if now >= July 5 00:00, use next year
+      // If we're at/after July 5 00:00, count to next year
       const cutoff = new Date(year, 6, 5, 0, 0, 0, 0);
       if (now >= cutoff) target = new Date(year + 1, 6, 4, 0, 0, 0, 0);
 
       return target;
     };
 
+    const tickPulse = (el) => {
+      el.classList.remove("is-tick");
+      // force reflow
+      void el.offsetWidth;
+      el.classList.add("is-tick");
+    };
+
+    let prev = { d: null, h: null, m: null, s: null };
+
     const render = () => {
       const now = new Date();
       const target = getNextJuly4();
       let diff = target.getTime() - now.getTime();
-
       if (diff < 0) diff = 0;
 
       const totalSeconds = Math.floor(diff / 1000);
@@ -115,31 +126,34 @@
       const mins = Math.floor((totalSeconds % (60 * 60)) / 60);
       const secs = totalSeconds % 60;
 
-      // Set text (days can be 1-3 digits; don't pad)
-      dEl.textContent = String(days);
-      hEl.textContent = pad2(hours);
-      mEl.textContent = pad2(mins);
-      sEl.textContent = pad2(secs);
+      const next = { d: String(days), h: pad2(hours), m: pad2(mins), s: pad2(secs) };
 
-      // Optional: add a "loaded" class so you can style away placeholders
+      if (prev.d !== next.d) tickPulse(dEl);
+      if (prev.h !== next.h) tickPulse(hEl);
+      if (prev.m !== next.m) tickPulse(mEl);
+      if (prev.s !== next.s) tickPulse(sEl);
+
+      dEl.textContent = next.d;
+      hEl.textContent = next.h;
+      mEl.textContent = next.m;
+      sEl.textContent = next.s;
+
+      prev = next;
       ticker.classList.add("tt-ready");
     };
 
     render();
     const t = setInterval(render, 1000);
 
-    // If page is hidden, reduce work; resume on focus
     document.addEventListener("visibilitychange", () => {
-      if (document.hidden) return;
-      render();
+      if (!document.hidden) render();
     });
 
-    // Safety cleanup if needed (not usually required)
     window.addEventListener("beforeunload", () => clearInterval(t));
   })();
 
   /* -------------------------
-     About page Tabs
+     About Tabs
      Wrapper: [data-tabs]
      Buttons: .tab-btn[data-tab="..."]
      Panels:  .tab-panel[data-panel="..."]
@@ -166,21 +180,19 @@
       });
     };
 
-    // init: hide non-active panels
     const initialBtn = btns.find((b) => b.classList.contains("is-active")) || btns[0];
     const initialKey = initialBtn.dataset.tab;
+
     panels.forEach((p) => (p.hidden = !p.classList.contains("is-active")));
     activate(initialKey);
 
-    btns.forEach((b) => {
-      b.addEventListener("click", () => activate(b.dataset.tab));
-    });
+    btns.forEach((b) => b.addEventListener("click", () => activate(b.dataset.tab)));
   })();
 
   /* -------------------------
      Count-up stats (About hero)
      Container: [data-countup]
-     Numbers:   [data-count="35"] etc
+     Numbers:   [data-count="35"]
   ------------------------- */
   (() => {
     const root = $("[data-countup]");
@@ -189,7 +201,8 @@
     const nums = $$("[data-count]", root);
     if (!nums.length) return;
 
-    const prefersReduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const prefersReduced =
+      window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     const animateEl = (el) => {
       const raw = el.getAttribute("data-count");
@@ -201,7 +214,7 @@
         return;
       }
 
-      const duration = 800;
+      const duration = 850;
       const start = 0;
       const startTime = performance.now();
 
@@ -216,14 +229,12 @@
     };
 
     let ran = false;
-
     const run = () => {
       if (ran) return;
       ran = true;
       nums.forEach(animateEl);
     };
 
-    // run when visible
     if ("IntersectionObserver" in window) {
       const io = new IntersectionObserver(
         (entries) => {
@@ -234,22 +245,20 @@
             }
           });
         },
-        { threshold: 0.3 }
+        { threshold: 0.35 }
       );
       io.observe(root);
     } else {
-      // fallback
       run();
     }
   })();
 
   /* -------------------------
-     Fundraising Carousel (safe, only if exists)
-     Expected:
+     Fundraising Carousel
      .fundpage-carousel
-       .fundpage-slide (background-image via CSS or inline)
+       .fundpage-slide
        .fundpage-dot
-       .fundpage-carousel-btn.prev / .next (optional)
+       .fundpage-carousel-btn.prev / .next
   ------------------------- */
   (() => {
     const carousel = $(".fundpage-carousel");
@@ -257,7 +266,6 @@
 
     const slides = $$(".fundpage-slide", carousel);
     if (slides.length < 2) {
-      // ensure first is active if only one
       if (slides[0]) slides[0].classList.add("is-active");
       return;
     }
@@ -275,15 +283,11 @@
     const setActive = (i) => {
       index = (i + slides.length) % slides.length;
 
-      slides.forEach((s, n) => {
-        s.classList.toggle("is-active", n === index);
-        s.classList.toggle("active", n === index); // supports either class name
-      });
+      slides.forEach((s, n) => s.classList.toggle("is-active", n === index));
 
       if (dots.length) {
         dots.forEach((d, n) => {
           d.classList.toggle("is-active", n === index);
-          d.classList.toggle("active", n === index);
           d.setAttribute("aria-current", n === index ? "true" : "false");
         });
       }
@@ -302,27 +306,19 @@
       timer = null;
     };
 
-    // init: pick any pre-marked active slide
-    const pre = slides.findIndex((s) => s.classList.contains("is-active") || s.classList.contains("active"));
+    const pre = slides.findIndex((s) => s.classList.contains("is-active"));
     setActive(pre >= 0 ? pre : 0);
 
-    // dots click
-    if (dots.length) {
-      dots.forEach((d, n) => d.addEventListener("click", () => { setActive(n); start(); }));
-    }
-
+    if (dots.length) dots.forEach((d, n) => d.addEventListener("click", () => { setActive(n); start(); }));
     if (nextBtn) nextBtn.addEventListener("click", () => { next(); start(); });
     if (prevBtn) prevBtn.addEventListener("click", () => { prev(); start(); });
 
-    // pause on hover/focus
     carousel.addEventListener("mouseenter", stop);
     carousel.addEventListener("mouseleave", start);
     carousel.addEventListener("focusin", stop);
     carousel.addEventListener("focusout", start);
 
-    // kickoff autoplay
     start();
-
     window.addEventListener("beforeunload", stop);
   })();
 })();
