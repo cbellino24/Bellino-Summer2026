@@ -21,6 +21,44 @@
 </head>
 
 <body class="fundraising-page">
+
+  <!-- =====================================================
+       JULY 4 COUNTDOWN STRIP (SITEWIDE)
+       Uses .july-countdown + .july-* classes (matches styles.css + main.js)
+  ====================================================== -->
+  <section class="july-countdown" data-july-ticker aria-label="Countdown to July 4th">
+    <div class="wrap july-row">
+      <div class="july-left">
+        <span class="july-badge">Countdown to July 4th</span>
+        <div class="july-title">Beat the rush — plan your visit.</div>
+        <div class="july-sub">Locations fill up fast near the holiday.</div>
+      </div>
+
+      <div class="july-right" aria-live="polite">
+        <div class="july-box">
+          <div class="july-num" data-tt-days>—</div>
+          <div class="july-lbl">Days</div>
+        </div>
+        <div class="july-box">
+          <div class="july-num" data-tt-hours>—</div>
+          <div class="july-lbl">Hours</div>
+        </div>
+        <div class="july-box">
+          <div class="july-num" data-tt-mins>—</div>
+          <div class="july-lbl">Mins</div>
+        </div>
+        <div class="july-box">
+          <div class="july-num" data-tt-secs>—</div>
+          <div class="july-lbl">Secs</div>
+        </div>
+      </div>
+
+      <div class="july-cta">
+        <a class="btn btn-buy" href="#fundraiser-form">Start a Fundraiser</a>
+      </div>
+    </div>
+  </section>
+
   <!-- =========================
        HEADER (same as homepage)
   ========================== -->
@@ -567,6 +605,7 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- IMPORTANT: use ONE js file sitewide -->
+  <script src="main.js"></script>
 </body>
 </html>
