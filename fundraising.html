@@ -1,4 +1,4 @@
-<!-- fundraising.html -->
+<!-- fundraising.html (FULL) -->
 <!doctype html>
 <html lang="en">
 <head>
@@ -10,7 +10,7 @@
   <meta name="robots" content="index,follow" />
 
   <meta property="og:title" content="Fireworks Fundraiser Programs | Bellino Fireworks">
-  <meta property="og:description" content="A high-demand fireworks fundraiser for schools, teams, churches & nonprofits — simple to run, supported by Bellino." />
+  <meta property="og:description" content="A high-demand fireworks fundraiser for schools, teams, churches & nonprofits — simple to run, supported by Bellino.">
   <meta property="og:type" content="website">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,15 +23,14 @@
 <body class="fundraising-page">
 
   <!-- =====================================================
-       JULY 4 COUNTDOWN STRIP (SITEWIDE)
-       Uses .july-countdown + .july-* classes (matches styles.css + main.js)
+       JULY 4 COUNTDOWN STRIP (SITEWIDE) — SAME AS INDEX/ABOUT
   ====================================================== -->
   <section class="july-countdown" data-july-ticker aria-label="Countdown to July 4th">
     <div class="wrap july-row">
       <div class="july-left">
         <span class="july-badge">Countdown to July 4th</span>
         <div class="july-title">Beat the rush — plan your visit.</div>
-        <div class="july-sub">Locations fill up fast near the holiday.</div>
+        <div class="july-sub">Groups lock in volunteers + promotions early.</div>
       </div>
 
       <div class="july-right" aria-live="polite">
@@ -60,7 +59,7 @@
   </section>
 
   <!-- =========================
-       HEADER (same as homepage)
+       HEADER (SITEWIDE) — SAME AS INDEX/ABOUT
   ========================== -->
   <header class="header" id="top">
     <div class="wrap header-row">
@@ -76,14 +75,14 @@
         <span></span><span></span><span></span>
       </button>
 
-      <nav class="nav" id="site-nav" data-nav>
+      <nav class="nav" id="site-nav" data-nav aria-label="Primary">
         <a class="nav-link" href="index.html#top">Home</a>
         <span class="dot">•</span>
         <a class="nav-link" href="index.html#locations">Locations</a>
         <span class="dot">•</span>
         <a class="nav-link" href="index.html#products">Our Products</a>
         <span class="dot">•</span>
-        <a class="nav-link is-active" href="fundraising.html">Fundraising</a>
+        <a class="nav-link is-active" href="fundraising.html" aria-current="page">Fundraising</a>
         <span class="dot">•</span>
         <a class="nav-link" href="about.html">About</a>
 
@@ -108,8 +107,9 @@
   </header>
 
   <main>
+
     <!-- =========================
-         HERO (Modern)
+         HERO (Fundraising unique classes)
     ========================== -->
     <section class="fundpage-hero">
       <div class="fundpage-hero-bg" aria-hidden="true"></div>
@@ -117,6 +117,7 @@
 
       <div class="wrap fundpage-hero-inner">
         <div class="fundpage-hero-grid fundpage-hero-grid--modern">
+
           <!-- LEFT -->
           <div class="fundpage-hero-left">
             <div class="fundpage-pill">Fireworks Fundraiser Program</div>
@@ -129,7 +130,7 @@
 
             <p class="fundpage-sub">
               Schools, teams, churches, and nonprofits run a fundraiser people actually want to support.
-              Bellino provides the plan + materials — your group brings the community.
+              Bellino provides the plan + guidance — your group brings the community.
             </p>
 
             <div class="fundpage-hero-actions">
@@ -137,7 +138,7 @@
               <a class="btn btn-outline" href="#programs">See Programs</a>
             </div>
 
-            <div class="fundpage-mini fundpage-mini--modern">
+            <div class="fundpage-mini fundpage-mini--modern" aria-label="Quick facts">
               <div class="fundpage-mini-card">
                 <div class="fundpage-mini-top">Common goals</div>
                 <div class="fundpage-mini-bot">Trips • Equipment • Programs • Facilities</div>
@@ -157,17 +158,55 @@
               <li><span class="fundpage-check"></span> Built around peak seasonal demand (summer + the 4th)</li>
               <li><span class="fundpage-check"></span> Simple to run — with real guidance and quick setup</li>
             </ul>
+
+            <!-- UNIQUE TOUCH: Program Picker (optional JS later) -->
+            <div class="fundpage-picker" data-fund-picker aria-label="Program picker">
+              <div class="fundpage-picker-head">
+                <div class="fundpage-picker-kicker">Quick match</div>
+                <div class="fundpage-picker-title">What kind of group are you?</div>
+              </div>
+
+              <div class="fundpage-picker-buttons" role="group" aria-label="Choose group type">
+                <button class="fundpage-pick-btn is-active" type="button" data-pick="school">School</button>
+                <button class="fundpage-pick-btn" type="button" data-pick="team">Team</button>
+                <button class="fundpage-pick-btn" type="button" data-pick="church">Church</button>
+                <button class="fundpage-pick-btn" type="button" data-pick="nonprofit">Nonprofit</button>
+              </div>
+
+              <div class="fundpage-picker-panels">
+                <div class="fundpage-pick-panel is-active" data-panel="school">
+                  <div class="fundpage-pick-h">Best for:</div>
+                  <div class="fundpage-pick-p">Bands, boosters, clubs, and programs with parents who can share promos.</div>
+                </div>
+                <div class="fundpage-pick-panel" data-panel="team">
+                  <div class="fundpage-pick-h">Best for:</div>
+                  <div class="fundpage-pick-p">Travel teams, uniforms, gear, tournaments — especially if you can staff peak days.</div>
+                </div>
+                <div class="fundpage-pick-panel" data-panel="church">
+                  <div class="fundpage-pick-h">Best for:</div>
+                  <div class="fundpage-pick-p">Mission trips, youth programs, outreach — great when your community already shops local.</div>
+                </div>
+                <div class="fundpage-pick-panel" data-panel="nonprofit">
+                  <div class="fundpage-pick-h">Best for:</div>
+                  <div class="fundpage-pick-p">Local causes, services, and event funding — strong seasonal momentum around the 4th.</div>
+                </div>
+              </div>
+
+              <div class="fundpage-picker-foot">
+                <span class="dot-bullet"></span>
+                Not sure? Fill the form — we’ll recommend the most realistic setup.
+              </div>
+            </div>
           </div>
 
-          <!-- RIGHT: MEDIA + QUICK START -->
+          <!-- RIGHT -->
           <aside class="fundpage-hero-right">
             <div class="fundpage-hero-media">
               <div class="fundpage-carousel" data-fund-carousel>
                 <div class="fundpage-carousel-track">
-                  <!-- Replace image paths with your real images -->
-                  <div class="fundpage-slide is-active" style="background-image:url('images/fundraiser-1.jpg');" aria-label="Fundraiser image 1"></div>
-                  <div class="fundpage-slide" style="background-image:url('images/fundraising-group-1.jpg');" aria-label="Fundraiser image 2"></div>
-                  <div class="fundpage-slide" style="background-image:url('images/fundraiser-3.jpg');" aria-label="Fundraiser image 3"></div>
+                  <div class="fundpage-slide is-active" style="background-image:url('images/fundraiser-1.jpg');" role="img" aria-label="Fundraiser image 1"></div>
+                  <div class="fundpage-slide" style="background-image:url('images/fundraising-group-1.jpg');" role="img" aria-label="Fundraiser image 2"></div>
+                  <div class="fundpage-slide" style="background-image:url('images/fundraiser-3.jpg');" role="img" aria-label="Fundraiser image 3"></div>
                 </div>
 
                 <button class="fundpage-carousel-btn prev" type="button" aria-label="Previous image" data-fund-prev>‹</button>
@@ -192,12 +231,12 @@
                 Tell us your group, city, and timing — we’ll recommend the best setup and next steps.
               </p>
 
-              <div class="fundpage-hero-card-steps">
+              <div class="fundpage-hero-card-steps" aria-label="Quick start steps">
                 <div class="fundpage-step">
                   <div class="fundpage-step-num">1</div>
                   <div class="fundpage-step-copy">
                     <div class="fundpage-step-title">Request info</div>
-                    <div class="fundpage-step-sub">We’ll respond with options & guidance.</div>
+                    <div class="fundpage-step-sub">We’ll reply with options & guidance.</div>
                   </div>
                 </div>
                 <div class="fundpage-step">
@@ -220,16 +259,40 @@
 
               <div class="fundpage-hero-note">
                 <span class="dot-bullet"></span>
-                Looking for “fundraising ideas that actually work”? This is one of the most seasonal-proof options.
+                Built for the busiest buying season of the year.
               </div>
             </div>
           </aside>
+
         </div>
       </div>
     </section>
 
     <!-- =========================
-         PROGRAMS / WHO IT'S FOR (Fun + SEO)
+         UNIQUE TOUCH: Success Snapshot strip
+    ========================== -->
+    <section class="fundpage-snapshot" aria-label="Fundraising snapshot">
+      <div class="wrap fundpage-snapshot-row">
+        <div class="fundpage-snap">
+          <div class="fundpage-snap-top">Season window</div>
+          <div class="fundpage-snap-big">Short + strong</div>
+          <div class="fundpage-snap-sub">Perfect for groups that want impact fast.</div>
+        </div>
+        <div class="fundpage-snap">
+          <div class="fundpage-snap-top">Demand</div>
+          <div class="fundpage-snap-big">Built-in</div>
+          <div class="fundpage-snap-sub">Families already shop for the 4th.</div>
+        </div>
+        <div class="fundpage-snap">
+          <div class="fundpage-snap-top">Support</div>
+          <div class="fundpage-snap-big">Real help</div>
+          <div class="fundpage-snap-sub">Guidance that keeps it organized.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         PROGRAMS / WHO IT'S FOR
     ========================== -->
     <section class="section fundpage-programs" id="programs">
       <div class="wrap">
@@ -245,7 +308,7 @@
         <div class="fundpage-cards">
           <article class="fundpage-card">
             <div class="fundpage-card-top">
-              <div class="fundpage-icon">🎒</div>
+              <div class="fundpage-icon" aria-hidden="true">🎒</div>
               <h3>School Fundraisers</h3>
             </div>
             <p>Great for bands, clubs, boosters, and school programs that need quick fundraising with strong community buy-in.</p>
@@ -258,7 +321,7 @@
 
           <article class="fundpage-card">
             <div class="fundpage-card-top">
-              <div class="fundpage-icon">🏆</div>
+              <div class="fundpage-icon" aria-hidden="true">🏆</div>
               <h3>Sports Team Fundraisers</h3>
             </div>
             <p>From uniforms to travel, teams use this as a high-demand seasonal fundraiser that doesn’t feel like “selling stuff.”</p>
@@ -271,7 +334,7 @@
 
           <article class="fundpage-card">
             <div class="fundpage-card-top">
-              <div class="fundpage-icon">⛪</div>
+              <div class="fundpage-icon" aria-hidden="true">⛪</div>
               <h3>Church Fundraisers</h3>
             </div>
             <p>Support mission trips, youth programs, and community outreach with a fundraiser people already expect in summer.</p>
@@ -284,7 +347,7 @@
 
           <article class="fundpage-card">
             <div class="fundpage-card-top">
-              <div class="fundpage-icon">🤝</div>
+              <div class="fundpage-icon" aria-hidden="true">🤝</div>
               <h3>Nonprofit Fundraising</h3>
             </div>
             <p>For local nonprofits, this is a proven seasonal fundraiser that can bring in meaningful support fast.</p>
@@ -299,7 +362,7 @@
         <div class="fundpage-bandline">
           <div class="fundpage-bandline-card">
             <div class="fundpage-bandline-title">Search terms people use:</div>
-            <div class="fundpage-bandline-tags">
+            <div class="fundpage-bandline-tags" aria-label="Search tags">
               <span>fireworks fundraiser</span>
               <span>school fundraiser ideas</span>
               <span>church fundraising</span>
@@ -308,6 +371,24 @@
               <span>4th of July fundraiser</span>
             </div>
           </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================
+         UNIQUE TOUCH: Mid-page CTA strip
+    ========================== -->
+    <section class="fundpage-cta-strip" aria-label="Fundraising call to action">
+      <div class="wrap fundpage-cta-strip-row">
+        <div class="fundpage-cta-strip-left">
+          <div class="fundpage-cta-strip-kicker">Ready when you are</div>
+          <div class="fundpage-cta-strip-title">Get the plan + next steps sent to you</div>
+          <div class="fundpage-cta-strip-sub">Takes 60 seconds. We’ll reply with realistic options.</div>
+        </div>
+        <div class="fundpage-cta-strip-right">
+          <a class="btn btn-cta" href="#fundraiser-form">Request Info</a>
+          <a class="btn btn-outline" href="#faq">Read FAQs</a>
         </div>
       </div>
     </section>
@@ -398,7 +479,7 @@
     </section>
 
     <!-- =========================
-         FAQ (WHITE / LIGHT)
+         FAQ
     ========================== -->
     <section class="section fundpage-faq" id="faq">
       <div class="wrap">
@@ -560,7 +641,7 @@
             </div>
 
             <div class="fundpage-side-card fundpage-side-card--alt">
-              <h3>Already have a location in mind?</h3>
+              <h3>Want to browse locations?</h3>
               <p>Use the locator on the homepage to find the closest Bellino tent or store.</p>
               <a class="btn btn-outline" href="index.html#locations">Open Store Locator</a>
             </div>
@@ -568,10 +649,11 @@
         </div>
       </div>
     </section>
+
   </main>
 
   <!-- =========================
-       FOOTER (same as homepage)
+       FOOTER (SITEWIDE) — SAME AS INDEX/ABOUT
   ========================== -->
   <footer class="footer">
     <div class="wrap footer-row">
@@ -585,7 +667,7 @@
         <a href="index.html#locations">Locations</a>
         <a href="index.html#products">Products</a>
         <a href="fundraising.html">Fundraising</a>
-        <a href="index.html#about">About</a>
+        <a href="about.html">About</a>
       </div>
 
       <div class="foot-social" aria-label="Social media">
@@ -605,7 +687,6 @@
     </div>
   </footer>
 
-  <!-- IMPORTANT: use ONE js file sitewide -->
   <script src="main.js"></script>
 </body>
 </html>
