@@ -1,1 +1,424 @@
+<!-- locations.html (FULL) -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <title>Find a Bellino Fireworks Location Near You | 250+ Retail Locations</title>
+  <meta name="description" content="Use the Bellino Fireworks store locator to find a stand, tent, or retail location near you. Search by city or zip, view hours and details, and plan your visit for the 4th of July season." />
+  <meta name="robots" content="index,follow" />
+
+  <meta property="og:title" content="Find a Bellino Fireworks Location Near You">
+  <meta property="og:description" content="Search 250+ Bellino Fireworks locations across multiple states. Plan your visit for the 4th of July season.">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="locations-page">
+
+  <!-- =====================================================
+       JULY 4 COUNTDOWN STRIP (SITEWIDE)
+       Uses .july-countdown + .july-* classes (matches styles.css + main.js)
+  ====================================================== -->
+  <section class="july-countdown" data-july-ticker aria-label="Countdown to July 4th">
+    <div class="wrap july-row">
+      <div class="july-left">
+        <span class="july-badge">Countdown to July 4th</span>
+        <div class="july-title">Beat the rush — plan your visit.</div>
+        <div class="july-sub">Locations fill up fast near the holiday.</div>
+      </div>
+
+      <div class="july-right" aria-live="polite">
+        <div class="july-box">
+          <div class="july-num" data-tt-days>—</div>
+          <div class="july-lbl">Days</div>
+        </div>
+        <div class="july-box">
+          <div class="july-num" data-tt-hours>—</div>
+          <div class="july-lbl">Hours</div>
+        </div>
+        <div class="july-box">
+          <div class="july-num" data-tt-mins>—</div>
+          <div class="july-lbl">Mins</div>
+        </div>
+        <div class="july-box">
+          <div class="july-num" data-tt-secs>—</div>
+          <div class="july-lbl">Secs</div>
+        </div>
+      </div>
+
+      <div class="july-cta">
+        <a class="btn btn-buy" href="#locator">Open Locator</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       HEADER (SITEWIDE - SAME)
+  ========================== -->
+  <header class="header" id="top">
+    <div class="wrap header-row">
+      <a class="logo" href="index.html#top" aria-label="Bellino Fireworks home">
+        <img src="images/nowin.svg" alt="Bellino Fireworks" />
+      </a>
+
+      <button class="nav-toggle" type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="site-nav"
+        data-nav-toggle>
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" id="site-nav" data-nav>
+        <a class="nav-link" href="index.html#top">Home</a>
+        <span class="dot">•</span>
+        <a class="nav-link is-active" href="locations.html" aria-current="page">Locations</a>
+        <span class="dot">•</span>
+        <a class="nav-link" href="index.html#products">Our Products</a>
+        <span class="dot">•</span>
+        <a class="nav-link" href="fundraising.html">Fundraising</a>
+        <span class="dot">•</span>
+        <a class="nav-link" href="about.html">About</a>
+
+        <div class="nav-social" aria-label="Social media">
+          <a class="icon-link" href="#" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3H13.5V9.3c0-.9.3-1.6 1.7-1.6H16.8V5.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V11H7.6v3h2.5v8h3.4z"/></svg>
+          </a>
+          <a class="icon-link" href="#" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9z"/><path d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/><path d="M17.6 6.4a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>
+          </a>
+          <a class="icon-link" href="#" target="_blank" rel="noopener" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.2c.7 1.1 1.8 1.9 3.2 2v2.8c-1.3 0-2.5-.4-3.5-1.1v6.1c0 3.2-2.6 5.8-5.8 5.8S4.7 18.2 4.7 15s2.6-5.8 5.8-5.8c.4 0 .8 0 1.2.1v3c-.4-.2-.8-.3-1.2-.3-1.5 0-2.8 1.2-2.8 2.8s1.2 2.8 2.8 2.8 2.8-1.2 2.8-2.8V2h3.1c0 1.1.3 2.2 1 3.2z"/></svg>
+          </a>
+          <a class="icon-link" href="#" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2s-.2-1.6-.9-2.3c-.8-.9-1.7-.9-2.2-1C15.7 3.6 12 3.6 12 3.6h0s-3.7 0-6.5.3c-.5.1-1.4.1-2.2 1C2.6 5.6 2.4 7.2 2.4 7.2S2.1 9.1 2.1 11v1.8c0 1.9.3 3.8.3 3.8s.2 1.6.9 2.3c.8.9 1.9.9 2.4 1 1.7.2 6.3.3 6.3.3s3.7 0 6.5-.3c.5-.1 1.4-.1 2.2-1 .7-.7.9-2.3.9-2.3s.3-1.9.3-3.8V11c0-1.9-.3-3.8-.3-3.8zM10 15.3V8.7l6 3.3-6 3.3z"/></svg>
+          </a>
+        </div>
+      </nav>
+
+      <a class="btn btn-buy" href="#locator">Find a Location</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- =========================
+         LOCATIONS HERO (UNIQUE)
+    ========================== -->
+    <section class="loc-hero" aria-label="Store locator hero">
+      <div class="loc-hero-bg" aria-hidden="true"></div>
+      <div class="loc-hero-shade" aria-hidden="true"></div>
+
+      <div class="wrap loc-hero-inner">
+        <div class="loc-hero-grid">
+          <div class="loc-hero-left">
+            <div class="loc-pill">Store Locator</div>
+
+            <h1 class="loc-h1">
+              Find a Bellino Fireworks Location
+              <span class="loc-accent">Near You</span>
+            </h1>
+
+            <p class="loc-sub">
+              Search by city or zip to find the closest Bellino Fireworks stand, tent, or retail partner.
+              Hours and inventory can vary — this is the easiest way to plan your stop.
+            </p>
+
+            <div class="loc-actions">
+              <a class="btn btn-cta" href="#locator">Open the Locator</a>
+              <a class="btn btn-outline" href="fundraising.html">Fundraising Programs</a>
+            </div>
+
+            <div class="loc-badges" role="list">
+              <div class="loc-badge" role="listitem"><span class="dot-bullet"></span> 250+ locations</div>
+              <div class="loc-badge" role="listitem"><span class="dot-bullet"></span> Multiple states served</div>
+              <div class="loc-badge" role="listitem"><span class="dot-bullet"></span> Peak season: late June → July 4</div>
+            </div>
+          </div>
+
+          <aside class="loc-hero-right">
+            <div class="loc-card">
+              <div class="loc-card-top">
+                <div class="loc-card-badge">Quick tips</div>
+                <div class="loc-card-title">Go in with a plan</div>
+              </div>
+
+              <div class="loc-card-body">
+                <div class="loc-tip">
+                  <div class="loc-tip-icon">🕒</div>
+                  <div>
+                    <div class="loc-tip-h">Best time to shop</div>
+                    <div class="loc-tip-p">Earlier in the day, earlier in the season.</div>
+                  </div>
+                </div>
+
+                <div class="loc-tip">
+                  <div class="loc-tip-icon">🎆</div>
+                  <div>
+                    <div class="loc-tip-h">Fast build</div>
+                    <div class="loc-tip-p">Assortment → favorites → finale piece.</div>
+                  </div>
+                </div>
+
+                <div class="loc-tip">
+                  <div class="loc-tip-icon">📍</div>
+                  <div>
+                    <div class="loc-tip-h">Use the map</div>
+                    <div class="loc-tip-p">Find the closest option before you drive.</div>
+                  </div>
+                </div>
+
+                <a class="btn btn-buywide" href="#locator">Jump to Locator</a>
+              </div>
+
+              <div class="loc-card-foot">
+                <span class="dot-bullet"></span>
+                Tip: On July 3–4, popular spots get busy — shop early if you can.
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         STATES STRIP (REUSE INDEX CLASSES)
+    ========================== -->
+    <section class="states" aria-label="States we serve">
+      <div class="wrap states-row">
+        <a class="state state-link" href="/fireworks-nebraska/" aria-label="Fireworks in Nebraska">
+          <img src="images/nebraska.png" alt="Nebraska"><div>Nebraska</div>
+        </a>
+        <a class="state state-link" href="/fireworks-iowa/" aria-label="Fireworks in Iowa">
+          <img src="images/Iowa-1.png" alt="Iowa"><div>Iowa</div>
+        </a>
+        <a class="state state-link" href="arizona.html" aria-label="Fireworks in Arizona">
+          <img src="images/Arizona.png" alt="Arizona"><div>Arizona</div>
+        </a>
+        <a class="state state-link" href="/fireworks-texas/" aria-label="Fireworks in Texas">
+          <img src="images/texas-1.png" alt="Texas"><div>Texas</div>
+        </a>
+        <a class="state state-link" href="/fireworks-oklahoma/" aria-label="Fireworks in Oklahoma">
+          <img src="images/OKC.png" alt="Oklahoma"><div>Oklahoma</div>
+        </a>
+        <a class="state state-link" href="/fireworks-south-dakota/" aria-label="Fireworks in South Dakota">
+          <img src="images/South-Dakota.png" alt="South Dakota"><div>South Dakota</div>
+        </a>
+        <a class="state state-link" href="/fireworks-kansas/" aria-label="Fireworks in Kansas">
+          <img src="images/Kansas.png" alt="Kansas"><div>Kansas</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- =========================
+         LOCATOR WRAP (ACF PLACEHOLDER)
+    ========================== -->
+    <section class="section loc-shell" id="locator" aria-label="Store locator section">
+      <div class="wrap">
+        <div class="loc-shell-head">
+          <div class="loc-kicker">Store Locator</div>
+          <h2 class="loc-h2">Search by City or Zip</h2>
+          <p class="loc-p">
+            This is where your big ACF/WP locator embed will live. We’re building the page around it so it looks premium on day one.
+          </p>
+        </div>
+
+        <div class="loc-layout">
+          <!-- LEFT: FILTERS / GUIDE -->
+          <aside class="loc-side">
+            <div class="loc-side-card">
+              <div class="loc-side-badge">Start here</div>
+              <h3 class="loc-side-h">Quick filters (optional)</h3>
+              <p class="loc-side-p">These can be wired later. Right now they’re designed to frame the locator.</p>
+
+              <div class="loc-filters" role="list">
+                <button class="loc-filter" type="button" data-loc-filter="open-now">Open now</button>
+                <button class="loc-filter" type="button" data-loc-filter="closest">Closest to me</button>
+                <button class="loc-filter" type="button" data-loc-filter="retail">Retail stores</button>
+                <button class="loc-filter" type="button" data-loc-filter="tents">Tents & stands</button>
+              </div>
+
+              <div class="loc-side-mini">
+                <div class="mini-point"><span class="dot-bullet"></span> Hours can vary by location</div>
+                <div class="mini-point"><span class="dot-bullet"></span> Inventory changes fast near the 4th</div>
+                <div class="mini-point"><span class="dot-bullet"></span> Shop earlier for best selection</div>
+              </div>
+
+              <a class="btn btn-outline" href="fundraising.html">Fundraising Info</a>
+            </div>
+
+            <div class="loc-side-card loc-side-card--alt">
+              <h3 class="loc-side-h">Planning a bigger show?</h3>
+              <p class="loc-side-p">Start with an assortment, then add crowd favorites and a finale piece.</p>
+              <a class="btn btn-cta" href="index.html#products">Browse Product Types</a>
+            </div>
+          </aside>
+
+          <!-- RIGHT: LOCATOR PLACEHOLDER -->
+          <div class="loc-main">
+            <div class="loc-embed-card" aria-label="ACF locator embed placeholder">
+              <div class="loc-embed-head">
+                <div class="loc-embed-title">Locator Embed</div>
+                <div class="loc-embed-note">Placeholder for your ACF Store Locator output</div>
+              </div>
+
+              <div class="loc-embed-body" id="acf-locator">
+                <!-- =====================================================
+                     ACF / WP STORE LOCATOR PLACEHOLDER
+                     Replace this entire block with your locator shortcode/embed.
+                     Example (WP): [wpsl] or your ACF template output.
+                ====================================================== -->
+                <div class="loc-placeholder">
+                  <div class="loc-placeholder-icon">📍</div>
+                  <div class="loc-placeholder-h">Your map + search UI goes here</div>
+                  <div class="loc-placeholder-p">
+                    This card is intentionally sized to feel like a “hero” element on the page.
+                    When the locator loads, everything around it already looks dialed.
+                  </div>
+
+                  <div class="loc-placeholder-row">
+                    <div class="loc-chip">Search by Zip</div>
+                    <div class="loc-chip">Search by City</div>
+                    <div class="loc-chip">Filter by State</div>
+                    <div class="loc-chip">Click pins for details</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="loc-embed-foot">
+                <div class="loc-embed-foot-left">
+                  <div class="lf-strong">4th of July Season</div>
+                  <div class="lf-muted">Save time — locate your nearest stand before you drive.</div>
+                </div>
+                <a class="btn btn-buywide" href="#top">Back to Top</a>
+              </div>
+            </div>
+
+            <div class="loc-bottom-band">
+              <div class="loc-bottom-card">
+                <div class="loc-bottom-kicker">Heads up</div>
+                <div class="loc-bottom-h">July 3–4 gets busy.</div>
+                <div class="loc-bottom-p">If you want the best selection, shop earlier in the week.</div>
+              </div>
+              <div class="loc-bottom-card">
+                <div class="loc-bottom-kicker">For groups</div>
+                <div class="loc-bottom-h">Need to raise money?</div>
+                <div class="loc-bottom-p">Our fundraising program is built for peak seasonal demand.</div>
+                <a class="btn btn-outline" href="fundraising.html">See Fundraising</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================
+         LOCATIONS FAQ (UNIQUE)
+    ========================== -->
+    <section class="section loc-faq" aria-label="Locations FAQ">
+      <div class="wrap">
+        <div class="loc-faq-head">
+          <div class="loc-kicker">FAQ</div>
+          <h2 class="loc-h2">Quick Questions About Locations</h2>
+          <p class="loc-p">Fast answers so you know what to expect before you arrive.</p>
+        </div>
+
+        <div class="loc-faq-grid">
+          <details class="loc-faq-item">
+            <summary>Do all locations carry the same items?</summary>
+            <div class="loc-faq-a">
+              Inventory can vary by location. Some spots may carry more family favorites, while others have expanded selections.
+              Use the locator details to plan your visit.
+            </div>
+          </details>
+
+          <details class="loc-faq-item">
+            <summary>Are hours the same at every stand?</summary>
+            <div class="loc-faq-a">
+              Hours vary by location and local rules. Near the holiday, many stands run extended hours.
+              Always check the location details in the locator.
+            </div>
+          </details>
+
+          <details class="loc-faq-item">
+            <summary>What’s the best day to shop?</summary>
+            <div class="loc-faq-a">
+              The earlier you shop, the better the selection. July 3–4 is the busiest.
+              If you can, shop earlier in the week or earlier in the day.
+            </div>
+          </details>
+
+          <details class="loc-faq-item">
+            <summary>Can I find locations outside Nebraska?</summary>
+            <div class="loc-faq-a">
+              Yes. Bellino serves multiple states. Use the states strip above or visit your state page to learn more and find nearby locations.
+            </div>
+          </details>
+        </div>
+
+        <div class="loc-final-cta">
+          <div class="loc-final-card">
+            <div class="loc-final-left">
+              <div class="loc-kicker">Ready?</div>
+              <h3 class="loc-final-h">Open the locator and pick your stop.</h3>
+              <p class="loc-final-p">Fast search. Clear info. Better planning for a better night.</p>
+            </div>
+            <div class="loc-final-right">
+              <a class="btn btn-cta" href="#locator">Open Locator</a>
+              <a class="btn btn-outline" href="arizona.html">Arizona Page</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================
+       FOOTER (SITEWIDE - SAME)
+  ========================== -->
+  <footer class="footer">
+    <div class="wrap footer-row">
+      <div class="foot-left">
+        <img src="images/nowin.svg" alt="Bellino Fireworks">
+        <div class="copy">© <span id="year"></span> Bellino Fireworks</div>
+      </div>
+
+      <div class="foot-right">
+        <a href="index.html#top">Home</a>
+        <a href="locations.html">Locations</a>
+        <a href="index.html#products">Products</a>
+        <a href="fundraising.html">Fundraising</a>
+        <a href="about.html">About</a>
+      </div>
+
+      <div class="foot-social" aria-label="Social media">
+        <a class="icon-link" href="#" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3H13.5V9.3c0-.9.3-1.6 1.7-1.6H16.8V5.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V11H7.6v3h2.5v8h3.4z"/></svg>
+        </a>
+        <a class="icon-link" href="#" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9z"/><path d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/><path d="M17.6 6.4a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>
+        </a>
+        <a class="icon-link" href="#" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.2c.7 1.1 1.8 1.9 3.2 2v2.8c-1.3 0-2.5-.4-3.5-1.1v6.1c0 3.2-2.6 5.8-5.8 5.8S4.7 18.2 4.7 15s2.6-5.8 5.8-5.8c.4 0 .8 0 1.2.1v3c-.4-.2-.8-.3-1.2-.3-1.5 0-2.8 1.2-2.8 2.8s1.2 2.8 2.8 2.8 2.8-1.2 2.8-2.8V2h3.1c0 1.1.3 2.2 1 3.2z"/></svg>
+        </a>
+        <a class="icon-link" href="#" target="_blank" rel="noopener" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2s-.2-1.6-.9-2.3c-.8-.9-1.7-.9-2.2-1C15.7 3.6 12 3.6 12 3.6h0s-3.7 0-6.5.3c-.5.1-1.4.1-2.2 1C2.6 5.6 2.4 7.2 2.4 7.2S2.1 9.1 2.1 11v1.8c0 1.9.3 3.8.3 3.8s.2 1.6.9 2.3c.8.9 1.9.9 2.4 1 1.7.2 6.3.3 6.3.3s3.7 0 6.5-.3c.5-.1 1.4-.1 2.2-1 .7-.7.9-2.3.9-2.3s.3-1.9.3-3.8V11c0-1.9-.3-3.8-.3-3.8zM10 15.3V8.7l6 3.3-6 3.3z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- IMPORTANT: use ONE js file sitewide -->
+  <script src="main.js"></script>
+</body>
+</html>
