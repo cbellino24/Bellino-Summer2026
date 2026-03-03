@@ -2714,3 +2714,660 @@ html.js-ready body{
 body{
   opacity: 1;
 }
+/* =========================================================
+   OVERRIDES — Paste at BOTTOM of styles.css
+   Fixes:
+   - Too much navy (rebalance theme)
+   - Index fundraising section styling
+   - Arizona page styling (hero slider + content bands)
+========================================================= */
+
+/* =========================
+   1) COLOR REBALANCE (less navy dominance)
+========================= */
+:root{
+  /* Keep your reds strong */
+  --red: #e11d2e;
+  --red2:#ff2d3c;
+
+  /* Make navy an accent, not the whole site */
+  --navy: #0b1533;
+  --navy2:#0f2147;
+
+  /* Better white / surface system */
+  --bg: #f6f8fb;
+  --bg2:#eef2f7;          /* was too dark in many builds */
+  --surface:#ffffff;
+  --surface2:#f9fbff;
+
+  --text:#0f172a;
+  --muted:#566174;
+
+  --line: rgba(15, 23, 42, 0.10);
+
+  /* Softer shadow so whites feel “alive” */
+  --shadow: 0 18px 44px rgba(15, 23, 42, 0.10);
+
+  /* Section tint helpers */
+  --tint-red: rgba(225,29,46,.08);
+  --tint-navy: rgba(11,21,51,.08);
+}
+
+body{
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Make dark bands “balanced” instead of black/navy blocks */
+.section-dark,
+.section-fund,
+.fundpage-proof,
+.fundpage-form{
+  color: #fff;
+  background:
+    radial-gradient(900px 520px at 16% 25%, rgba(255,255,255,.10), transparent 60%),
+    radial-gradient(980px 600px at 82% 72%, rgba(225,29,46,.16), transparent 62%),
+    linear-gradient(180deg, #0b1533 0%, #08102a 100%);
+}
+
+/* =========================
+   2) INDEX: FUNDRAISING SECTION (this is the one you said is off)
+   Targets your existing index HTML:
+   <section class="section section-fund" id="fundraising"> ...
+========================= */
+
+.section-fund{
+  position: relative;
+  overflow: hidden;
+  padding: 84px 0;
+}
+
+.section-fund .fund-bg{
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(900px 560px at 18% 20%, rgba(255,255,255,.12), transparent 55%),
+    radial-gradient(900px 560px at 78% 70%, rgba(225,29,46,.22), transparent 60%),
+    linear-gradient(180deg, #0b1533 0%, #08102a 100%);
+  opacity: 1;
+}
+
+.section-fund .fund-shade{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.25), rgba(0,0,0,.05) 40%, rgba(0,0,0,.18));
+  pointer-events:none;
+}
+
+.section-fund .wrap{
+  position: relative;
+  z-index: 2;
+}
+
+.section-fund .fundraising-head{
+  max-width: 920px;
+  margin: 0 auto 28px;
+  text-align: center;
+}
+
+.section-fund .fund-kicker{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(225,29,46,.16);
+  border: 1px solid rgba(255,255,255,.18);
+  font-weight: 800;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.section-fund .fund-title{
+  margin: 14px 0 10px;
+  font-size: clamp(28px, 3.2vw, 44px);
+  line-height: 1.05;
+  letter-spacing: -.02em;
+}
+
+.section-fund .fund-sub{
+  margin: 0 auto;
+  max-width: 820px;
+  color: rgba(255,255,255,.86);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.section-fund .fund-grid{
+  display:grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 22px;
+  align-items: start;
+  margin-top: 26px;
+}
+
+@media (max-width: 980px){
+  .section-fund .fund-grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+.section-fund .fund-video{
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: var(--shadow);
+}
+
+.section-fund .video-shell{
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(0,0,0,.22);
+  aspect-ratio: 16 / 9;
+}
+
+.section-fund .video-shell iframe{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  border:0;
+}
+
+.section-fund .fund-actions{
+  display:flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+  justify-content: flex-start;
+}
+
+.section-fund .fund-visual .visual-card{
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 18px;
+  overflow:hidden;
+  box-shadow: var(--shadow);
+}
+
+.section-fund .fund-visual .visual-media{
+  min-height: 220px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.section-fund .fund-visual .visual-media::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(180deg, rgba(0,0,0,.0) 0%, rgba(0,0,0,.55) 100%);
+}
+
+.section-fund .fund-visual .visual-copy{
+  padding: 16px 16px 18px;
+}
+
+.section-fund .fund-visual h3{
+  margin: 4px 0 10px;
+  font-size: 18px;
+}
+
+.section-fund .fund-visual p{
+  margin: 0 0 10px;
+  color: rgba(255,255,255,.88);
+  line-height: 1.65;
+}
+
+.section-fund .mini-list{
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 10px;
+  display: grid;
+  gap: 8px;
+}
+
+.section-fund .mini-check{
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  display:inline-block;
+  margin-right: 10px;
+  vertical-align: -3px;
+  background: rgba(225,29,46,.20);
+  border: 1px solid rgba(255,255,255,.18);
+  position: relative;
+}
+
+.section-fund .mini-check::after{
+  content:"";
+  position:absolute;
+  left: 4px;
+  top: 4px;
+  width: 7px;
+  height: 4px;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(-45deg);
+}
+
+.section-fund .fund-steps{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 18px;
+}
+
+@media (max-width: 980px){
+  .section-fund .fund-steps{
+    grid-template-columns: 1fr;
+  }
+}
+
+.section-fund .step-card{
+  display:flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 14px 14px;
+  border-radius: 16px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.14);
+}
+
+.section-fund .step-num{
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight: 900;
+  background: rgba(225,29,46,.18);
+  border: 1px solid rgba(255,255,255,.18);
+}
+
+.section-fund .step-title{
+  font-weight: 900;
+  margin-bottom: 4px;
+}
+
+.section-fund .step-sub{
+  color: rgba(255,255,255,.82);
+  line-height: 1.55;
+}
+
+/* =========================
+   3) ARIZONA PAGE — full styling layer
+   Assumes your arizona.html uses:
+     <body class="arizona-page">
+     .az-hero, [data-az-slider], .az-slide, .az-overlay, .az-hero-inner,
+     .az-features, .az-locator, .az-faq etc.
+========================= */
+
+body.arizona-page{
+  background: var(--bg);
+}
+
+/* Arizona hero band */
+body.arizona-page .az-hero{
+  position: relative;
+  overflow: hidden;
+  padding: 92px 0 64px;
+  background:
+    radial-gradient(900px 520px at 16% 18%, rgba(255,255,255,.12), transparent 60%),
+    radial-gradient(900px 520px at 86% 78%, rgba(225,29,46,.14), transparent 62%),
+    linear-gradient(180deg, #0b1533 0%, #08102a 100%);
+  color: #fff;
+}
+
+body.arizona-page .az-hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.36), rgba(0,0,0,.08) 45%, rgba(0,0,0,.28));
+  pointer-events:none;
+}
+
+body.arizona-page .az-hero-inner{
+  position: relative;
+  z-index: 2;
+}
+
+body.arizona-page .az-hero-grid{
+  display:grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 22px;
+  align-items: center;
+}
+
+@media (max-width: 980px){
+  body.arizona-page .az-hero-grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+body.arizona-page .az-pill{
+  display:inline-flex;
+  gap:10px;
+  align-items:center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(225,29,46,.16);
+  font-weight: 900;
+  font-size: 12px;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+}
+
+body.arizona-page .az-h1{
+  margin: 14px 0 10px;
+  font-size: clamp(30px, 3.4vw, 52px);
+  line-height: 1.03;
+  letter-spacing: -.03em;
+}
+
+body.arizona-page .az-h1 .az-accent{
+  color: #fff;
+  text-shadow: 0 10px 30px rgba(225,29,46,.22);
+}
+
+body.arizona-page .az-sub{
+  color: rgba(255,255,255,.86);
+  line-height: 1.7;
+  margin: 0 0 16px;
+  max-width: 62ch;
+}
+
+body.arizona-page .az-actions{
+  display:flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Slider shell */
+body.arizona-page .az-slider{
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.16);
+  background: rgba(255,255,255,.06);
+  box-shadow: var(--shadow);
+  min-height: 360px;
+}
+
+@media (max-width: 980px){
+  body.arizona-page .az-slider{
+    min-height: 300px;
+  }
+}
+
+body.arizona-page .az-slide{
+  position:absolute;
+  inset:0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1.02);
+  transition: opacity .6s ease, transform 1.2s ease;
+}
+
+body.arizona-page .az-slide.is-active{
+  opacity: 1;
+  transform: scale(1);
+}
+
+body.arizona-page .az-slider::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(180deg, rgba(0,0,0,.10) 0%, rgba(0,0,0,.56) 100%);
+  pointer-events:none;
+}
+
+body.arizona-page .az-slider-ui{
+  position:absolute;
+  inset:0;
+  z-index: 2;
+  display:flex;
+  align-items:flex-end;
+  justify-content: space-between;
+  padding: 14px;
+  gap: 10px;
+}
+
+body.arizona-page .az-caption{
+  max-width: 60%;
+  background: rgba(10,14,30,.55);
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 14px;
+  padding: 10px 12px;
+}
+
+body.arizona-page .az-caption strong{
+  display:block;
+  font-weight: 900;
+  margin-bottom: 2px;
+}
+
+body.arizona-page .az-caption span{
+  display:block;
+  color: rgba(255,255,255,.85);
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+body.arizona-page .az-controls{
+  display:flex;
+  gap: 8px;
+  align-items:center;
+}
+
+body.arizona-page .az-carousel-btn{
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.16);
+  background: rgba(255,255,255,.10);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 900;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  transition: transform .15s ease, background .15s ease;
+}
+body.arizona-page .az-carousel-btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.16); }
+
+body.arizona-page .az-dots{
+  display:flex;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(10,14,30,.55);
+}
+body.arizona-page .az-dot{
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.55);
+  background: rgba(255,255,255,.18);
+  cursor:pointer;
+}
+body.arizona-page .az-dot.is-active{
+  background: var(--red);
+  border-color: rgba(255,255,255,.75);
+}
+
+/* Arizona content sections */
+body.arizona-page .az-section{
+  padding: 78px 0;
+}
+
+body.arizona-page .az-section.az-light{
+  background: linear-gradient(180deg, var(--surface) 0%, var(--surface2) 100%);
+}
+
+body.arizona-page .az-section.az-tint{
+  background:
+    radial-gradient(900px 520px at 20% 20%, var(--tint-red), transparent 60%),
+    radial-gradient(900px 520px at 80% 80%, var(--tint-navy), transparent 62%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+}
+
+body.arizona-page .az-head{
+  text-align:center;
+  max-width: 900px;
+  margin: 0 auto 26px;
+}
+
+body.arizona-page .az-kicker{
+  display:inline-flex;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: var(--tint-red);
+  border: 1px solid rgba(225,29,46,.18);
+  font-weight: 900;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  color: var(--navy);
+}
+
+body.arizona-page .az-h2{
+  margin: 12px 0 8px;
+  font-size: clamp(26px, 2.8vw, 40px);
+  letter-spacing: -.02em;
+}
+
+body.arizona-page .az-p{
+  margin: 0 auto;
+  max-width: 78ch;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+body.arizona-page .az-features{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 22px;
+}
+
+@media (max-width: 980px){
+  body.arizona-page .az-features{
+    grid-template-columns: 1fr;
+  }
+}
+
+body.arizona-page .az-card{
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: var(--shadow);
+}
+
+body.arizona-page .az-card h3{
+  margin: 8px 0 8px;
+  font-size: 18px;
+}
+
+body.arizona-page .az-card p{
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+body.arizona-page .az-icon{
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: var(--tint-red);
+  border: 1px solid rgba(225,29,46,.18);
+  font-size: 20px;
+}
+
+/* Arizona locator teaser card */
+body.arizona-page .az-locator-grid{
+  display:grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 18px;
+  align-items: start;
+  margin-top: 20px;
+}
+
+@media (max-width: 980px){
+  body.arizona-page .az-locator-grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+body.arizona-page .az-locator-shell{
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: var(--shadow);
+}
+
+body.arizona-page .az-placeholder{
+  border-radius: 14px;
+  border: 1px dashed rgba(11,21,51,.28);
+  background: linear-gradient(180deg, rgba(225,29,46,.06), rgba(11,21,51,.04));
+  padding: 18px;
+  min-height: 260px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color: var(--muted);
+}
+
+body.arizona-page .az-side{
+  display:grid;
+  gap: 12px;
+}
+
+body.arizona-page .az-side .az-card{
+  padding: 16px;
+}
+
+/* Arizona FAQ */
+body.arizona-page .az-faq{
+  display:grid;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+body.arizona-page .az-faq details{
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 10px 12px;
+  box-shadow: 0 10px 26px rgba(15,23,42,.07);
+}
+
+body.arizona-page .az-faq summary{
+  cursor:pointer;
+  font-weight: 900;
+  list-style:none;
+}
+body.arizona-page .az-faq summary::-webkit-details-marker{ display:none; }
+
+body.arizona-page .az-faq .az-a{
+  color: var(--muted);
+  line-height: 1.75;
+  padding: 8px 2px 4px;
+}
