@@ -2478,3 +2478,239 @@ body.arizona-page{
   .az-grid{ grid-template-columns: 1fr; }
   .az-grid-3{ grid-template-columns: 1fr; }
 }
+/* =========================================================
+   styles.css (FULL) — PART 3/3
+   Final section: shared polish + final CTA + footer + utilities
+========================================================= */
+
+/* =========================
+   FINAL CTA (index.html)
+========================= */
+.final-cta{
+  position:relative;
+  background:
+    radial-gradient(900px 540px at 18% 25%, rgba(255,204,85,.12), transparent 60%),
+    radial-gradient(900px 540px at 82% 70%, rgba(225,29,46,.14), transparent 60%),
+    linear-gradient(180deg, #070a14 0%, #0b1020 100%);
+  border-top: 1px solid rgba(255,255,255,.10);
+  border-bottom: 1px solid rgba(255,255,255,.10);
+  overflow:hidden;
+}
+.final-grid{
+  display:grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 18px;
+  align-items:stretch;
+}
+.final-title{
+  margin:0 0 8px;
+  font-size: clamp(26px, 2.8vw, 38px);
+  letter-spacing:-.03em;
+  line-height:1.1;
+  font-weight: 950;
+}
+.final-sub{
+  margin:0 0 14px;
+  color: rgba(255,255,255,.78);
+  max-width: 70ch;
+}
+.final-actions{
+  display:flex;
+  gap: 12px;
+  flex-wrap:wrap;
+  margin-bottom: 14px;
+}
+.final-points{
+  display:flex;
+  flex-wrap:wrap;
+  gap: 12px;
+}
+.mini-point{
+  display:inline-flex;
+  align-items:center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+  color: rgba(255,255,255,.88);
+  font-weight: 850;
+}
+
+.final-card{
+  height:100%;
+  border-radius: var(--r24);
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 18px 55px rgba(0,0,0,.26);
+  padding: 18px 16px;
+}
+.final-badge{
+  display:inline-flex;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(77,163,255,.14);
+  border: 1px solid rgba(77,163,255,.22);
+  font-weight: 950;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  font-size: 12px;
+}
+.final-h{
+  margin: 12px 0 6px;
+  font-weight: 950;
+  letter-spacing:-.02em;
+  font-size: 22px;
+}
+.final-p{
+  margin:0 0 14px;
+  color: rgba(255,255,255,.78);
+}
+
+@media (max-width: 980px){
+  .final-grid{ grid-template-columns: 1fr; }
+}
+
+/* =========================
+   FOOTER (all pages)
+========================= */
+.footer{
+  background: #070a14;
+  border-top: 1px solid rgba(255,255,255,.10);
+  padding: 24px 0;
+}
+.footer-row{
+  display:grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 14px;
+  align-items:center;
+}
+.foot-left{
+  display:flex;
+  align-items:center;
+  gap: 12px;
+}
+.foot-left img{
+  height: 28px;
+  width:auto;
+  opacity:.95;
+}
+.copy{
+  color: rgba(255,255,255,.70);
+  font-weight: 800;
+  font-size: 13px;
+}
+.foot-right{
+  display:flex;
+  gap: 12px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.foot-right a{
+  color: rgba(255,255,255,.78);
+  font-weight: 850;
+  font-size: 13px;
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  transition: background .15s ease, border-color .15s ease, transform .15s ease;
+}
+.foot-right a:hover{
+  background: rgba(255,255,255,.06);
+  border-color: rgba(255,255,255,.10);
+  transform: translateY(-1px);
+}
+
+.foot-social{
+  display:flex;
+  gap: 10px;
+  justify-content:flex-end;
+}
+.foot-social .icon-link{
+  width: 38px;
+  height: 38px;
+  border-radius: 16px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition: transform .15s ease, background .15s ease, border-color .15s ease;
+}
+.foot-social .icon-link:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.10);
+  border-color: rgba(255,255,255,.18);
+}
+.foot-social svg{
+  width: 18px;
+  height: 18px;
+  fill: rgba(255,255,255,.92);
+}
+
+@media (max-width: 980px){
+  .footer-row{
+    grid-template-columns: 1fr;
+    text-align:center;
+  }
+  .foot-left{ justify-content:center; }
+  .foot-social{ justify-content:center; }
+}
+
+/* =========================
+   GLOBAL UTILITIES / FIXES
+========================= */
+
+/* Prevent anchored sections from hiding under sticky header */
+:target{
+  scroll-margin-top: 90px;
+}
+
+/* Improve tap behavior on mobile */
+button, a{
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Details/summary smoothing */
+details{
+  transition: border-color .15s ease, box-shadow .15s ease, transform .15s ease;
+}
+details:hover{
+  border-color: rgba(255,255,255,.18);
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce){
+  *{
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .hero-slide, .fundpage-slide, .az-slide{
+    transform:none !important;
+  }
+}
+
+/* =========================
+   RESPONSIVE CLEANUPS (small)
+========================= */
+@media (max-width: 520px){
+  .btn{ width: 100%; justify-content:center; }
+  .nav .btn-buy, .header .btn-buy{ display:none; } /* keep header clean on tiny screens */
+  .hero-bullets li{ font-size: 13px; }
+  .states-row{ gap: 8px; }
+  .state{ padding: 10px 10px; }
+  .july-row{ gap: 10px; }
+  .july-right{ grid-template-columns: repeat(2, 1fr); }
+}
+
+/* =========================
+   OPTIONAL: subtle page fade-in (safe)
+========================= */
+html.js-ready body{
+  opacity: 1;
+}
+body{
+  opacity: 1;
+}
