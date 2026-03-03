@@ -1,1 +1,408 @@
+<!-- arizona.html (FULL) -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <title>Fireworks in Arizona | Find Bellino Fireworks Locations + Local Info</title>
+  <meta name="description" content="Looking for fireworks in Arizona? Find Bellino Fireworks locations, planning tips, and Arizona-specific guidance. Shop early for the best selection near July 4th." />
+  <meta name="robots" content="index,follow" />
+
+  <meta property="og:title" content="Fireworks in Arizona | Bellino Fireworks">
+  <meta property="og:description" content="Find Bellino Fireworks locations in Arizona with local tips, planning guidance, and a better way to shop near July 4th.">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="state-page state-arizona">
+
+  <!-- =====================================================
+       JULY 4 COUNTDOWN STRIP (SITEWIDE)
+       Uses .july-countdown + .july-* classes (matches styles.css + main.js)
+  ====================================================== -->
+  <section class="july-countdown" data-july-ticker aria-label="Countdown to July 4th">
+    <div class="wrap july-row">
+      <div class="july-left">
+        <span class="july-badge">Countdown to July 4th</span>
+        <div class="july-title">Arizona goes big — plan your stop.</div>
+        <div class="july-sub">Shop earlier for the best selection.</div>
+      </div>
+
+      <div class="july-right" aria-live="polite">
+        <div class="july-box">
+          <div class="july-num" data-tt-days>—</div>
+          <div class="july-lbl">Days</div>
+        </div>
+        <div class="july-box">
+          <div class="july-num" data-tt-hours>—</div>
+          <div class="july-lbl">Hours</div>
+        </div>
+        <div class="july-box">
+          <div class="july-num" data-tt-mins>—</div>
+          <div class="july-lbl">Mins</div>
+        </div>
+        <div class="july-box">
+          <div class="july-num" data-tt-secs>—</div>
+          <div class="july-lbl">Secs</div>
+        </div>
+      </div>
+
+      <div class="july-cta">
+        <a class="btn btn-buy" href="locations.html#locator">Find Locations</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       HEADER (SITEWIDE - SAME)
+  ========================== -->
+  <header class="header" id="top">
+    <div class="wrap header-row">
+      <a class="logo" href="index.html#top" aria-label="Bellino Fireworks home">
+        <img src="images/nowin.svg" alt="Bellino Fireworks" />
+      </a>
+
+      <button class="nav-toggle" type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="site-nav"
+        data-nav-toggle>
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" id="site-nav" data-nav>
+        <a class="nav-link" href="index.html#top">Home</a>
+        <span class="dot">•</span>
+        <a class="nav-link" href="locations.html">Locations</a>
+        <span class="dot">•</span>
+        <a class="nav-link" href="index.html#products">Our Products</a>
+        <span class="dot">•</span>
+        <a class="nav-link" href="fundraising.html">Fundraising</a>
+        <span class="dot">•</span>
+        <a class="nav-link" href="about.html">About</a>
+
+        <div class="nav-social" aria-label="Social media">
+          <a class="icon-link" href="#" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3H13.5V9.3c0-.9.3-1.6 1.7-1.6H16.8V5.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V11H7.6v3h2.5v8h3.4z"/></svg>
+          </a>
+          <a class="icon-link" href="#" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9z"/><path d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/><path d="M17.6 6.4a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>
+          </a>
+          <a class="icon-link" href="#" target="_blank" rel="noopener" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.2c.7 1.1 1.8 1.9 3.2 2v2.8c-1.3 0-2.5-.4-3.5-1.1v6.1c0 3.2-2.6 5.8-5.8 5.8S4.7 18.2 4.7 15s2.6-5.8 5.8-5.8c.4 0 .8 0 1.2.1v3c-.4-.2-.8-.3-1.2-.3-1.5 0-2.8 1.2-2.8 2.8s1.2 2.8 2.8 2.8 2.8-1.2 2.8-2.8V2h3.1c0 1.1.3 2.2 1 3.2z"/></svg>
+          </a>
+          <a class="icon-link" href="#" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2s-.2-1.6-.9-2.3c-.8-.9-1.7-.9-2.2-1C15.7 3.6 12 3.6 12 3.6h0s-3.7 0-6.5.3c-.5.1-1.4.1-2.2 1C2.6 5.6 2.4 7.2 2.4 7.2S2.1 9.1 2.1 11v1.8c0 1.9.3 3.8.3 3.8s.2 1.6.9 2.3c.8.9 1.9.9 2.4 1 1.7.2 6.3.3 6.3.3s3.7 0 6.5-.3c.5-.1 1.4-.1 2.2-1 .7-.7.9-2.3.9-2.3s.3-1.9.3-3.8V11c0-1.9-.3-3.8-.3-3.8zM10 15.3V8.7l6 3.3-6 3.3z"/></svg>
+          </a>
+        </div>
+      </nav>
+
+      <a class="btn btn-buy" href="locations.html#locator">Find a Location</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- =========================
+         ARIZONA HERO (UNIQUE + SLIDESHOW)
+         Uses the same hero slider pattern as index (shared classes)
+         PLUS Arizona-only wrapper classes for custom styling.
+    ========================== -->
+    <section class="az-hero" aria-label="Fireworks in Arizona hero">
+      <div class="az-hero-bg hero-bg" aria-hidden="true">
+        <div class="hero-slider az-hero-slider" data-hero-slider>
+          <!-- Slide 1: PROVIDED IMAGE -->
+          <div class="hero-slide az-hero-slide is-active" style="background-image:url('images/bellino-fireworks-in-arizona.png');"></div>
+
+          <!-- Slide 2-3: Replace these with your real Arizona photos later -->
+          <div class="hero-slide az-hero-slide" style="background-image:url('images/arizona/arizona-2.jpg');"></div>
+          <div class="hero-slide az-hero-slide" style="background-image:url('images/arizona/arizona-3.jpg');"></div>
+        </div>
+      </div>
+
+      <div class="az-hero-shade hero-shade" aria-hidden="true"></div>
+
+      <div class="wrap az-hero-inner">
+        <div class="az-hero-grid">
+          <div class="az-hero-left">
+            <div class="az-pill">Arizona • State Guide + Locations</div>
+
+            <h1 class="az-h1">
+              Fireworks in <span class="az-accent">Arizona</span>
+              <br>
+              Find locations. Plan the night.
+            </h1>
+
+            <p class="az-sub">
+              This page is built to help Arizona families find the closest Bellino Fireworks location and plan a clean, fun 4th.
+              Shop earlier for better selection — the last two days get busy.
+            </p>
+
+            <div class="az-actions">
+              <a class="btn btn-cta" href="locations.html#locator">Find Arizona Locations</a>
+              <a class="btn btn-outline" href="#az-tips">Arizona Tips</a>
+            </div>
+
+            <div class="az-mini">
+              <div class="az-mini-card">
+                <div class="az-mini-top">Best time to shop</div>
+                <div class="az-mini-bot">Earlier in the week</div>
+              </div>
+              <div class="az-mini-card">
+                <div class="az-mini-top">Build a show</div>
+                <div class="az-mini-bot">Assortment → Finale</div>
+              </div>
+              <div class="az-mini-card">
+                <div class="az-mini-top">Fast locator</div>
+                <div class="az-mini-bot">City or Zip search</div>
+              </div>
+            </div>
+          </div>
+
+          <aside class="az-hero-right">
+            <div class="az-hero-card">
+              <div class="az-card-badge">Arizona quick guide</div>
+
+              <div class="az-card-list">
+                <div class="az-card-item">
+                  <span class="az-dot"></span>
+                  <div>
+                    <div class="az-card-title">Plan for crowds</div>
+                    <div class="az-card-sub">July 3–4 is the busiest — shop earlier if possible.</div>
+                  </div>
+                </div>
+
+                <div class="az-card-item">
+                  <span class="az-dot"></span>
+                  <div>
+                    <div class="az-card-title">Keep it simple</div>
+                    <div class="az-card-sub">A few strong pieces beat a cart full of randoms.</div>
+                  </div>
+                </div>
+
+                <div class="az-card-item">
+                  <span class="az-dot"></span>
+                  <div>
+                    <div class="az-card-title">Find your closest stop</div>
+                    <div class="az-card-sub">Use the locator — it’s the fastest way to plan.</div>
+                  </div>
+                </div>
+              </div>
+
+              <a class="btn btn-buywide" href="locations.html#locator">Open Store Locator</a>
+
+              <div class="az-card-note">
+                <span class="dot-bullet"></span>
+                Replace the placeholder slides with real Arizona tent photos for maximum “wow.”
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         ARIZONA INTRO (UNIQUE)
+    ========================== -->
+    <section class="section az-intro" aria-label="Arizona introduction">
+      <div class="wrap az-intro-grid">
+        <div class="az-intro-left">
+          <div class="az-kicker">Arizona Fireworks</div>
+          <h2 class="az-h2">A better way to shop for a big summer night</h2>
+          <p class="az-p">
+            Arizona celebrations are different — big skies, big gatherings, and lots of people shopping close to the holiday.
+            Bellino Fireworks is built to make your visit simple: find a location, shop with a plan, and leave ready.
+          </p>
+
+          <div class="az-points">
+            <div class="az-point"><span class="dot-bullet"></span> Find nearby locations fast</div>
+            <div class="az-point"><span class="dot-bullet"></span> Build a show without overthinking it</div>
+            <div class="az-point"><span class="dot-bullet"></span> Get in and out with the right picks</div>
+          </div>
+
+          <div class="az-intro-actions">
+            <a class="btn btn-cta" href="locations.html#locator">Find Locations</a>
+            <a class="btn btn-outline" href="fundraising.html">Fundraising Programs</a>
+          </div>
+        </div>
+
+        <aside class="az-intro-right">
+          <div class="az-fact-card">
+            <div class="az-fact-badge">Ranking-friendly sections</div>
+            <div class="az-fact-h">This page is built to scale.</div>
+            <p class="az-fact-p">
+              We’ll reuse this same structure for every state page so the whole site can rank harder
+              outside Nebraska — with local headings, FAQs, and internal linking.
+            </p>
+            <div class="az-fact-mini">
+              <span class="dot-bullet"></span> Next up: Iowa, Kansas, Oklahoma, Texas, South Dakota…
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- =========================
+         ARIZONA TIPS (UNIQUE)
+    ========================== -->
+    <section class="section az-tips" id="az-tips" aria-label="Arizona tips">
+      <div class="wrap">
+        <div class="az-head">
+          <div class="az-kicker">Arizona tips</div>
+          <h2 class="az-h2">How to build a clean backyard show</h2>
+          <p class="az-p">
+            Keep it simple: start with a base assortment, add a couple crowd favorites, then close with a finale piece.
+            That structure works great for most family gatherings.
+          </p>
+        </div>
+
+        <div class="az-tips-grid">
+          <article class="az-tip-card">
+            <div class="az-tip-top">
+              <div class="az-tip-ico">🧨</div>
+              <h3 class="az-tip-h">Pick your “base”</h3>
+            </div>
+            <p class="az-tip-p">
+              Start with an assortment so you’re not guessing. It’s the easiest way to cover the night.
+            </p>
+          </article>
+
+          <article class="az-tip-card">
+            <div class="az-tip-top">
+              <div class="az-tip-ico">🎆</div>
+              <h3 class="az-tip-h">Add a couple hitters</h3>
+            </div>
+            <p class="az-tip-p">
+              Choose 2–3 favorites that you’re excited about — those become your “moments.”
+            </p>
+          </article>
+
+          <article class="az-tip-card">
+            <div class="az-tip-top">
+              <div class="az-tip-ico">🏁</div>
+              <h3 class="az-tip-h">Finish strong</h3>
+            </div>
+            <p class="az-tip-p">
+              Close with one finale piece. It’s the cleanest way to end on a high note.
+            </p>
+          </article>
+
+          <article class="az-tip-card az-tip-card--featured">
+            <div class="az-tip-top">
+              <div class="az-tip-ico">📍</div>
+              <h3 class="az-tip-h">Find the right stop</h3>
+            </div>
+            <p class="az-tip-p">
+              Use the locator to choose the closest location and plan your visit earlier in the season.
+            </p>
+            <a class="btn btn-cta" href="locations.html#locator">Open Locator</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         ARIZONA FAQ (UNIQUE)
+    ========================== -->
+    <section class="section az-faq" aria-label="Arizona FAQ">
+      <div class="wrap">
+        <div class="az-head">
+          <div class="az-kicker">FAQ</div>
+          <h2 class="az-h2">Arizona Fireworks Questions</h2>
+          <p class="az-p">Quick answers we can expand later with more Arizona-specific detail.</p>
+        </div>
+
+        <div class="az-faq-grid">
+          <details class="az-faq-item">
+            <summary>Where can I find Bellino Fireworks locations in Arizona?</summary>
+            <div class="az-faq-a">
+              Use the Bellino store locator to search by city or zip. It’s the fastest way to find the closest location.
+            </div>
+          </details>
+
+          <details class="az-faq-item">
+            <summary>When is the best time to shop near July 4th?</summary>
+            <div class="az-faq-a">
+              Earlier is better. July 3–4 gets the busiest, so shopping earlier in the week can mean better selection and shorter lines.
+            </div>
+          </details>
+
+          <details class="az-faq-item">
+            <summary>What’s the simplest way to plan a backyard show?</summary>
+            <div class="az-faq-a">
+              Start with an assortment, add a couple favorite pieces, and finish with a finale. That structure works for most families.
+            </div>
+          </details>
+
+          <details class="az-faq-item">
+            <summary>Can groups in Arizona run fundraisers?</summary>
+            <div class="az-faq-a">
+              Yes. Schools, churches, teams, and nonprofits can use our fundraising program. Visit the fundraising page to request info.
+            </div>
+          </details>
+        </div>
+
+        <div class="az-cta-band">
+          <div class="az-cta-card">
+            <div class="az-cta-left">
+              <div class="az-kicker">Arizona</div>
+              <h3 class="az-cta-h">Find your location and plan the night.</h3>
+              <p class="az-cta-p">Shop early, build a simple show, and make it a summer you remember.</p>
+            </div>
+            <div class="az-cta-right">
+              <a class="btn btn-cta" href="locations.html#locator">Find Locations</a>
+              <a class="btn btn-outline" href="index.html#products">Product Types</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================
+       FOOTER (SITEWIDE - SAME)
+  ========================== -->
+  <footer class="footer">
+    <div class="wrap footer-row">
+      <div class="foot-left">
+        <img src="images/nowin.svg" alt="Bellino Fireworks">
+        <div class="copy">© <span id="year"></span> Bellino Fireworks</div>
+      </div>
+
+      <div class="foot-right">
+        <a href="index.html#top">Home</a>
+        <a href="locations.html">Locations</a>
+        <a href="index.html#products">Products</a>
+        <a href="fundraising.html">Fundraising</a>
+        <a href="about.html">About</a>
+      </div>
+
+      <div class="foot-social" aria-label="Social media">
+        <a class="icon-link" href="#" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3H13.5V9.3c0-.9.3-1.6 1.7-1.6H16.8V5.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V11H7.6v3h2.5v8h3.4z"/></svg>
+        </a>
+        <a class="icon-link" href="#" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9z"/><path d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/><path d="M17.6 6.4a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>
+        </a>
+        <a class="icon-link" href="#" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.2c.7 1.1 1.8 1.9 3.2 2v2.8c-1.3 0-2.5-.4-3.5-1.1v6.1c0 3.2-2.6 5.8-5.8 5.8S4.7 18.2 4.7 15s2.6-5.8 5.8-5.8c.4 0 .8 0 1.2.1v3c-.4-.2-.8-.3-1.2-.3-1.5 0-2.8 1.2-2.8 2.8s1.2 2.8 2.8 2.8 2.8-1.2 2.8-2.8V2h3.1c0 1.1.3 2.2 1 3.2z"/></svg>
+        </a>
+        <a class="icon-link" href="#" target="_blank" rel="noopener" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2s-.2-1.6-.9-2.3c-.8-.9-1.7-.9-2.2-1C15.7 3.6 12 3.6 12 3.6h0s-3.7 0-6.5.3c-.5.1-1.4.1-2.2 1C2.6 5.6 2.4 7.2 2.4 7.2S2.1 9.1 2.1 11v1.8c0 1.9.3 3.8.3 3.8s.2 1.6.9 2.3c.8.9 1.9.9 2.4 1 1.7.2 6.3.3 6.3.3s3.7 0 6.5-.3c.5-.1 1.4-.1 2.2-1 .7-.7.9-2.3.9-2.3s.3-1.9.3-3.8V11c0-1.9-.3-3.8-.3-3.8zM10 15.3V8.7l6 3.3-6 3.3z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- IMPORTANT: use ONE js file sitewide -->
+  <script src="main.js"></script>
+</body>
+</html>
