@@ -1,4 +1,3 @@
-<!-- index.html (FULL) — UPDATED (clickable states + Spark Lab fun section + stronger fundraising card copy) -->
 <!doctype html>
 <html lang="en">
 <head>
@@ -19,13 +18,50 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body>
+<body class="home-page">
+
+  <!-- =====================================================
+       JULY 4 COUNTDOWN STRIP (SITEWIDE)
+  ====================================================== -->
+  <section class="july-countdown" data-july-ticker aria-label="Countdown to July 4th">
+    <div class="wrap july-row">
+      <div class="july-left">
+        <span class="july-badge">Countdown to July 4th</span>
+        <div class="july-title">Beat the rush — plan your visit.</div>
+        <div class="july-sub">Locations fill up fast near the holiday.</div>
+      </div>
+
+      <div class="july-right" aria-live="polite">
+        <div class="july-box">
+          <div class="july-num" data-tt-days>—</div>
+          <div class="july-lbl">Days</div>
+        </div>
+        <div class="july-box">
+          <div class="july-num" data-tt-hours>—</div>
+          <div class="july-lbl">Hours</div>
+        </div>
+        <div class="july-box">
+          <div class="july-num" data-tt-mins>—</div>
+          <div class="july-lbl">Mins</div>
+        </div>
+        <div class="july-box">
+          <div class="july-num" data-tt-secs>—</div>
+          <div class="july-lbl">Secs</div>
+        </div>
+      </div>
+
+      <div class="july-cta">
+        <a class="btn btn-buy" href="#locations">Buy Fireworks</a>
+      </div>
+    </div>
+  </section>
+
   <!-- =========================
-       HEADER
+       HEADER (SITEWIDE)
   ========================== -->
   <header class="header" id="top">
     <div class="wrap header-row">
-      <a class="logo" href="#top" aria-label="Bellino Fireworks home">
+      <a class="logo" href="index.html#top" aria-label="Bellino Fireworks home">
         <img src="images/nowin.svg" alt="Bellino Fireworks" />
       </a>
 
@@ -37,16 +73,16 @@
         <span></span><span></span><span></span>
       </button>
 
-      <nav class="nav" id="site-nav" data-nav>
-        <a class="nav-link is-active" href="#top">Home</a>
+      <nav class="nav" id="site-nav" data-nav aria-label="Primary">
+        <a class="nav-link is-active" href="index.html#top" aria-current="page">Home</a>
         <span class="dot">•</span>
-        <a class="nav-link" href="#locations">Locations</a>
+        <a class="nav-link" href="index.html#locations">Locations</a>
         <span class="dot">•</span>
-        <a class="nav-link" href="#products">Our Products</a>
+        <a class="nav-link" href="index.html#products">Our Products</a>
         <span class="dot">•</span>
         <a class="nav-link" href="fundraising.html">Fundraising</a>
         <span class="dot">•</span>
-        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="about.html">About</a>
 
         <div class="nav-social" aria-label="Social media">
           <a class="icon-link" href="#" target="_blank" rel="noopener" aria-label="Facebook">
@@ -62,9 +98,9 @@
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2s-.2-1.6-.9-2.3c-.8-.9-1.7-.9-2.2-1C15.7 3.6 12 3.6 12 3.6h0s-3.7 0-6.5.3c-.5.1-1.4.1-2.2 1C2.6 5.6 2.4 7.2 2.4 7.2S2.1 9.1 2.1 11v1.8c0 1.9.3 3.8.3 3.8s.2 1.6.9 2.3c.8.9 1.9.9 2.4 1 1.7.2 6.3.3 6.3.3s3.7 0 6.5-.3c.5-.1 1.4-.1 2.2-1 .7-.7.9-2.3.9-2.3s.3-1.9.3-3.8V11c0-1.9-.3-3.8-.3-3.8zM10 15.3V8.7l6 3.3-6 3.3z"/></svg>
           </a>
         </div>
-      </nav>
 
-      <a class="btn btn-buy" href="#locations">Buy Fireworks</a>
+        <a class="btn btn-buy nav-cta" href="index.html#locations">Buy Fireworks</a>
+      </nav>
     </div>
   </header>
 
@@ -302,14 +338,13 @@
 
         <div class="newprod-footnote">
           <span class="dot-bullet"></span>
-          Replace each image with a clean product box shot on a white or neutral background (like the example you showed).
+          Replace each image with a clean product box shot on a white or neutral background.
         </div>
       </div>
     </section>
 
     <!-- =========================
-         BELLINO SPARK LAB (FUN MIDDLE SECTION)
-         Placed here to break up the "business" feel
+         SPARK LAB
     ========================== -->
     <section class="section spark-lab" id="spark-lab" aria-label="Bellino Spark Lab">
       <div class="spark-bg" aria-hidden="true"></div>
@@ -524,26 +559,31 @@
     </section>
 
     <!-- =========================
-         ABOUT
+         ABOUT TEASER
     ========================== -->
     <section class="section section-light about-section" id="about">
       <div class="wrap about-grid">
         <div class="about-left">
           <div class="section-head">
-            <h2 class="section-title">A Fireworks Tradition Built for Families</h2>
+            <h2 class="section-title">Family Built. Midwest Strong.</h2>
             <p class="section-sub">
-              Bellino Fireworks serves families across 7 states with 250+ retail locations — and supports community groups with fundraising programs built for the season.
+              From a local start to multi-state growth — still hands-on, still focused on the customer experience.
             </p>
           </div>
 
           <div class="about-copy">
             <p>
-              From neighborhood tents to retail outlets, our mission stays the same:
-              bring bigger celebrations with great value and a lineup you can trust.
+              Bellino Fireworks is a family-built company with a simple goal: make the season better for communities and customers.
+              Clean stands, straightforward guidance, and a product lineup people come back for.
             </p>
             <p>
-              If you’re organizing a fundraiser, we’ll help make it easy to run — with guidance, support, and a product people actually want.
+              Want the full story and what we’re known for? Hit the About page.
             </p>
+          </div>
+
+          <div class="about-cta">
+            <a class="btn btn-cta" href="about.html">About Bellino</a>
+            <a class="btn btn-outline" href="fundraising.html">Fundraising Programs</a>
           </div>
         </div>
 
@@ -558,15 +598,12 @@
               <div class="stat-label">States Served</div>
             </div>
             <div class="stat">
-              <div class="stat-num">Fundraising</div>
-              <div class="stat-label">For community groups</div>
+              <div class="stat-num">35+</div>
+              <div class="stat-label">Years Built</div>
             </div>
           </div>
 
-          <div class="about-cta">
-            <a class="btn btn-cta" href="#locations">Open Store Locator</a>
-            <a class="btn btn-outline" href="fundraising.html">Fundraising Info</a>
-          </div>
+          <a class="btn btn-buywide" href="#locations">Find a Location</a>
         </div>
       </div>
     </section>
@@ -575,6 +612,7 @@
          FINAL CTA
     ========================== -->
     <section class="section final-cta" id="cta">
+      <div class="final-bg" aria-hidden="true"></div>
       <div class="wrap final-grid">
         <div class="final-left">
           <h2 class="final-title">Ready to Shop Nearby?</h2>
@@ -608,7 +646,7 @@
   </main>
 
   <!-- =========================
-       FOOTER (SOCIAL ICONS)
+       FOOTER (SITEWIDE)
   ========================== -->
   <footer class="footer">
     <div class="wrap footer-row">
@@ -618,11 +656,11 @@
       </div>
 
       <div class="foot-right">
-        <a href="#top">Top</a>
-        <a href="#locations">Locations</a>
-        <a href="#products">Products</a>
+        <a href="index.html#top">Top</a>
+        <a href="index.html#locations">Locations</a>
+        <a href="index.html#products">Products</a>
         <a href="fundraising.html">Fundraising</a>
-        <a href="#about">About</a>
+        <a href="about.html">About</a>
       </div>
 
       <div class="foot-social" aria-label="Social media">
@@ -642,6 +680,6 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
