@@ -1186,6 +1186,165 @@ input:hover, select:hover, textarea:hover{
   to{ transform: translateX(60%); }
 }
 /* =========================================================
+   ABOUT TEASER (index.html #about)
+   "Family Built. Midwest Strong."
+   Uses your markup:
+   .section-light .about-section .about-grid .about-left .about-right
+   .section-head .section-title .section-sub .about-copy .light-card .stats-card
+========================================================= */
+
+.section.section-light.about-section{
+  position: relative;
+  padding: 86px 0;
+  background:
+    radial-gradient(1200px 520px at 15% 20%, rgba(225,29,46,.08), transparent 60%),
+    radial-gradient(900px 520px at 85% 65%, rgba(59,130,246,.06), transparent 62%),
+    linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(246,248,251,1) 100%);
+  color: #0f172a;
+  overflow: hidden;
+}
+
+.section.section-light.about-section::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  background:
+    radial-gradient(900px 260px at 50% 0%, rgba(15,23,42,.06), transparent 60%);
+  pointer-events:none;
+  z-index: 0;
+}
+
+.section.section-light.about-section .wrap{
+  position: relative;
+  z-index: 1;
+}
+
+/* grid */
+.about-grid{
+  display:grid;
+  grid-template-columns: 1.25fr .75fr;
+  gap: 18px;
+  align-items: start;
+}
+
+@media (max-width: 980px){
+  .about-grid{ grid-template-columns: 1fr; }
+}
+
+/* left content */
+.about-left{
+  border-radius: 24px;
+  padding: 22px;
+  background: rgba(255,255,255,.72);
+  border: 1px solid rgba(15,23,42,.10);
+  box-shadow: 0 22px 60px rgba(15,23,42,.10);
+  backdrop-filter: blur(10px);
+}
+
+.about-left .section-head{
+  margin-bottom: 14px;
+}
+
+.about-left .section-title{
+  margin: 0 0 8px;
+  font-size: clamp(1.65rem, 2.8vw, 2.2rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+}
+
+.about-left .section-sub{
+  margin: 0;
+  color: rgba(15,23,42,.70);
+  line-height: 1.7;
+  max-width: 75ch;
+}
+
+.about-copy p{
+  margin: 12px 0 0;
+  color: rgba(15,23,42,.78);
+  line-height: 1.75;
+  font-size: 1.02rem;
+}
+
+.about-cta{
+  display:flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+/* right column */
+.about-right{
+  display:flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* light card / stats */
+.light-card{
+  border-radius: 24px;
+  padding: 18px;
+  background: rgba(255,255,255,.82);
+  border: 1px solid rgba(15,23,42,.10);
+  box-shadow: 0 22px 60px rgba(15,23,42,.10);
+  backdrop-filter: blur(10px);
+}
+
+.stats-card{
+  display:grid;
+  gap: 12px;
+}
+
+.stat{
+  display:flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 12px;
+  border-radius: 18px;
+  background:
+    radial-gradient(900px 220px at 10% 10%, rgba(225,29,46,.10), transparent 55%),
+    rgba(15,23,42,.03);
+  border: 1px solid rgba(15,23,42,.08);
+}
+
+.stat-num{
+  font-weight: 950;
+  font-size: 1.75rem;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  background: linear-gradient(135deg, rgba(225,29,46,1), rgba(245,158,11,1));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.stat-label{
+  color: rgba(15,23,42,.70);
+  font-weight: 700;
+  font-size: .98rem;
+  text-align: right;
+}
+
+/* button spacing in right column */
+.about-right .btn.btn-buywide{
+  width: 100%;
+  justify-content: center;
+}
+
+/* small polish on hover if your .btn already exists */
+.about-left:hover,
+.light-card:hover{
+  transform: translateY(-1px);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.about-left:hover,
+.light-card:hover{
+  box-shadow: 0 28px 70px rgba(15,23,42,.12);
+}
+
+/* =========================================================
    FUNDRAISING SECTION (index.html #fundraising)
    Uses your existing markup exactly:
    .section-fund, .fund-bg, .fund-shade, .fundraising-head,
