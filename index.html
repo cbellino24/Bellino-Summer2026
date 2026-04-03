@@ -3,677 +3,625 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bellino Fireworks | 250+ Fireworks Locations Across 9 States</title>
+  <meta
+    name="description"
+    content="Bellino Fireworks serves families across 9 states with 250+ retail fireworks locations. Find a location near you and learn about fundraising programs for schools, teams, churches, and nonprofits."
+  />
 
-  <title>Bellino Fireworks | 250+ Retail Firework Locations + Fundraising Programs</title>
-  <meta name="description" content="Bellino Fireworks has 250+ retail locations across 7 states and fireworks fundraising programs for schools, teams, churches, and nonprofits. Find a location near you or start a fundraiser." />
-
-  <meta property="og:title" content="Bellino Fireworks | Locations + Fundraising Programs">
-  <meta property="og:description" content="250+ retail locations across 7 states + fundraising programs for schools, teams, churches, and nonprofits.">
-  <meta property="og:type" content="website">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
 
   <link rel="stylesheet" href="styles.css" />
 </head>
-
-<body class="home-page">
-
-  <!-- =====================================================
-       JULY 4 COUNTDOWN STRIP (SITEWIDE)
-  ====================================================== -->
-  <section class="july-countdown" data-july-ticker aria-label="Countdown to July 4th">
-    <div class="wrap july-row">
-      <div class="july-left">
-        <span class="july-badge">Countdown to July 4th</span>
-        <div class="july-title">Beat the rush — plan your visit.</div>
-        <div class="july-sub">Locations fill up fast near the holiday.</div>
-      </div>
-
-      <div class="july-right" aria-live="polite">
-        <div class="july-box">
-          <div class="july-num" data-tt-days>—</div>
-          <div class="july-lbl">Days</div>
+<body>
+  <header class="site-header" id="top">
+    <div class="header-topbar">
+      <div class="container header-topbar-row">
+        <div class="countdown-wrap" aria-live="polite">
+          <span class="countdown-stars" aria-hidden="true">★ ★</span>
+          <span class="countdown-label">Countdown to July 4th</span>
+          <span class="countdown-value" id="july4Countdown">Loading...</span>
+          <span class="countdown-stars" aria-hidden="true">★ ★</span>
         </div>
-        <div class="july-box">
-          <div class="july-num" data-tt-hours>—</div>
-          <div class="july-lbl">Hours</div>
-        </div>
-        <div class="july-box">
-          <div class="july-num" data-tt-mins>—</div>
-          <div class="july-lbl">Mins</div>
-        </div>
-        <div class="july-box">
-          <div class="july-num" data-tt-secs>—</div>
-          <div class="july-lbl">Secs</div>
-        </div>
-      </div>
 
-      <div class="july-cta">
-        <a class="btn btn-buy" href="#locations">Buy Fireworks</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================
-       HEADER (SITEWIDE)
-  ========================== -->
-  <header class="header" id="top">
-    <div class="wrap header-row">
-      <a class="logo" href="index.html#top" aria-label="Bellino Fireworks home">
-        <img src="images/nowin.svg" alt="Bellino Fireworks" />
-      </a>
-
-      <button class="nav-toggle" type="button"
-        aria-label="Open menu"
-        aria-expanded="false"
-        aria-controls="site-nav"
-        data-nav-toggle>
-        <span></span><span></span><span></span>
-      </button>
-
-      <nav class="nav" id="site-nav" data-nav aria-label="Primary">
-        <a class="nav-link is-active" href="index.html#top" aria-current="page">Home</a>
-        <span class="dot">•</span>
-        <a class="nav-link" href="index.html#locations">Locations</a>
-        <span class="dot">•</span>
-        <a class="nav-link" href="index.html#products">Our Products</a>
-        <span class="dot">•</span>
-        <a class="nav-link" href="fundraising.html">Fundraising</a>
-        <span class="dot">•</span>
-        <a class="nav-link" href="about.html">About</a>
-
-        <div class="nav-social" aria-label="Social media">
-          <a class="icon-link" href="#" target="_blank" rel="noopener" aria-label="Facebook">
+        <div class="header-social" aria-label="Social media">
+          <a href="#" target="_blank" rel="noopener" aria-label="Facebook">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3H13.5V9.3c0-.9.3-1.6 1.7-1.6H16.8V5.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V11H7.6v3h2.5v8h3.4z"/></svg>
           </a>
-          <a class="icon-link" href="#" target="_blank" rel="noopener" aria-label="Instagram">
+          <a href="#" target="_blank" rel="noopener" aria-label="Instagram">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9z"/><path d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/><path d="M17.6 6.4a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>
           </a>
-          <a class="icon-link" href="#" target="_blank" rel="noopener" aria-label="TikTok">
+          <a href="#" target="_blank" rel="noopener" aria-label="TikTok">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.2c.7 1.1 1.8 1.9 3.2 2v2.8c-1.3 0-2.5-.4-3.5-1.1v6.1c0 3.2-2.6 5.8-5.8 5.8S4.7 18.2 4.7 15s2.6-5.8 5.8-5.8c.4 0 .8 0 1.2.1v3c-.4-.2-.8-.3-1.2-.3-1.5 0-2.8 1.2-2.8 2.8s1.2 2.8 2.8 2.8 2.8-1.2 2.8-2.8V2h3.1c0 1.1.3 2.2 1 3.2z"/></svg>
           </a>
-          <a class="icon-link" href="#" target="_blank" rel="noopener" aria-label="YouTube">
+          <a href="#" target="_blank" rel="noopener" aria-label="YouTube">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2s-.2-1.6-.9-2.3c-.8-.9-1.7-.9-2.2-1C15.7 3.6 12 3.6 12 3.6h0s-3.7 0-6.5.3c-.5.1-1.4.1-2.2 1C2.6 5.6 2.4 7.2 2.4 7.2S2.1 9.1 2.1 11v1.8c0 1.9.3 3.8.3 3.8s.2 1.6.9 2.3c.8.9 1.9.9 2.4 1 1.7.2 6.3.3 6.3.3s3.7 0 6.5-.3c.5-.1 1.4-.1 2.2-1 .7-.7.9-2.3.9-2.3s.3-1.9.3-3.8V11c0-1.9-.3-3.8-.3-3.8zM10 15.3V8.7l6 3.3-6 3.3z"/></svg>
           </a>
         </div>
+      </div>
+    </div>
 
-        <a class="btn btn-buy nav-cta" href="index.html#locations">Buy Fireworks</a>
+    <div class="container header-main">
+      <a class="brand" href="#top" aria-label="Bellino Fireworks home">
+        <img src="images/bellino-high-res.png" alt="Bellino Fireworks" />
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <a href="#top">Home</a>
+        <a href="#locations">Locations</a>
+        <a href="#products">Products</a>
+        <a href="#fundraising">Fundraising</a>
+        <a href="#about">About</a>
+        <a class="header-cta" href="#locations">Find a Location</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <!-- =========================
-         HERO
-    ========================== -->
     <section class="hero">
-      <div class="hero-bg" aria-hidden="true">
-        <div class="hero-slider" data-hero-slider>
-          <div class="hero-slide" style="background-image:url('images/bellino-logo.jpg');"></div>
-          <div class="hero-slide" style="background-image:url('images/fireworks-world-hero.jpg');"></div>
-        </div>
+      <div class="hero-stars hero-stars-left" aria-hidden="true">★ ★ ★</div>
+      <div class="hero-stars hero-stars-right" aria-hidden="true">★ ★</div>
+
+      <div class="hero-slides" aria-hidden="true">
+        <div class="hero-slide is-active" style="background-image:url('images/fireworks-world-hero.jpg');"></div>
+        <div class="hero-slide" style="background-image:url('images/bellino-hero2.jpg');"></div>
+        <div class="hero-slide" style="background-image:url('images/hero-2.jpg.png');"></div>
       </div>
 
-      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="hero-overlay" aria-hidden="true"></div>
 
-      <div class="wrap hero-inner">
-        <div class="hero-grid">
-          <div class="hero-left">
-            <div class="hero-card">
-              <h1 class="hero-h1">
-                <span class="line-white">250+ Retail</span><br>
-                <span class="line-red">Firework Locations</span>
-              </h1>
-
-              <p class="hero-p">
-                Serving families across Nebraska, Iowa, Arizona,
-                Texas, Oklahoma, South Dakota, &amp; Kansas.
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <div class="hero-copy-rotator" data-hero-copy>
+            <div class="hero-copy-slide is-active">
+              <p class="section-kicker section-kicker-dark">Serving Families Across 9 States</p>
+              <h1>Big Summer Nights Start With the Right Fireworks</h1>
+              <p class="hero-text">
+                Bellino Fireworks serves families across Nebraska, Iowa, Arizona, Texas,
+                Oklahoma, South Dakota, Kansas, Arkansas, and Illinois with 250+ retail locations,
+                seasonal favorites, and fundraising programs built for community groups.
               </p>
+            </div>
 
-              <ul class="hero-bullets" aria-label="Key highlights">
-                <li><span class="bullet-dot"></span> Find a location near you</li>
-                <li><span class="bullet-dot"></span> Curated products for parties + finales</li>
-                <li><span class="bullet-dot"></span> Fireworks fundraising for schools, teams, churches &amp; nonprofits</li>
-              </ul>
+            <div class="hero-copy-slide">
+              <p class="section-kicker section-kicker-dark">Seasonal Shopping Made Easy</p>
+              <h1>Find Fireworks Near You Without the Guesswork</h1>
+              <p class="hero-text">
+                From neighborhood stands to larger seasonal markets, Bellino makes it easier
+                to shop close to home with strong selection and familiar locations.
+              </p>
+            </div>
 
-              <div class="hero-actions">
-                <a class="btn btn-cta" href="#locations">Find a Location</a>
-                <a class="btn btn-outline" href="fundraising.html">Fundraising Programs</a>
-              </div>
+            <div class="hero-copy-slide">
+              <p class="section-kicker section-kicker-dark">Built for Groups Too</p>
+              <h1>Retail Fireworks and Fundraising Programs That Fit Summer</h1>
+              <p class="hero-text">
+                Bellino also helps schools, teams, churches, and nonprofits create stronger
+                seasonal fundraising opportunities during one of the busiest buying windows of the year.
+              </p>
+            </div>
+          </div>
+
+          <div class="button-row hero-buttons">
+            <a class="btn btn-primary" href="#locations">Find a Location</a>
+            <a class="btn btn-outline-light" href="#fundraising">Explore Fundraising</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <strong>250+</strong>
+              <span>Retail Locations</span>
+            </div>
+            <div class="hero-stat">
+              <strong>9</strong>
+              <span>States Served</span>
+            </div>
+            <div class="hero-stat">
+              <strong>Seasonal</strong>
+              <span>Retail + Group Programs</span>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="hero-figure" aria-hidden="true">
-        <img class="family" src="images/family-bellino-2.png" alt="">
+      <div class="hero-wave" aria-hidden="true">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+          <path d="M0,38 C205,92 414,110 708,82 C962,58 1182,12 1440,44 L1440,120 L0,120 Z"></path>
+        </svg>
       </div>
     </section>
 
-    <!-- =========================
-         STATES STRIP (SOLID RED) — CLICKABLE
-    ========================== -->
-    <section class="states" aria-label="States we serve">
-      <div class="wrap states-row">
-        <a class="state state-link" href="/fireworks-nebraska/" aria-label="Fireworks in Nebraska">
-          <img src="images/Nebraska.png" alt="Nebraska"><div>Nebraska</div>
-        </a>
-        <a class="state state-link" href="/fireworks-iowa/" aria-label="Fireworks in Iowa">
-          <img src="images/Iowa-1.png" alt="Iowa"><div>Iowa</div>
-        </a>
-        <a class="state state-link" href="/fireworks-arizona/" aria-label="Fireworks in Arizona">
-          <img src="images/Arizona.png" alt="Arizona"><div>Arizona</div>
-        </a>
-        <a class="state state-link" href="/fireworks-texas/" aria-label="Fireworks in Texas">
-          <img src="images/texas-1.png" alt="Texas"><div>Texas</div>
-        </a>
-        <a class="state state-link" href="/fireworks-oklahoma/" aria-label="Fireworks in Oklahoma">
-          <img src="images/OKC.png" alt="Oklahoma"><div>Oklahoma</div>
-        </a>
-        <a class="state state-link" href="/fireworks-south-dakota/" aria-label="Fireworks in South Dakota">
-          <img src="images/South-Dakota.png" alt="South Dakota"><div>South Dakota</div>
-        </a>
-        <a class="state state-link" href="/fireworks-kansas/" aria-label="Fireworks in Kansas">
-          <img src="images/Kansas.png" alt="Kansas"><div>Kansas</div>
-        </a>
-      </div>
-    </section>
-
-    <!-- =========================
-         LOCATIONS
-    ========================== -->
-    <section class="section section-tool locations-section" id="locations">
-      <div class="tool-bg" aria-hidden="true"></div>
-      <div class="tool-shade" aria-hidden="true"></div>
-
-      <div class="wrap tool-grid">
-        <div class="tool-left">
-          <div class="tool-kicker">Store Locator</div>
-          <h2 class="tool-title">Find a Bellino Fireworks Location Near You</h2>
-          <p class="tool-sub">
-            Search by city or zip to find the closest Bellino Fireworks stand, retail store, or tent.
-            Hours and availability may vary by location.
-          </p>
-
-          <div class="tool-pills" role="list">
-            <div class="tool-pill" role="listitem">250+ locations</div>
-            <div class="tool-pill" role="listitem">7 states served</div>
-            <div class="tool-pill" role="listitem">Fast search</div>
-          </div>
-
-          <div class="tool-actions">
-            <a class="btn btn-cta" href="#fundraising">Start a Fundraiser</a>
-            <a class="btn btn-outline" href="#products">Browse Products</a>
-          </div>
-        </div>
-
-        <div class="tool-right">
-          <div class="locator-card">
-            <div class="locator-head">
-              <div class="locator-title">Locator</div>
-              <div class="locator-note">Embed your map / locator here</div>
-            </div>
-
-            <div class="locator-shell locator-shell--tight">
-              <div class="locator-note">
-                <strong>Locator here:</strong>
-                <span>Store locator embed WP shortcode output.</span>
-              </div>
-            </div>
-
-            <div class="locator-foot">
-              <div class="locator-foot-item">
-                <div class="lf-strong">4th of July Season</div>
-                <div class="lf-muted">Find the BEST fireworks deals near you.</div>
-              </div>
-              <a class="btn btn-buywide" href="#fundraising">City/State Pages</a>
-            </div>
-          </div>
+    <section class="states-band">
+      <div class="container">
+        <div class="states-grid states-grid-nine">
+          <a class="state-card" href="/fireworks-nebraska/"><img src="images/Nebraska.png" alt="Nebraska" /><span>Nebraska</span></a>
+          <a class="state-card" href="/fireworks-iowa/"><img src="images/Iowa-1.png" alt="Iowa" /><span>Iowa</span></a>
+          <a class="state-card" href="/fireworks-arizona/"><img src="images/Arizona.png" alt="Arizona" /><span>Arizona</span></a>
+          <a class="state-card" href="/fireworks-texas/"><img src="images/texas-1.png" alt="Texas" /><span>Texas</span></a>
+          <a class="state-card" href="/fireworks-oklahoma/"><img src="images/OKC.png" alt="Oklahoma" /><span>Oklahoma</span></a>
+          <a class="state-card" href="/fireworks-south-dakota/"><img src="images/South-Dakota.png" alt="South Dakota" /><span>South Dakota</span></a>
+          <a class="state-card" href="/fireworks-kansas/"><img src="images/Kansas.png" alt="Kansas" /><span>Kansas</span></a>
+          <a class="state-card" href="/fireworks-arkansas/"><img src="images/arkansas.png" alt="Arkansas" /><span>Arkansas</span></a>
+          <a class="state-card" href="/fireworks-illinois/"><img src="images/illinois.png" alt="Illinois" /><span>Illinois</span></a>
         </div>
       </div>
     </section>
 
-    <!-- =========================
-         PRODUCTS (LIGHT)
-    ========================== -->
-    <section class="section products-band" id="products">
-      <div class="wrap">
-        <div class="products-head">
-          <div class="products-kicker">Our Products</div>
-          <h2 class="products-title">Fireworks for Families, Parties, and Big Finales</h2>
-          <p class="products-sub">
-            Build a backyard show that fits your night — start with an assortment, then add a finale piece.
+    <section class="section section-white locator-section" id="locations">
+      <div class="container two-col">
+        <div class="content-block locator-copy">
+          <p class="section-kicker">Store Locator</p>
+          <h2>Find a Bellino Fireworks Location Near You</h2>
+          <p class="section-lead">
+            Search by city or zip to find the closest Bellino Fireworks stand,
+            tent, or retail location. This section is ready for your live locator embed.
           </p>
 
-          <div class="products-chips" role="list">
-            <div class="chip-lite" role="listitem">Assortments</div>
-            <div class="chip-lite" role="listitem">Finale Pieces</div>
-            <div class="chip-lite" role="listitem">Family Favorites</div>
-            <div class="chip-lite" role="listitem">Aerials</div>
-          </div>
-        </div>
-
-        <div class="products-body">
-          <div class="products-grid">
-            <div class="products-card">
-              <h3>Assortments</h3>
-              <p>Value bundles that cover a full celebration without overthinking it.</p>
-            </div>
-            <div class="products-card">
-              <h3>Finale Pieces</h3>
-              <p>Add a big closer when you want the “wow” ending.</p>
-            </div>
-            <div class="products-card">
-              <h3>Family Favorites</h3>
-              <p>Fountains, novelties, and crowd-pleasers for all ages.</p>
-            </div>
-            <div class="products-card">
-              <h3>Aerials</h3>
-              <p>For the big sky moments — available at many locations.</p>
-            </div>
-          </div>
-
-          <div class="products-cta">
-            <a class="btn btn-cta" href="#locations">Shop Nearby</a>
-            <a class="btn btn-outline" href="#fundraising">Fundraising Programs</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================
-         NEW PRODUCTS (RED BAND / CAROUSEL)
-    ========================== -->
-    <section class="section new-products-band" id="new-products">
-      <div class="newprod-bg" aria-hidden="true"></div>
-      <div class="wrap">
-        <div class="newprod-head">
-          <div class="newprod-kicker">NEW • 2026</div>
-          <h2 class="newprod-title">New Products for America’s Birthday</h2>
-          <p class="newprod-sub">
-            Limited-season drops built for big crowds and bigger finales. Add these to your list early.
-          </p>
-        </div>
-
-        <div class="newprod-shell">
-          <button class="carousel-btn prev" type="button" aria-label="Previous" data-carousel-prev="newprod">
-            <span aria-hidden="true">‹</span>
-          </button>
-
-          <div class="newprod-track" data-carousel="newprod">
-            <article class="newprod-card">
-              <div class="newprod-media" style="background-image:url('images/products/sky-titan.jpg');" role="img" aria-label="Sky Titan product image"></div>
-              <div class="newprod-body">
-                <h3 class="newprod-name">Sky Titan</h3>
-                <p class="newprod-desc">Big sky effects, hard-hitting breaks, and a clean pacing for a real finale moment.</p>
-                <a class="btn btn-buywide" href="#locations">Shop / See Availability</a>
-              </div>
-            </article>
-
-            <article class="newprod-card">
-              <div class="newprod-media" style="background-image:url('images/products/stretching-limit.jpg');" role="img" aria-label="Stretching Limit product image"></div>
-              <div class="newprod-body">
-                <h3 class="newprod-name">Stretching Limit</h3>
-                <p class="newprod-desc">Fast, loud, and built to stack with assortments when you want the crowd reaction.</p>
-                <a class="btn btn-buywide" href="#locations">Shop / See Availability</a>
-              </div>
-            </article>
-
-            <article class="newprod-card">
-              <div class="newprod-media" style="background-image:url('images/products/2026.jpg');" role="img" aria-label="2026 product image"></div>
-              <div class="newprod-body">
-                <h3 class="newprod-name">2026</h3>
-                <p class="newprod-desc">America’s birthday energy — bold color, big lift, and a clean “end of show” feel.</p>
-                <a class="btn btn-buywide" href="#locations">Shop / See Availability</a>
-              </div>
-            </article>
-          </div>
-
-          <button class="carousel-btn next" type="button" aria-label="Next" data-carousel-next="newprod">
-            <span aria-hidden="true">›</span>
-          </button>
-        </div>
-
-        <div class="newprod-footnote">
-          <span class="dot-bullet"></span>
-          Image here.
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================
-         SPARK LAB
-    ========================== -->
-    <section class="section spark-lab" id="spark-lab" aria-label="Bellino Spark Lab">
-      <div class="spark-bg" aria-hidden="true"></div>
-      <div class="wrap">
-        <div class="spark-head">
-          <div class="spark-kicker">Bellino Spark Lab</div>
-          <h2 class="spark-title">Learn. Build. Celebrate. Like a Pro.</h2>
-          <p class="spark-sub">
-            Quick guides, fun ideas, and real-world tips so your night feels legendary — whether it’s your first show or your biggest finale.
-          </p>
-        </div>
-
-        <div class="spark-grid">
-          <article class="spark-card" data-tilt>
-            <div class="spark-top">
-              <div class="spark-icon" aria-hidden="true">🎆</div>
-              <div>
-                <h3 class="spark-h">Fireworks 101</h3>
-                <p class="spark-mini">Start here (fast + simple).</p>
-              </div>
-            </div>
-            <p class="spark-p">
-              Learn the basics: assortments, fountains, aerials, and what to buy for your yard size — without overthinking it.
-            </p>
-            <a class="btn btn-outline spark-btn" href="/fireworks-101/">Explore Fireworks 101</a>
-          </article>
-
-          <article class="spark-card" data-tilt>
-            <div class="spark-top">
-              <div class="spark-icon" aria-hidden="true">🧯</div>
-              <div>
-                <h3 class="spark-h">Safety + Setup</h3>
-                <p class="spark-mini">Smart rules that keep it fun.</p>
-              </div>
-            </div>
-            <p class="spark-p">
-              A quick checklist for spacing, lighting order, wind tips, and cleanup — so everyone goes home happy.
-            </p>
-            <a class="btn btn-outline spark-btn" href="/fireworks-safety/">See Safety Tips</a>
-          </article>
-
-          <article class="spark-card" data-tilt>
-            <div class="spark-top">
-              <div class="spark-icon" aria-hidden="true">🧨</div>
-              <div>
-                <h3 class="spark-h">Show Builder</h3>
-                <p class="spark-mini">Plan a 10-minute backyard show.</p>
-              </div>
-            </div>
-            <p class="spark-p">
-              Pick a simple structure: warm-up → crowd favorites → finale. We’ll show you combos that hit every time.
-            </p>
-            <a class="btn btn-outline spark-btn" href="/show-builder/">Build Your Show</a>
-          </article>
-
-          <article class="spark-card spark-card--featured" data-tilt>
-            <div class="spark-top">
-              <div class="spark-icon" aria-hidden="true">🏆</div>
-              <div>
-                <h3 class="spark-h">Fundraiser Playbook</h3>
-                <p class="spark-mini">The easy way to raise real money.</p>
-              </div>
-            </div>
-            <p class="spark-p">
-              Proven steps, signup materials, and a timeline that works for schools, teams, churches &amp; nonprofits — no guesswork.
-            </p>
-            <a class="btn btn-cta spark-btn" href="fundraising.html">Get the Playbook</a>
-          </article>
-        </div>
-
-        <div class="spark-foot">
-          <div class="spark-foot-left">
-            <span class="spark-dot" aria-hidden="true"></span>
-            <div>
-              <div class="spark-foot-strong">Want local tips by state?</div>
-              <div class="spark-foot-muted">Hit your state above — rules and timing can vary.</div>
-            </div>
-          </div>
-          <a class="btn btn-buy spark-foot-btn" href="#locations">Find a Location</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================
-         USA 250 (LIGHT TINT)
-    ========================== -->
-    <section class="section usa250-light" id="usa250">
-      <div class="wrap usa250l-grid">
-        <div>
-          <div class="usa250l-kicker">Summer 2026</div>
-          <h2 class="usa250l-title">America’s 250th Anniversary is a Once-in-a-Generation Summer</h2>
-          <p class="usa250l-sub">
-            This season is going to be bigger than normal — family gatherings, community events, and backyard celebrations everywhere.
-            If you’re planning something for the USA 250th, Bellino Fireworks can help you do it right.
-          </p>
-
-          <div class="usa250l-pills" role="list">
-            <div class="usa250l-pill" role="listitem">Backyard shows</div>
-            <div class="usa250l-pill" role="listitem">Community events</div>
-            <div class="usa250l-pill" role="listitem">Fundraisers + groups</div>
-          </div>
-
-          <div class="usa250l-actions">
-            <a class="btn btn-cta" href="#locations">Find a Location</a>
-            <a class="btn btn-outline" href="#fundraising">Group Fundraising</a>
-          </div>
-        </div>
-
-        <aside class="usa250l-card">
-          <div class="usa250l-badge">USA 250</div>
-          <div class="usa250l-h">Make it memorable.</div>
-          <p class="usa250l-p">
-            Big demand means planning matters. Shop early, or talk to us about group fundraising.
-          </p>
-          <ul class="usa250l-list">
-            <li><span class="dot-bullet"></span> Trusted selection</li>
-            <li><span class="dot-bullet"></span> Great value</li>
-            <li><span class="dot-bullet"></span> Easy to find nearby</li>
+          <ul class="feature-list">
+            <li>Fast location search by market</li>
+            <li>Built for shoppers ready to buy</li>
+            <li>Perfect place for your real locator tool</li>
           </ul>
-        </aside>
-      </div>
-    </section>
 
-    <!-- =========================
-         FUNDRAISING (DARK)
-    ========================== -->
-    <section class="section section-fund" id="fundraising">
-      <div class="fund-bg" aria-hidden="true"></div>
-      <div class="fund-shade" aria-hidden="true"></div>
-
-      <div class="wrap">
-        <div class="fundraising-head">
-          <div class="fund-kicker">Fundraising</div>
-          <h2 class="fund-title">Fireworks Fundraising Programs for Schools, Teams, Churches &amp; Nonprofits</h2>
-          <p class="fund-sub">
-            Run a fundraiser that’s simple to organize and built for high demand around the 4th.
-            We help with the plan, the product, and the support — your group focuses on the community.
-          </p>
+          <div class="button-row locator-buttons">
+            <a class="btn btn-primary" href="#products">Browse Products</a>
+            <a class="btn btn-outline-dark" href="#fundraising">Fundraising Info</a>
+          </div>
         </div>
 
-        <div class="fund-grid">
-          <div class="fund-video">
-            <div class="video-shell">
-              <iframe
-                src="https://www.youtube.com/embed/vmR-fn2W-lg?rel=0"
-                title="Bellino Fireworks Fundraising"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen>
-              </iframe>
-            </div>
+        <div class="locator-panel">
+          <div class="locator-panel-head">
+            <strong>Bellino Store Locator</strong>
+            <span>Embed your locator here</span>
+          </div>
 
-            <div class="fund-actions">
-              <a class="btn btn-cta" href="fundraising.html">Get Fundraising Info</a>
-              <a class="btn btn-outline" href="#locations">Find Nearest Location</a>
+          <div class="locator-panel-map">
+            <div class="locator-placeholder">
+              <strong>Locator Area</strong>
+              <p>Replace this block with your actual map or store locator output.</p>
             </div>
           </div>
 
-          <div class="fund-visual">
-            <div class="visual-card">
-              <div class="visual-media" style="background-image:url('images/fundraising-team.jpg');" role="img" aria-label="Community group fundraising with Bellino Fireworks"></div>
+          <div class="locator-panel-bottom">
+            <div>
+              <strong>Need fireworks near you?</strong>
+              <p>Use the locator to find nearby hours, availability, and the closest stand or store.</p>
+            </div>
+            <a class="btn btn-primary btn-full" href="#top">Shop Nearby</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-              <div class="visual-copy">
-                <h3>Why Groups Choose Bellino Fireworks</h3>
+    <section class="section section-dark products-section" id="products">
+      <div class="dark-stars dark-stars-left" aria-hidden="true">★ ★</div>
+      <div class="dark-stars dark-stars-right" aria-hidden="true">★ ★ ★</div>
 
-                <p>
-                  Bellino Fireworks partners with <strong>schools, sports teams, churches, and nonprofits</strong> across 7 states to help groups raise serious money
-                  during the biggest demand season of the year.
-                </p>
+      <div class="products-promo-wrap">
+        <div class="products-promo-badge">
+          <div class="products-promo-stars" aria-hidden="true">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+          <p>Home of the BUY 1 GET 3 FREE</p>
+        </div>
+      </div>
 
-                <p>
-                  Every summer, local groups use our fundraiser to pay for uniforms, travel, equipment, programs, and mission work — and we make it easy to run.
-                </p>
+      <div class="container">
+        <div class="section-head center-head products-head-large">
+          <p class="section-kicker section-kicker-dark">Featured Product Types</p>
+          <h2>Built for Families, Parties, and Big Finale Moments</h2>
+          <p class="section-lead center-copy section-lead-dark">
+            Bellino Fireworks offers product mixes that make it easier to shop by
+            experience, not just by shelf label.
+          </p>
+        </div>
 
-                <ul class="mini-list">
-                  <li><span class="mini-check"></span> Built-in holiday demand drives real sales.</li>
-                  <li><span class="mini-check"></span> Proven multi-state system keeps it smooth.</li>
-                  <li><span class="mini-check"></span> Short season, serious fundraising potential.</li>
-                </ul>
+        <div class="product-grid">
+          <article class="product-card">
+            <div class="product-image-wrap"><img src="images/family-bellino-2.png" alt="Family fireworks fun" /></div>
+            <div class="product-card-body">
+              <h3>Family Favorites</h3>
+              <p>Fountains, novelties, and crowd-pleasers that work great for all ages.</p>
+            </div>
+          </article>
 
-                <p class="visual-note">
-                  Results vary by location and participation — but many partner groups raise strong totals when they promote it well.
-                </p>
+          <article class="product-card">
+            <div class="product-image-wrap"><img src="images/44Magnum.png" alt="Big assortment fireworks" /></div>
+            <div class="product-card-body">
+              <h3>Assortments</h3>
+              <p>Great all-in-one options when you want variety without overcomplicating it.</p>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image-wrap"><img src="images/stretching-the-limit.png" alt="Finale fireworks product" /></div>
+            <div class="product-card-body">
+              <h3>Finale Pieces</h3>
+              <p>Big impact products built for the kind of finish people remember.</p>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image-wrap"><img src="images/buy1product.png" alt="Aerial fireworks assortment" /></div>
+            <div class="product-card-body">
+              <h3>Aerial Effects</h3>
+              <p>For the bigger sky moments when you want your backyard show to feel huge.</p>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image-wrap"><img src="images/buy1product.png" alt="Artillery shell fireworks" /></div>
+            <div class="product-card-body">
+              <h3>Artillery Shells</h3>
+              <p>Strong breaks and louder sky moments for shoppers wanting more punch.</p>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image-wrap"><img src="images/44Magnum.png" alt="Multi-shot cake fireworks" /></div>
+            <div class="product-card-body">
+              <h3>Multi-Shot Cakes</h3>
+              <p>Easy-to-light favorites that keep the show moving without constant reset.</p>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image-wrap"><img src="images/stretching-the-limit.png" alt="Premium fireworks selection" /></div>
+            <div class="product-card-body">
+              <h3>Premium Picks</h3>
+              <p>Higher-impact options for customers looking to step up their display.</p>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image-wrap"><img src="images/family-bellino-2.png" alt="Backyard celebration fireworks" /></div>
+            <div class="product-card-body">
+              <h3>Backyard Bundles</h3>
+              <p>Balanced product mixes built for neighborhood celebrations and family nights.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="button-row button-row-center">
+          <a class="btn btn-primary" href="#locations">Find Products Near You</a>
+          <a class="btn btn-outline-light" href="#fundraising">Learn About Fundraising</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section usa250-section">
+      <div class="usa250-badge-bridge-wrap">
+        <div class="usa250-badge-bridge">
+          <div class="usa250-mini-stars" aria-hidden="true">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+          <p>Celebrating America’s 250th Anniversary</p>
+        </div>
+      </div>
+
+      <div class="container usa250-shell">
+        <div class="usa250-grid">
+          <div class="usa250-copy">
+            <h3>A Bigger Summer Deserves a Bigger Celebration</h3>
+            <p>
+              Community events, family gatherings, and neighborhood celebrations are going to be bigger than normal.
+              Bellino Fireworks is built to serve shoppers and groups looking to make the season count.
+            </p>
+
+            <div class="usa250-bottom-ribbon">
+              <span>Making Summer Bigger Since 1974</span>
+            </div>
+
+            <div class="usa250-stat-card usa250-stat-card-inline">
+              <div class="usa250-stat-stars" aria-hidden="true">
+                <span>★</span><span>★</span><span>★</span>
+              </div>
+              <strong>250+</strong>
+              <p>Retail locations positioned to serve communities across 9 states.</p>
+            </div>
+          </div>
+
+          <div class="usa250-visual">
+            <div class="usa250-photo-panel">
+              <div class="usa250-photo-overlay"></div>
+            </div>
+
+            <a class="usa250-cta usa250-cta-overlay" href="#locations">
+              <span class="usa250-cta-icon">⌖</span>
+              <span>Find Fireworks Near You</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="usa250-gold-divider" aria-hidden="true"></div>
+    </section>
+
+    <section class="section section-dark fundraising-section" id="fundraising">
+      <div class="dark-stars dark-stars-left" aria-hidden="true">★ ★</div>
+      <div class="dark-stars dark-stars-right" aria-hidden="true">★ ★ ★</div>
+
+      <div class="container two-col fundraising-layout">
+        <div class="fundraising-left">
+          <div class="fundraising-carousel-card">
+            <div class="fund-carousel" data-fund-carousel>
+              <div class="fund-slide is-active">
+                <img src="images/fundraising-group-1.jpg" alt="Bellino Fireworks fundraising group" />
+              </div>
+              <div class="fund-slide">
+                <img src="images/girls-omaha-fireworks.jpg" alt="Bellino family fireworks celebration" />
+              </div>
+              <div class="fund-slide">
+                <img src="images/brian-athletics.jpg" alt="Bellino fireworks retail scene" />
+              </div>
+
+              <button class="fund-carousel-btn prev" type="button" aria-label="Previous image" data-fund-prev>‹</button>
+              <button class="fund-carousel-btn next" type="button" aria-label="Next image" data-fund-next>›</button>
+
+              <div class="fund-carousel-dots" aria-label="Carousel pagination">
+                <button class="fund-dot is-active" type="button" aria-label="Go to slide 1"></button>
+                <button class="fund-dot" type="button" aria-label="Go to slide 2"></button>
+                <button class="fund-dot" type="button" aria-label="Go to slide 3"></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="fund-support-grid">
+            <div class="fund-support-card">
+              <div class="fund-support-icon">★</div>
+              <div>
+                <strong>Seasonal Opportunity</strong>
+                <span>Short sales window, strong summer demand.</span>
+              </div>
+            </div>
+            <div class="fund-support-card">
+              <div class="fund-support-icon">✓</div>
+              <div>
+                <strong>Simple to Promote</strong>
+                <span>Clear message for groups, parents, and supporters.</span>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="fund-steps">
-          <div class="step-card">
-            <div class="step-num">1</div>
-            <div>
-              <div class="step-title">Tell us your group + goal</div>
-              <div class="step-sub">School, team, church, or nonprofit — we’ll match the right setup.</div>
-            </div>
-          </div>
-          <div class="step-card">
-            <div class="step-num">2</div>
-            <div>
-              <div class="step-title">We help with the plan + materials</div>
-              <div class="step-sub">Simple guidance, promo assets, and support to run it smoothly.</div>
-            </div>
-          </div>
-          <div class="step-card">
-            <div class="step-num">3</div>
-            <div>
-              <div class="step-title">You sell to your community</div>
-              <div class="step-sub">High seasonal demand makes it a strong, proven fundraiser.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================
-         ABOUT TEASER
-    ========================== -->
-    <section class="section section-light about-section" id="about">
-      <div class="wrap about-grid">
-        <div class="about-left">
-          <div class="section-head">
-            <h2 class="section-title">Family Built. Midwest Strong.</h2>
-            <p class="section-sub">
-              From a local start to multi-state growth — still hands-on, still focused on the customer experience.
-            </p>
-          </div>
-
-          <div class="about-copy">
-            <p>
-              Bellino Fireworks is a family-built company with a simple goal: make the season better for communities and customers.
-              Clean stands, straightforward guidance, and a product lineup people come back for.
-            </p>
-            <p>
-              Want the full story and what we’re known for? Hit the About page.
-            </p>
-          </div>
-
-          <div class="about-cta">
-            <a class="btn btn-cta" href="about.html">About Bellino</a>
-            <a class="btn btn-outline" href="fundraising.html">Fundraising Programs</a>
-          </div>
-        </div>
-
-        <div class="about-right">
-          <div class="light-card stats-card">
-            <div class="stat">
-              <div class="stat-num">250+</div>
-              <div class="stat-label">Retail Locations</div>
-            </div>
-            <div class="stat">
-              <div class="stat-num">7</div>
-              <div class="stat-label">States Served</div>
-            </div>
-            <div class="stat">
-              <div class="stat-num">35+</div>
-              <div class="stat-label">Years Built</div>
-            </div>
-          </div>
-
-          <a class="btn btn-buywide" href="#locations">Find a Location</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================
-         FINAL CTA
-    ========================== -->
-    <section class="section final-cta" id="cta">
-      <div class="final-bg" aria-hidden="true"></div>
-      <div class="wrap final-grid">
-        <div class="final-left">
-          <h2 class="final-title">Ready to Shop Nearby?</h2>
-          <p class="final-sub">
-            Use the locator to find hours, addresses, and what’s available near you.
+        <div class="content-block content-block-dark fundraising-detail">
+          <p class="section-kicker section-kicker-dark">Fundraising Programs</p>
+          <h2>Fireworks Fundraising for Schools, Teams, Churches, and Nonprofits</h2>
+          <p class="section-lead section-lead-dark">
+            Bellino Fireworks helps community groups turn one of the biggest sales
+            seasons of the year into a real fundraising opportunity.
           </p>
-          <div class="final-actions">
-            <a class="btn btn-cta" href="#locations">Find a Location</a>
-            <a class="btn btn-outline" href="#products">Browse Products</a>
+          <p>
+            We help simplify the process so your group can stay focused on promotion,
+            participation, and results.
+          </p>
+
+          <ul class="feature-list feature-list-dark">
+            <li>Built around proven seasonal demand</li>
+            <li>Structured for schools, teams, churches, and nonprofits</li>
+            <li>Designed to help groups raise meaningful funds in a short window</li>
+          </ul>
+
+          <div class="fundraising-mini-grid">
+            <div class="fund-mini-card">
+              <div class="fund-mini-icon">★</div>
+              <div>
+                <strong>Seasonal Demand</strong>
+                <span>Built around the highest buying window of the year.</span>
+              </div>
+            </div>
+            <div class="fund-mini-card">
+              <div class="fund-mini-icon">⌖</div>
+              <div>
+                <strong>Local Reach</strong>
+                <span>Programs that connect directly with your community.</span>
+              </div>
+            </div>
+            <div class="fund-mini-card">
+              <div class="fund-mini-icon">✓</div>
+              <div>
+                <strong>Simple Structure</strong>
+                <span>Clear setup, strong visibility, straightforward process.</span>
+              </div>
+            </div>
+            <div class="fund-mini-card">
+              <div class="fund-mini-icon">✦</div>
+              <div>
+                <strong>Strong Support</strong>
+                <span>Better materials, cleaner positioning, more confidence.</span>
+              </div>
+            </div>
           </div>
 
-          <div class="final-points">
-            <div class="mini-point"><span class="dot-bullet"></span> Trusted selection</div>
-            <div class="mini-point"><span class="dot-bullet"></span> Great value</div>
-            <div class="mini-point"><span class="dot-bullet"></span> Easy to find nearby</div>
-          </div>
-        </div>
-
-        <div class="final-right">
-          <div class="final-card">
-            <div class="final-badge">For groups</div>
-            <div class="final-h">Need a fundraiser?</div>
-            <p class="final-p">
-              Schools, teams, churches, and nonprofits — we’ll help you choose a simple program that fits your timeline and volunteers.
-            </p>
-            <a class="btn btn-buywide" href="fundraising.html">Get Fundraising Info</a>
+          <div class="button-row">
+            <a class="btn btn-gold" href="fundraising.html">Get Fundraising Info</a>
+            <a class="btn btn-outline-light" href="#locations">Find a Nearby Location</a>
           </div>
         </div>
       </div>
+
+      <div class="section-wave section-wave-bottom dark-wave" aria-hidden="true">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+          <path d="M0,52 C180,96 392,114 716,86 C1018,60 1212,18 1440,54 L1440,120 L0,120 Z"></path>
+        </svg>
+      </div>
+    </section>
+
+    <section class="section section-white about-section" id="about">
+      <div class="container two-col about-layout">
+        <div class="content-block">
+          <p class="section-kicker">About Bellino</p>
+          <h2>A Fireworks Tradition Built Around Access, Value, and Big Summer Nights</h2>
+          <p class="section-lead">
+            Bellino Fireworks serves families across multiple states with a broad
+            seasonal footprint designed to make shopping easy when demand is highest.
+          </p>
+          <p>
+            From neighborhood retail stands to large seasonal markets, the goal is
+            simple: help customers celebrate with confidence and help communities
+            connect with a trusted fireworks retailer.
+          </p>
+
+          <div class="stats-grid">
+            <div class="stat-box">
+              <strong>250+</strong>
+              <span>Retail Locations</span>
+            </div>
+            <div class="stat-box">
+              <strong>9</strong>
+              <span>States Served</span>
+            </div>
+            <div class="stat-box">
+              <strong>Seasonal</strong>
+              <span>Retail + Fundraising Focus</span>
+            </div>
+            <div class="stat-box stat-box-feature">
+              <strong>Community</strong>
+              <span>Built for families, groups, and summer traditions</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-photo-card">
+          <img src="images/family-tradition-bellino-fireworks.jpg" alt="Bellino Fireworks family celebration" />
+        </div>
+      </div>
+    </section>
+
+    <section class="closing-cta">
+      <div class="closing-top-wave-wrap" aria-hidden="true">
+        <svg class="closing-top-wave-svg" viewBox="0 0 1440 76" preserveAspectRatio="none">
+          <path d="M0,76 L0,34 C180,8 408,6 718,18 C1018,30 1220,56 1440,42 L1440,76 Z"></path>
+        </svg>
+
+        <div class="closing-wave-stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+      </div>
+
+      <div class="container closing-cta-row">
+        <div class="closing-copy">
+          <h2>Ready to Find Fireworks Near You?</h2>
+          <p>
+            Use the locator to find your closest Bellino Fireworks location and start planning your celebration.
+          </p>
+        </div>
+
+        <div class="button-row closing-buttons">
+          <a class="btn btn-gold" href="#locations">Find a Location</a>
+          <a class="btn btn-outline-light" href="#fundraising">Fundraising Programs</a>
+        </div>
+      </div>
+
+      <div class="closing-bottom-divider" aria-hidden="true"></div>
+    </section>
+
+    <section class="app-section" id="app">
+      <div class="container app-shell">
+        <div class="app-grid">
+          <div class="app-copy">
+            <p class="section-kicker app-kicker">Stay Connected</p>
+            <h2 class="app-heading">Download Our <span class="app-heading-flash">App</span></h2>
+            <p class="app-lead">
+              Get Bellino Fireworks in your pocket with a cleaner way to browse products,
+              explore what’s available, and stay closer to the action all summer long.
+            </p>
+
+            <div class="app-points">
+              <div class="app-point">
+                <div class="app-point-icon">⌖</div>
+                <div>
+                  <strong>Find Products Faster</strong>
+                  <span>Quick browsing and easier product discovery wherever you are.</span>
+                </div>
+              </div>
+
+              <div class="app-point">
+                <div class="app-point-icon">★</div>
+                <div>
+                  <strong>Tap Into the Boom</strong>
+                  <span>Built for shoppers who want a simpler way to view Bellino items in action.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="app-store-row">
+              <a class="app-store-inline" href="#" aria-label="Download on Apple App Store">
+                <span class="app-store-inline-icon"></span>
+                <span class="app-store-inline-copy">
+                  <strong>Apple Store</strong>
+                  <small>Available on Apple App Store</small>
+                </span>
+              </a>
+
+              <a class="app-store-inline" href="#" aria-label="Download on Google Play">
+                <span class="app-store-inline-icon app-store-inline-icon-play">▶</span>
+                <span class="app-store-inline-copy">
+                  <strong>Google Play</strong>
+                  <small>Available on Google Play Store</small>
+                </span>
+              </a>
+            </div>
+
+            <div class="button-row app-buttons">
+              <a class="btn btn-primary" href="#">Watch the Demo</a>
+              <a class="btn btn-outline-dark" href="#">See App Details</a>
+            </div>
+          </div>
+
+          <div class="app-visual">
+            <div class="app-visual-shell">
+              <div class="app-phone-stars" aria-hidden="true">★ ★ ★</div>
+              <div class="app-phone-showcase">
+                <img src="images/app-hand.png" alt="Bellino Fireworks app in hand" />
+              </div>
+              <div class="app-flag-strip" aria-hidden="true">
+                <span>★ ★ ★</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="app-footer-divider" aria-hidden="true"></div>
     </section>
   </main>
 
-  <!-- =========================
-       FOOTER (SITEWIDE)
-  ========================== -->
-  <footer class="footer">
-    <div class="wrap footer-row">
-      <div class="foot-left">
-        <img src="images/nowin.svg" alt="Bellino Fireworks">
-        <div class="copy">© <span id="year"></span> Bellino Fireworks</div>
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <div class="footer-brand">
+        <img src="images/bellino-high-res.png" alt="Bellino Fireworks" />
+        <p>© <span id="year"></span> Bellino Fireworks</p>
       </div>
 
-      <div class="foot-right">
-        <a href="index.html#top">Top</a>
-        <a href="index.html#locations">Locations</a>
-        <a href="index.html#products">Products</a>
-        <a href="fundraising.html">Fundraising</a>
-        <a href="about.html">About</a>
-      </div>
+      <nav class="footer-links">
+        <a href="#top">Home</a>
+        <a href="#locations">Locations</a>
+        <a href="#products">Products</a>
+        <a href="#fundraising">Fundraising</a>
+        <a href="#about">About</a>
+      </nav>
 
-      <div class="foot-social" aria-label="Social media">
-        <a class="icon-link" href="#" target="_blank" rel="noopener" aria-label="Facebook">
+      <div class="footer-social" aria-label="Social media">
+        <a href="#" target="_blank" rel="noopener" aria-label="Facebook">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3H13.5V9.3c0-.9.3-1.6 1.7-1.6H16.8V5.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V11H7.6v3h2.5v8h3.4z"/></svg>
         </a>
-        <a class="icon-link" href="#" target="_blank" rel="noopener" aria-label="Instagram">
+        <a href="#" target="_blank" rel="noopener" aria-label="Instagram">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9z"/><path d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/><path d="M17.6 6.4a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>
         </a>
-        <a class="icon-link" href="#" target="_blank" rel="noopener" aria-label="TikTok">
+        <a href="#" target="_blank" rel="noopener" aria-label="TikTok">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.2c.7 1.1 1.8 1.9 3.2 2v2.8c-1.3 0-2.5-.4-3.5-1.1v6.1c0 3.2-2.6 5.8-5.8 5.8S4.7 18.2 4.7 15s2.6-5.8 5.8-5.8c.4 0 .8 0 1.2.1v3c-.4-.2-.8-.3-1.2-.3-1.5 0-2.8 1.2-2.8 2.8s1.2 2.8 2.8 2.8 2.8-1.2 2.8-2.8V2h3.1c0 1.1.3 2.2 1 3.2z"/></svg>
         </a>
-        <a class="icon-link" href="#" target="_blank" rel="noopener" aria-label="YouTube">
+        <a href="#" target="_blank" rel="noopener" aria-label="YouTube">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2s-.2-1.6-.9-2.3c-.8-.9-1.7-.9-2.2-1C15.7 3.6 12 3.6 12 3.6h0s-3.7 0-6.5.3c-.5.1-1.4.1-2.2 1C2.6 5.6 2.4 7.2 2.4 7.2S2.1 9.1 2.1 11v1.8c0 1.9.3 3.8.3 3.8s.2 1.6.9 2.3c.8.9 1.9.9 2.4 1 1.7.2 6.3.3 6.3.3s3.7 0 6.5-.3c.5-.1 1.4-.1 2.2-1 .7-.7.9-2.3.9-2.3s.3-1.9.3-3.8V11c0-1.9-.3-3.8-.3-3.8zM10 15.3V8.7l6 3.3-6 3.3z"/></svg>
         </a>
       </div>
