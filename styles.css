@@ -2237,3 +2237,619 @@ svg{ display:block; }
     letter-spacing:.26em;
   }
 }
+
+/* =========================================================
+   BELLINO FUNDRAISING PAGE V3
+   fundraising.html only
+   ========================================================= */
+
+.bfund3-hero{
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(180deg, var(--navy) 0%, var(--navy-2) 100%);
+  color:#fff;
+  padding:94px 0 118px;
+}
+
+.bfund3-stars{
+  position:absolute;
+  z-index:1;
+  color:#fff;
+  font-size:14px;
+  letter-spacing:.48em;
+  user-select:none;
+}
+
+.bfund3-stars-left{ top:84px; left:8%; }
+.bfund3-stars-right{ top:126px; right:9%; }
+
+.bfund3-hero-grid{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:1.02fr .98fr;
+  gap:30px;
+  align-items:start;
+}
+
+.bfund3-hero-copy h1{
+  margin:0 0 18px;
+  font-size:clamp(44px, 5vw, 74px);
+  line-height:.98;
+  letter-spacing:-.05em;
+}
+
+.bfund3-hero-lead{
+  margin:0 0 26px;
+  max-width:760px;
+  font-size:18px;
+  line-height:1.78;
+  color:rgba(255,255,255,.88);
+}
+
+.bfund3-hero-points{
+  display:grid;
+  gap:14px;
+  margin-bottom:26px;
+  max-width:720px;
+}
+
+.bfund3-hero-point{
+  padding:16px 16px 14px;
+  border-radius:18px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.10);
+  border-left:5px solid rgba(217,164,32,.95);
+  box-shadow:0 12px 22px rgba(0,0,0,.10);
+}
+
+.bfund3-hero-point strong{
+  display:block;
+  margin-bottom:4px;
+  color:#fff;
+  font-size:16px;
+  line-height:1.2;
+  font-weight:900;
+}
+
+.bfund3-hero-point span{
+  display:block;
+  color:rgba(255,255,255,.80);
+  font-size:14px;
+  line-height:1.6;
+  font-weight:700;
+}
+
+.bfund3-hero-tagline{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.bfund3-hero-tagline span{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:40px;
+  padding:10px 16px;
+  border-radius:999px;
+  background:rgba(255,255,255,.10);
+  border:1px solid rgba(255,255,255,.12);
+  color:#fff;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+}
+
+.bfund3-hero-form-wrap{
+  position:relative;
+}
+
+.bfund3-form-card{
+  background:#fff;
+  border:1px solid rgba(19,35,62,.10);
+  border-bottom:6px solid var(--red);
+  border-radius:26px;
+  overflow:hidden;
+  box-shadow:0 22px 42px rgba(5,12,28,.22);
+}
+
+.bfund3-form-top{
+  padding:20px 22px 18px;
+  background:var(--navy);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.bfund3-form-top span{
+  display:block;
+  margin-bottom:8px;
+  color:var(--gold);
+  font-size:14px;
+  letter-spacing:.22em;
+  line-height:1;
+}
+
+.bfund3-form-top strong{
+  display:block;
+  color:#fff;
+  font-size:24px;
+  line-height:1.12;
+  letter-spacing:-.03em;
+}
+
+.bfund3-form-top small{
+  display:block;
+  margin-top:8px;
+  color:rgba(255,255,255,.76);
+  font-size:13px;
+  line-height:1.55;
+  font-weight:700;
+}
+
+.bfund3-form{
+  display:grid;
+  gap:14px;
+  padding:22px;
+}
+
+.bfund3-form label{
+  display:grid;
+  gap:8px;
+}
+
+.bfund3-form label span{
+  color:var(--navy);
+  font-size:14px;
+  font-weight:800;
+}
+
+.bfund3-form input,
+.bfund3-form textarea{
+  width:100%;
+  border:1px solid rgba(19,35,62,.14);
+  border-radius:14px;
+  background:#fff;
+  padding:15px 16px;
+  font:inherit;
+  color:var(--text);
+  outline:none;
+  transition:border-color .16s ease, box-shadow .16s ease, background .16s ease;
+}
+
+.bfund3-form input:focus,
+.bfund3-form textarea:focus{
+  border-color:rgba(36,79,176,.55);
+  box-shadow:0 0 0 4px rgba(36,79,176,.10);
+  background:#fff;
+}
+
+.bfund3-form textarea{
+  resize:vertical;
+  min-height:140px;
+}
+
+.bfund3-hero-wave{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:-1px;
+  line-height:0;
+  z-index:2;
+}
+
+.bfund3-hero-wave svg{
+  width:100%;
+  height:96px;
+}
+
+.bfund3-hero-wave path{
+  fill:var(--red);
+}
+
+.bfund3-band{
+  position:relative;
+  background:linear-gradient(180deg, var(--red) 0%, var(--red-dark) 100%);
+  padding:22px 0 30px;
+}
+
+.bfund3-band::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:6px;
+  background:linear-gradient(90deg, rgba(255,255,255,.55) 0%, rgba(217,164,32,.95) 50%, rgba(255,255,255,.55) 100%);
+}
+
+.bfund3-band-grid{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:14px;
+}
+
+.bfund3-band-card{
+  min-height:116px;
+  padding:18px 16px 16px;
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:18px;
+  box-shadow:0 12px 22px rgba(0,0,0,.12);
+}
+
+.bfund3-band-card strong{
+  display:block;
+  margin-bottom:8px;
+  color:#fff;
+  font-size:20px;
+  font-weight:900;
+  line-height:1.1;
+}
+
+.bfund3-band-card span{
+  display:block;
+  color:rgba(255,255,255,.84);
+  font-size:14px;
+  line-height:1.58;
+  font-weight:700;
+}
+
+.bfund3-story{
+  padding-bottom:0;
+}
+
+.bfund3-story-grid{
+  align-items:start;
+  padding-bottom:90px;
+}
+
+.bfund3-story-photo{
+  border-radius:28px;
+  overflow:hidden;
+  box-shadow:0 18px 36px rgba(13,27,56,.10);
+  border-bottom:5px solid var(--blue-accent);
+  background:#f5f7fb;
+}
+
+.bfund3-story-photo img{
+  width:100%;
+  height:100%;
+  min-height:560px;
+  object-fit:cover;
+}
+
+.bfund3-process{
+  padding-top:112px;
+  padding-bottom:94px;
+}
+
+.bfund3-process-grid{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:18px;
+}
+
+.bfund3-process-card{
+  padding:26px 22px 24px;
+  border-radius:22px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 16px 28px rgba(0,0,0,.14);
+  transition:transform .16s ease, background .16s ease, box-shadow .16s ease;
+}
+
+.bfund3-process-card:hover{
+  transform:translateY(-5px);
+  background:rgba(255,255,255,.11);
+  box-shadow:0 22px 34px rgba(0,0,0,.18);
+}
+
+.bfund3-process-icon{
+  width:48px;
+  height:48px;
+  margin-bottom:16px;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(180deg, var(--red) 0%, var(--red-dark) 100%);
+  color:#fff;
+  font-size:20px;
+  font-weight:900;
+  box-shadow:0 10px 18px rgba(225,31,45,.16);
+}
+
+.bfund3-process-card h3{
+  margin:0 0 10px;
+  color:#fff;
+  font-size:22px;
+  line-height:1.08;
+  letter-spacing:-.03em;
+}
+
+.bfund3-process-card p{
+  margin:0;
+  color:rgba(255,255,255,.80);
+  font-size:15px;
+  line-height:1.72;
+}
+
+.bfund3-gold-divider{
+  width:100%;
+  height:6px;
+  background:linear-gradient(90deg, rgba(255,255,255,.55) 0%, rgba(217,164,32,.95) 50%, rgba(255,255,255,.55) 100%);
+}
+
+.bfund3-opportunity{
+  padding-top:96px;
+  padding-bottom:0;
+}
+
+.bfund3-opportunity-head{
+  text-align:center;
+  max-width:960px;
+  margin:0 auto 34px;
+}
+
+.bfund3-opportunity-stars{
+  margin-bottom:10px;
+  color:var(--gold);
+  font-size:18px;
+  letter-spacing:.28em;
+  line-height:1;
+}
+
+.bfund3-opportunity-head h2{
+  margin:0 0 14px;
+  color:var(--navy);
+  font-size:clamp(34px, 3.5vw, 58px);
+  line-height:1.02;
+  letter-spacing:-.05em;
+}
+
+.bfund3-flag-rule{
+  position:relative;
+  width:min(460px, 100%);
+  height:16px;
+  margin:18px auto 0;
+  border-radius:999px;
+  overflow:hidden;
+  background:
+    linear-gradient(
+      90deg,
+      #244fb0 0%,
+      #244fb0 18%,
+      #d91f2d 18%,
+      #d91f2d 31%,
+      #ffffff 31%,
+      #ffffff 44%,
+      #d91f2d 44%,
+      #d91f2d 57%,
+      #ffffff 57%,
+      #ffffff 70%,
+      #d91f2d 70%,
+      #d91f2d 83%,
+      #ffffff 83%,
+      #ffffff 100%
+    );
+  border:1px solid rgba(19,35,62,.08);
+  box-shadow:0 10px 18px rgba(13,27,56,.08);
+}
+
+.bfund3-flag-rule span{
+  position:absolute;
+  left:9%;
+  top:50%;
+  transform:translate(-50%, -50%);
+  color:var(--gold);
+  font-size:12px;
+  letter-spacing:.18em;
+  white-space:nowrap;
+}
+
+.bfund3-opportunity-grid{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:18px;
+  padding-bottom:90px;
+}
+
+.bfund3-opportunity-card{
+  padding:24px 20px 22px;
+  border-radius:22px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-bottom:5px solid var(--red);
+  box-shadow:0 14px 28px rgba(13,27,56,.07);
+}
+
+.bfund3-opportunity-card strong{
+  display:block;
+  margin-bottom:10px;
+  color:var(--navy);
+  font-size:21px;
+  line-height:1.12;
+  font-weight:900;
+  letter-spacing:-.03em;
+}
+
+.bfund3-opportunity-card p{
+  margin:0;
+  color:var(--text-soft);
+  line-height:1.72;
+  font-size:15px;
+}
+
+.bfund3-groups{
+  padding-top:112px;
+  padding-bottom:0;
+}
+
+.bfund3-groups-layout{
+  align-items:start;
+  padding-bottom:90px;
+}
+
+.bfund3-groups-photo{
+  border-radius:28px;
+  overflow:hidden;
+  box-shadow:0 18px 36px rgba(0,0,0,.16);
+  border-bottom:5px solid var(--red);
+  background:#10234f;
+}
+
+.bfund3-groups-photo img{
+  width:100%;
+  height:100%;
+  min-height:560px;
+  object-fit:cover;
+}
+
+.bfund3-groups-list{
+  display:grid;
+  gap:14px;
+  margin-top:28px;
+}
+
+.bfund3-groups-item{
+  padding:18px 18px 16px;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.12);
+  border-left:6px solid var(--gold);
+  background:rgba(255,255,255,.08);
+}
+
+.bfund3-groups-item strong{
+  display:block;
+  margin-bottom:6px;
+  color:#fff;
+  font-size:17px;
+  line-height:1.2;
+  font-weight:900;
+}
+
+.bfund3-groups-item span{
+  display:block;
+  color:rgba(255,255,255,.78);
+  line-height:1.68;
+  font-size:15px;
+}
+
+.bfund3-closing{
+  padding-top:88px;
+  padding-bottom:92px;
+}
+
+.bfund3-closing-head{
+  text-align:center;
+  max-width:900px;
+  margin:0 auto;
+}
+
+.bfund3-closing-stars{
+  margin-bottom:10px;
+  color:var(--gold);
+  font-size:18px;
+  letter-spacing:.28em;
+  line-height:1;
+}
+
+.bfund3-closing-head h2{
+  margin:0 0 14px;
+  color:var(--navy);
+  font-size:clamp(34px, 3.4vw, 56px);
+  line-height:1.04;
+  letter-spacing:-.05em;
+}
+
+@media (max-width:1100px){
+  .bfund3-hero-grid,
+  .bfund3-story-grid,
+  .bfund3-groups-layout{
+    grid-template-columns:1fr;
+  }
+
+  .bfund3-band-grid,
+  .bfund3-process-grid,
+  .bfund3-opportunity-grid{
+    grid-template-columns:repeat(2, 1fr);
+  }
+
+  .bfund3-story-photo img,
+  .bfund3-groups-photo img{
+    min-height:420px;
+  }
+}
+
+@media (max-width:900px){
+  .bfund3-hero{
+    padding-top:82px;
+  }
+
+  .bfund3-hero-grid{
+    gap:22px;
+  }
+}
+
+@media (max-width:700px){
+  .bfund3-stars{
+    display:none;
+  }
+
+  .bfund3-hero{
+    padding:72px 0 96px;
+  }
+
+  .bfund3-hero-copy h1{
+    font-size:clamp(36px, 10vw, 52px);
+    line-height:1.02;
+  }
+
+  .bfund3-hero-lead{
+    font-size:16px;
+    line-height:1.66;
+  }
+
+  .bfund3-band-grid,
+  .bfund3-process-grid,
+  .bfund3-opportunity-grid{
+    grid-template-columns:1fr;
+  }
+
+  .bfund3-story-photo img,
+  .bfund3-groups-photo img{
+    min-height:320px;
+  }
+
+  .bfund3-form{
+    padding:18px;
+  }
+
+  .bfund3-form-top{
+    padding:18px 18px 16px;
+  }
+
+  .bfund3-form-top strong{
+    font-size:22px;
+  }
+
+  .bfund3-flag-rule{
+    height:14px;
+  }
+
+  .bfund3-flag-rule span{
+    font-size:10px;
+    letter-spacing:.14em;
+  }
+
+  .bfund3-hero-tagline{
+    gap:8px;
+  }
+
+  .bfund3-hero-tagline span{
+    min-height:36px;
+    padding:8px 12px;
+    font-size:11px;
+  }
+}
