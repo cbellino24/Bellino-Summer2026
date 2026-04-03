@@ -1083,6 +1083,7 @@ svg{ display:block; }
   height:6px;
   background:linear-gradient(90deg, rgba(255,255,255,.55) 0%, rgba(217,164,32,.95) 50%, rgba(255,255,255,.55) 100%);
 }
+
 .usa250-exclusive{
   margin-top:84px;
 }
@@ -1204,30 +1205,6 @@ svg{ display:block; }
   line-height:1.72;
 }
 
-@media (max-width:1100px){
-  .usa250-product-grid{
-    grid-template-columns:repeat(2, 1fr);
-  }
-}
-
-@media (max-width:700px){
-  .usa250-exclusive{
-    margin-top:64px;
-  }
-
-  .usa250-product-grid{
-    grid-template-columns:1fr;
-  }
-
-  .usa250-flag-underline{
-    height:14px;
-  }
-
-  .usa250-flag-underline span{
-    font-size:10px;
-    letter-spacing:.18em;
-  }
-}
 /* FUNDRAISING */
 .fundraising-left{
   display:grid;
@@ -1533,7 +1510,6 @@ svg{ display:block; }
   text-shadow:0 2px 8px rgba(10,30,70,.12);
 }
 
-/* tuned so stars sit on the actual wave line */
 .closing-wave-stars span:nth-child(1){ left:8%;  top:33px; }
 .closing-wave-stars span:nth-child(2){ left:21%; top:28px; }
 .closing-wave-stars span:nth-child(3){ left:34%; top:23px; }
@@ -1803,25 +1779,18 @@ svg{ display:block; }
       90deg,
       #244fb0 0%,
       #244fb0 16%,
-
       #d91f2d 16%,
       #d91f2d 28%,
-
       #ffffff 28%,
       #ffffff 40%,
-
       #d91f2d 40%,
       #d91f2d 52%,
-
       #ffffff 52%,
       #ffffff 64%,
-
       #d91f2d 64%,
       #d91f2d 76%,
-
       #ffffff 76%,
       #ffffff 88%,
-
       #d91f2d 88%,
       #d91f2d 100%
     );
@@ -1954,6 +1923,7 @@ svg{ display:block; }
   }
 
   .product-grid{ grid-template-columns:repeat(2, 1fr); }
+  .usa250-product-grid{ grid-template-columns:repeat(2, 1fr); }
   .states-grid{ grid-template-columns:repeat(4, 1fr); }
   .closing-buttons{ justify-content:flex-start; }
 
@@ -2051,23 +2021,79 @@ svg{ display:block; }
     padding:10px 0;
   }
 
-  .brand img{ height:58px; }
+  .brand img{
+    height:58px;
+  }
 
-  .hero{
-    min-height:680px;
+  /* HERO MOBILE FIX */
+  .hero,
+  .hero-inner{
+    min-height:auto;
   }
 
   .hero-inner{
-    min-height:680px;
-    padding:96px 0 82px;
+    padding:64px 0 72px;
+    align-items:flex-start;
+  }
+
+  .hero-copy{
+    max-width:100%;
+  }
+
+  .hero-copy-rotator{
+    display:block;
+    height:auto !important;
+  }
+
+  .hero-copy-slide{
+    position:relative;
+    inset:auto;
+    opacity:1 !important;
+    transform:none !important;
+    pointer-events:auto;
+  }
+
+  .hero-copy-slide:not(.is-active){
+    display:none;
   }
 
   .hero h1{
-    font-size:clamp(34px, 10vw, 52px);
+    font-size:clamp(34px, 11vw, 52px);
+    line-height:1.02;
+    margin:0 0 14px;
+    max-width:100%;
   }
 
   .hero-text{
+    max-width:100%;
     font-size:16px;
+    line-height:1.6;
+    margin:0 0 18px;
+  }
+
+  .hero-buttons{
+    margin:22px 0 18px;
+  }
+
+  .hero-buttons .btn{
+    width:100%;
+    min-height:54px;
+  }
+
+  .hero-stats{
+    grid-template-columns:1fr;
+    max-width:100%;
+    margin-top:8px;
+  }
+
+  .hero-stat{
+    padding:16px 16px 14px;
+  }
+
+  .hero-overlay{
+    background:
+      linear-gradient(180deg, rgba(10,30,70,.84) 0%, rgba(10,30,70,.72) 58%, rgba(10,30,70,.60) 100%),
+      linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.22));
   }
 
   .states-grid,
@@ -2075,7 +2101,10 @@ svg{ display:block; }
     grid-template-columns:repeat(2, 1fr);
   }
 
-  .product-grid{ grid-template-columns:1fr; }
+  .product-grid,
+  .usa250-product-grid{
+    grid-template-columns:1fr;
+  }
 
   .section{
     padding:78px 0;
@@ -2156,6 +2185,19 @@ svg{ display:block; }
     right:auto;
     width:calc(100% - 30px);
     min-width:0;
+  }
+
+  .usa250-exclusive{
+    margin-top:64px;
+  }
+
+  .usa250-flag-underline{
+    height:14px;
+  }
+
+  .usa250-flag-underline span{
+    font-size:10px;
+    letter-spacing:.18em;
   }
 
   .hero-stars,
