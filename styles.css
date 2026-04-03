@@ -1,2197 +1,691 @@
-:root{
-  --navy:#0a1e46;
-  --navy-2:#122c63;
-  --navy-3:#183671;
-  --red:#e11f2d;
-  --red-dark:#c71a26;
-  --blue-accent:#244fb0;
-  --gold:#d9a420;
-  --gold-dark:#b98815;
-  --white:#ffffff;
-  --text:#13233e;
-  --text-soft:#5d6b7d;
-  --line:#d8dee7;
-  --shadow:0 18px 40px rgba(13,27,56,.10);
-  --shadow-soft:0 12px 26px rgba(13,27,56,.08);
-  --radius:22px;
-  --container:1220px;
-}
-
-*{ box-sizing:border-box; }
-html{ scroll-behavior:smooth; }
-
-body{
-  margin:0;
-  font-family:"Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  color:var(--text);
-  background:#fff;
-  line-height:1.55;
-  overflow-x:hidden;
-}
-
-img{ display:block; max-width:100%; }
-a{ color:inherit; text-decoration:none; }
-button{ font:inherit; }
-svg{ display:block; }
-
-.container{
-  width:min(var(--container), calc(100% - 34px));
-  margin:0 auto;
-}
-
-/* HEADER */
-.site-header{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  background:rgba(255,255,255,.98);
-  border-bottom:1px solid rgba(19,35,62,.08);
-  box-shadow:0 4px 14px rgba(16,24,40,.04);
-}
-
-.header-topbar{
-  position:relative;
-  background:var(--navy);
-  color:#fff;
-  border-bottom:2px solid rgba(217,164,32,.95);
-}
-
-.header-topbar::before,
-.header-topbar::after{
-  content:"★";
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  color:#fff;
-  font-size:14px;
-}
-
-.header-topbar::before{ left:18px; }
-.header-topbar::after{ right:18px; }
-
-.header-topbar-row{
-  min-height:44px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
-}
-
-.countdown-wrap{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  flex-wrap:wrap;
-  font-size:13px;
-}
-
-.countdown-label{
-  font-weight:800;
-  color:rgba(255,255,255,.86);
-  text-transform:uppercase;
-  letter-spacing:.06em;
-}
-
-.countdown-value{
-  font-weight:900;
-  color:#fff;
-}
-
-.countdown-stars{
-  color:var(--gold);
-  font-size:11px;
-  letter-spacing:.24em;
-}
-
-.header-social{
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
-
-.header-social a{
-  width:30px;
-  height:30px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:999px;
-  background:rgba(255,255,255,.08);
-  transition:background .16s ease, transform .16s ease;
-}
-
-.header-social a:hover{
-  background:rgba(255,255,255,.16);
-  transform:translateY(-2px);
-}
-
-.header-social svg{
-  width:16px;
-  height:16px;
-  fill:#fff;
-}
-
-.header-main{
-  min-height:92px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:24px;
-}
-
-.brand img{
-  height:72px;
-  width:auto;
-  object-fit:contain;
-}
-
-.site-nav{
-  display:flex;
-  align-items:center;
-  gap:28px;
-}
-
-.site-nav a{
-  font-size:15px;
-  font-weight:800;
-  color:var(--text);
-}
-
-.site-nav a:hover{
-  color:var(--red);
-}
-
-.header-cta{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-height:52px;
-  padding:0 24px;
-  border-radius:14px;
-  background:linear-gradient(180deg, var(--red) 0%, var(--red-dark) 100%);
-  color:#fff !important;
-  font-weight:900;
-  box-shadow:0 10px 22px rgba(225,31,45,.18);
-  transition:transform .16s ease, box-shadow .16s ease;
-}
-
-.header-cta:hover{
-  transform:translateY(-2px);
-  box-shadow:0 16px 28px rgba(225,31,45,.24);
-}
-
-.menu-toggle{
-  display:none;
-  width:46px;
-  height:46px;
-  border:1px solid rgba(19,35,62,.14);
-  border-radius:12px;
-  background:#fff;
-  cursor:pointer;
-  padding:0;
-}
-
-.menu-toggle span{
-  display:block;
-  width:18px;
-  height:2px;
-  background:var(--text);
-  margin:4px auto;
-  border-radius:999px;
-}
-
-/* BUTTONS */
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-height:56px;
-  padding:14px 26px;
-  border-radius:14px;
-  font-size:15px;
-  font-weight:900;
-  letter-spacing:-.01em;
-  transition:transform .16s ease, background .16s ease, border-color .16s ease, box-shadow .16s ease;
-  border:2px solid transparent;
-  position:relative;
-}
-
-.btn:hover{ transform:translateY(-2px); }
-.btn:active{ transform:translateY(0); }
-
-.btn-primary{
-  background:linear-gradient(180deg, var(--red) 0%, var(--red-dark) 100%);
-  color:#fff;
-  box-shadow:0 10px 22px rgba(225,31,45,.18);
-}
-
-.btn-primary:hover{
-  box-shadow:0 16px 28px rgba(225,31,45,.24);
-}
-
-.btn-gold{
-  background:linear-gradient(180deg, #e2b43b 0%, var(--gold-dark) 100%);
-  color:#0d1d3f;
-  box-shadow:0 10px 22px rgba(217,164,32,.24);
-}
-
-.btn-gold:hover{
-  box-shadow:0 16px 28px rgba(217,164,32,.30);
-}
-
-.btn-outline-light{
-  background:transparent;
-  border-color:rgba(255,255,255,.28);
-  color:#fff;
-}
-
-.btn-outline-light:hover{
-  background:rgba(255,255,255,.08);
-}
-
-.btn-outline-dark{
-  background:#fff;
-  border-color:rgba(19,35,62,.14);
-  color:var(--text);
-}
-
-.btn-outline-dark:hover{
-  background:#f8f8f6;
-}
-
-.btn-full{ width:100%; }
-
-/* GENERAL */
-.section-kicker{
-  display:inline-flex;
-  align-items:center;
-  min-height:42px;
-  padding:10px 18px;
-  border-radius:999px;
-  background:#fff;
-  color:var(--navy);
-  font-size:12px;
-  font-weight:900;
-  letter-spacing:.06em;
-  text-transform:uppercase;
-  margin:0 0 18px;
-  border:1px solid rgba(19,35,62,.10);
-  box-shadow:0 8px 18px rgba(13,27,56,.06);
-}
-
-.section-kicker-dark{
-  background:rgba(255,255,255,.10);
-  color:#fff;
-  border:none;
-  box-shadow:none;
-}
-
-.section{
-  position:relative;
-  padding:96px 0;
-}
-
-.section-white{
-  background:#fff;
-}
-
-.section-dark{
-  position:relative;
-  background:linear-gradient(180deg, var(--navy) 0%, var(--navy-2) 100%);
-  color:#fff;
-  overflow:hidden;
-}
-
-.section h2,
-.closing-cta h2,
-.app-section h2{
-  margin:0 0 14px;
-  font-size:clamp(32px, 3vw, 56px);
-  line-height:1.04;
-  letter-spacing:-.04em;
-}
-
-.section-white h2,
-.app-section h2{ color:var(--text); }
-
-.section-dark h2{ color:#fff; }
-
-.section-lead{
-  margin:0 0 16px;
-  font-size:17px;
-  line-height:1.75;
-  color:var(--text-soft);
-}
-
-.section-lead-dark{
-  color:rgba(255,255,255,.84);
-}
-
-.section-head{
-  margin-bottom:34px;
-}
-
-.center-head{
-  text-align:center;
-  max-width:980px;
-  margin:0 auto 40px;
-}
-
-.center-copy{
-  max-width:860px;
-  margin-left:auto;
-  margin-right:auto;
-}
-
-.section-wave{
-  position:absolute;
-  left:0;
-  right:0;
-  bottom:-1px;
-  line-height:0;
-}
-
-.section-wave svg{
-  width:100%;
-  height:90px;
-}
-
-.white-to-blue-wave path{ fill:var(--navy); }
-.dark-wave path{ fill:#fff; }
-
-/* STARS */
-.hero-stars,
-.dark-stars{
-  position:absolute;
-  z-index:1;
-  color:#ffffff;
-  font-size:13px;
-  letter-spacing:.5em;
-  user-select:none;
-}
-
-.hero-stars-left{ top:84px; left:8%; }
-.hero-stars-right{ top:132px; right:10%; }
-.dark-stars-left{ top:64px; left:8%; }
-.dark-stars-right{ top:96px; right:8%; }
-
-/* HERO */
-.hero{
-  position:relative;
-  min-height:760px;
-  overflow:hidden;
-  background:var(--navy);
-}
-
-.hero-slides{
-  position:absolute;
-  inset:0;
-}
-
-.hero-slide{
-  position:absolute;
-  inset:0;
-  opacity:0;
-  transition:opacity 900ms ease;
-  background-size:cover;
-  background-position:center;
-  background-repeat:no-repeat;
-  transform:scale(1.03);
-}
-
-.hero-slide.is-active{
-  opacity:1;
-}
-
-.hero-overlay{
-  position:absolute;
-  inset:0;
-  background:
-    linear-gradient(90deg, rgba(10,30,70,.88) 0%, rgba(10,30,70,.70) 42%, rgba(10,30,70,.26) 100%),
-    linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,.28));
-}
-
-.hero-inner{
-  position:relative;
-  z-index:2;
-  display:flex;
-  align-items:center;
-  min-height:760px;
-  padding:124px 0 116px;
-}
-
-.hero-copy{
-  max-width:760px;
-  color:#fff;
-}
-
-.hero-copy-rotator{
-  position:relative;
-}
-
-.hero-copy-slide{
-  position:absolute;
-  inset:0;
-  opacity:0;
-  transform:translateY(12px);
-  transition:opacity .45s ease, transform .45s ease;
-  pointer-events:none;
-}
-
-.hero-copy-slide.is-active{
-  opacity:1;
-  transform:translateY(0);
-  pointer-events:auto;
-}
-
-.hero h1{
-  margin:0 0 18px;
-  font-size:clamp(42px, 5vw, 76px);
-  line-height:.96;
-  letter-spacing:-.05em;
-}
-
-.hero-text{
-  max-width:690px;
-  margin:0;
-  font-size:18px;
-  line-height:1.75;
-  color:rgba(255,255,255,.88);
-}
-
-.hero-buttons{
-  margin:34px 0;
-}
-
-.button-row{
-  display:flex;
-  flex-wrap:wrap;
-  gap:14px;
-}
-
-.hero-stats{
-  display:grid;
-  grid-template-columns:repeat(3, 1fr);
-  gap:14px;
-  max-width:760px;
-}
-
-.hero-stat{
-  padding:18px 16px 16px;
-  background:rgba(255,255,255,.08);
-  border:1px solid rgba(255,255,255,.10);
-  border-bottom:4px solid rgba(217,164,32,.92);
-  border-radius:16px;
-  transition:transform .16s ease, box-shadow .16s ease, background .16s ease;
-}
-
-.hero-stat:hover{
-  transform:translateY(-4px);
-  background:rgba(255,255,255,.11);
-  box-shadow:0 18px 28px rgba(0,0,0,.18);
-}
-
-.hero-stat strong{
-  display:block;
-  margin-bottom:6px;
-  font-size:24px;
-  line-height:1;
-  font-weight:900;
-}
-
-.hero-stat span{
-  display:block;
-  color:rgba(255,255,255,.84);
-  font-size:13px;
-  font-weight:800;
-}
-
-.hero-wave{
-  position:absolute;
-  left:0;
-  right:0;
-  bottom:-1px;
-  line-height:0;
-  z-index:2;
-}
-
-.hero-wave svg{
-  width:100%;
-  height:96px;
-}
-
-.hero-wave path{
-  fill:var(--red);
-}
-
-/* STATES */
-.states-band{
-  position:relative;
-  background:linear-gradient(180deg, var(--red) 0%, #c91b27 100%);
-  padding:18px 0 24px;
-}
-
-.states-band::after{
-  content:"";
-  position:absolute;
-  left:0;
-  right:0;
-  bottom:0;
-  height:5px;
-  background:linear-gradient(90deg, rgba(255,255,255,.75) 0%, rgba(217,164,32,.95) 50%, rgba(255,255,255,.75) 100%);
-}
-
-.states-grid{
-  display:grid;
-  grid-template-columns:repeat(7, 1fr);
-  gap:12px;
-}
-
-.states-grid-nine{
-  grid-template-columns:repeat(9, 1fr);
-}
-
-.state-card{
-  min-height:102px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  padding:12px 10px;
-  background:rgba(255,255,255,.14);
-  border:1px solid rgba(255,255,255,.20);
-  border-bottom:5px solid rgba(255,255,255,.32);
-  border-radius:16px;
-  transition:transform .16s ease, background .16s ease, box-shadow .16s ease;
-  box-shadow:0 10px 18px rgba(0,0,0,.14);
-  overflow:hidden;
-  position:relative;
-}
-
-.state-card::before{
-  content:"";
-  position:absolute;
-  inset:-50% auto auto -30%;
-  width:120%;
-  height:100%;
-  background:linear-gradient(120deg, transparent 30%, rgba(255,255,255,.22) 50%, transparent 70%);
-  opacity:0;
-  transition:opacity .18s ease, transform .38s ease;
-}
-
-.state-card:hover{
-  transform:translateY(-5px) scale(1.035);
-  background:rgba(255,255,255,.20);
-  box-shadow:0 18px 26px rgba(0,0,0,.18);
-}
-
-.state-card:hover::before{
-  opacity:1;
-  transform:translateX(18%) rotate(8deg);
-}
-
-.state-card img{
-  width:50px;
-  height:32px;
-  object-fit:contain;
-  filter:drop-shadow(0 6px 10px rgba(0,0,0,.18));
-  transition:transform .16s ease, filter .16s ease;
-}
-
-.state-card:hover img{
-  transform:translateY(-2px) scale(1.08);
-  filter:drop-shadow(0 10px 14px rgba(0,0,0,.24));
-}
-
-.state-card span{
-  color:#fff;
-  font-size:13px;
-  font-weight:900;
-  text-align:center;
-}
-
-/* LAYOUT */
-.two-col{
-  display:grid;
-  grid-template-columns:1.04fr .96fr;
-  gap:30px;
-  align-items:center;
-}
-
-.content-block p{
-  margin:0 0 16px;
-  font-size:16px;
-  line-height:1.75;
-  color:var(--text-soft);
-}
-
-.content-block-dark p{
-  color:rgba(255,255,255,.82);
-}
-
-.feature-list{
-  list-style:none;
-  padding:0;
-  margin:22px 0 0;
-  display:grid;
-  gap:10px;
-}
-
-.feature-list li{
-  position:relative;
-  padding-left:18px;
-  color:var(--text);
-  font-size:15px;
-  font-weight:800;
-  line-height:1.55;
-}
-
-.feature-list li::before{
-  content:"";
-  position:absolute;
-  left:0;
-  top:9px;
-  width:8px;
-  height:8px;
-  border-radius:999px;
-  background:var(--red);
-}
-
-.feature-list-dark li{
-  color:#fff;
-}
-
-/* LOCATOR */
-.locator-copy .locator-buttons{
-  margin-top:28px;
-}
-
-.locator-panel{
-  background:#fff;
-  border:1px solid var(--line);
-  border-bottom:5px solid var(--red);
-  border-radius:var(--radius);
-  overflow:hidden;
-  box-shadow:var(--shadow);
-}
-
-.locator-panel-head{
-  padding:20px 22px;
-  background:var(--navy);
-  color:#fff;
-  display:grid;
-  gap:4px;
-}
-
-.locator-panel-head strong{ font-size:18px; }
-
-.locator-panel-head span{
-  color:rgba(255,255,255,.78);
-  font-size:14px;
-  font-weight:700;
-}
-
-.locator-panel-map{
-  min-height:360px;
-  background:linear-gradient(180deg, #eef1f5 0%, #f8f8f6 100%);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:24px;
-}
-
-.locator-placeholder{
-  max-width:320px;
-  text-align:center;
-}
-
-.locator-placeholder strong{
-  display:block;
-  font-size:22px;
-  margin-bottom:8px;
-  color:var(--navy);
-}
-
-.locator-placeholder p{
-  margin:0;
-  color:var(--text-soft);
-}
-
-.locator-panel-bottom{
-  padding:22px;
-  display:grid;
-  gap:18px;
-  border-top:1px solid var(--line);
-}
-
-.locator-panel-bottom strong{
-  display:block;
-  margin-bottom:6px;
-  font-size:18px;
-  color:var(--text);
-}
-
-.locator-panel-bottom p{
-  margin:0;
-  color:var(--text-soft);
-}
-
-/* PRODUCTS */
-.products-section{
-  padding-top:170px;
-  overflow:visible;
-}
-
-.products-promo-wrap{
-  position:absolute;
-  top:0;
-  left:0;
-  right:0;
-  z-index:6;
-  transform:translateY(-50%);
-  pointer-events:none;
-}
-
-.products-promo-badge{
-  width:min(760px, calc(100% - 34px));
-  margin:0 auto;
-  text-align:center;
-  padding:18px 24px 16px;
-  border:1px solid rgba(19,35,62,.10);
-  border-radius:24px;
-  background:#ffffff;
-  opacity:1;
-  box-shadow:0 16px 34px rgba(4,14,36,.20);
-  transition:transform .16s ease, box-shadow .16s ease;
-  position:relative;
-  overflow:hidden;
-}
-
-.products-promo-badge:hover{
-  transform:translateY(-4px);
-  box-shadow:0 22px 38px rgba(4,14,36,.24);
-}
-
-.products-promo-stars{
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  margin-bottom:8px;
-  color:var(--gold);
-  font-size:18px;
-  line-height:1;
-}
-
-.products-promo-badge p{
-  margin:0;
-  color:var(--navy);
-  font-size:15px;
-  font-weight:900;
-  letter-spacing:.06em;
-  text-transform:uppercase;
-}
-
-.products-head-large h2{
-  font-size:clamp(40px, 4vw, 68px);
-  max-width:980px;
-  margin-left:auto;
-  margin-right:auto;
-}
-
-.products-head-large .section-lead{
-  font-size:19px;
-}
-
-.product-grid{
-  display:grid;
-  grid-template-columns:repeat(4, 1fr);
-  gap:18px;
-}
-
-.product-card{
-  background:#fff;
-  border:1px solid rgba(255,255,255,.10);
-  border-bottom:5px solid var(--red);
-  border-radius:22px;
-  overflow:hidden;
-  box-shadow:0 18px 36px rgba(5,12,28,.22);
-  transition:transform .16s ease, box-shadow .16s ease;
-}
-
-.product-card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 24px 40px rgba(5,12,28,.28);
-}
-
-.product-image-wrap{
-  background:#f3f4f6;
-  min-height:240px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:18px;
-}
-
-.product-image-wrap img{
-  width:100%;
-  height:220px;
-  object-fit:contain;
-}
-
-.product-card-body{
-  padding:22px 20px;
-}
-
-.product-card h3{
-  margin:0 0 10px;
-  font-size:22px;
-  letter-spacing:-.03em;
-  color:var(--text);
-}
-
-.product-card p{
-  margin:0;
-  color:var(--text-soft);
-  line-height:1.7;
-}
-
-.button-row-center{
-  justify-content:center;
-  margin-top:28px;
-}
-
-/* USA 250 */
-.usa250-section{
-  position:relative;
-  background:#fff;
-  padding:130px 0 0;
-}
-
-.usa250-badge-bridge-wrap{
-  position:absolute;
-  top:0;
-  left:0;
-  right:0;
-  transform:translateY(-50%);
-  z-index:5;
-}
-
-.usa250-badge-bridge{
-  margin:0 auto;
-  max-width:560px;
-  text-align:center;
-  padding:18px 24px 16px;
-  border:1px solid rgba(19,35,62,.10);
-  border-radius:20px;
-  background:#ffffff;
-  box-shadow:0 12px 28px rgba(13,27,56,.10);
-  transition:transform .16s ease, box-shadow .16s ease;
-}
-
-.usa250-badge-bridge:hover{
-  transform:translateY(-4px);
-  box-shadow:0 20px 36px rgba(13,27,56,.14);
-}
-
-.usa250-mini-stars{
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  margin-bottom:8px;
-  color:var(--gold);
-  font-size:18px;
-  line-height:1;
-}
-
-.usa250-badge-bridge p{
-  margin:0;
-  font-size:15px;
-  font-weight:900;
-  letter-spacing:.06em;
-  text-transform:uppercase;
-  color:var(--navy);
-}
-
-.usa250-shell{
-  max-width:1160px;
-  margin:0 auto;
-  padding-bottom:88px;
-}
-
-.usa250-grid{
-  display:grid;
-  grid-template-columns:1fr 1.08fr;
-  gap:42px;
-  align-items:center;
-}
-
-.usa250-copy h3{
-  margin:0 0 18px;
-  font-size:clamp(34px, 3.2vw, 60px);
-  line-height:1;
-  letter-spacing:-.05em;
-  color:var(--navy);
-  max-width:620px;
-}
-
-.usa250-copy p{
-  margin:0 0 28px;
-  max-width:620px;
-  font-size:17px;
-  line-height:1.8;
-  color:var(--text-soft);
-}
-
-.usa250-bottom-ribbon{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-height:54px;
-  padding:0 28px;
-  margin-bottom:22px;
-  background:linear-gradient(180deg, var(--red) 0%, #bf1722 100%);
-  color:#fff;
-  border-radius:999px;
-  font-weight:900;
-  font-size:14px;
-  letter-spacing:.05em;
-  text-transform:uppercase;
-  box-shadow:0 12px 22px rgba(225,31,45,.14);
-  transition:transform .16s ease, box-shadow .16s ease;
-}
-
-.usa250-bottom-ribbon:hover{
-  transform:translateY(-3px);
-  box-shadow:0 18px 30px rgba(225,31,45,.20);
-}
-
-.usa250-visual{
-  position:relative;
-  min-height:600px;
-}
-
-.usa250-photo-panel{
-  position:absolute;
-  inset:0;
-  border-radius:30px;
-  background-image:url('images/fireworks-world-hero.jpg');
-  background-size:cover;
-  background-position:center;
-  overflow:hidden;
-  box-shadow:0 18px 34px rgba(10,30,70,.12);
-}
-
-.usa250-photo-overlay{
-  position:absolute;
-  inset:0;
-  background:
-    linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,.46)),
-    linear-gradient(90deg, rgba(0,0,0,.05), rgba(0,0,0,.06));
-}
-
-.usa250-stat-card{
-  position:relative;
-  background:#ffffff;
-  border:1px solid var(--line);
-  border-bottom:6px solid var(--blue-accent);
-  border-radius:24px;
-  padding:24px 26px 22px;
-  box-shadow:0 18px 34px rgba(10,30,70,.12);
-  overflow:hidden;
-  transition:transform .16s ease, box-shadow .16s ease;
-}
-
-.usa250-stat-card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 24px 40px rgba(10,30,70,.16);
-}
-
-.usa250-stat-card-inline{
-  max-width:360px;
-}
-
-.usa250-stat-stars{
-  display:flex;
-  gap:10px;
-  margin-bottom:12px;
-  color:var(--gold);
-  font-size:18px;
-  line-height:1;
-}
-
-.usa250-stat-card strong{
-  display:block;
-  margin-bottom:10px;
-  font-size:62px;
-  line-height:.9;
-  font-weight:900;
-  letter-spacing:-.06em;
-  color:var(--navy);
-}
-
-.usa250-stat-card p{
-  margin:0;
-  max-width:235px;
-  font-size:16px;
-  line-height:1.65;
-  color:#4c5f79;
-}
-
-.usa250-cta{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:14px;
-  min-height:64px;
-  padding:0 24px;
-  border-radius:18px;
-  background:linear-gradient(90deg, #e62a36 0%, #d91f2d 46%, #1f56b2 100%);
-  color:#fff;
-  font-size:16px;
-  font-weight:900;
-  letter-spacing:-.02em;
-  box-shadow:0 16px 28px rgba(20,44,99,.16);
-  transition:transform .16s ease, box-shadow .16s ease;
-}
-
-.usa250-cta:hover{
-  transform:translateY(-4px);
-  box-shadow:0 22px 36px rgba(20,44,99,.22);
-}
-
-.usa250-cta-icon{
-  font-size:24px;
-  line-height:1;
-}
-
-.usa250-cta-overlay{
-  position:absolute;
-  left:50%;
-  bottom:-28px;
-  transform:translateX(-50%);
-  min-width:320px;
-  z-index:3;
-}
-
-.usa250-cta-overlay:hover{
-  transform:translateX(-50%) translateY(-4px);
-}
-
-.usa250-gold-divider{
-  width:100%;
-  height:6px;
-  background:linear-gradient(90deg, rgba(255,255,255,.55) 0%, rgba(217,164,32,.95) 50%, rgba(255,255,255,.55) 100%);
-}
-.usa250-exclusive{
-  margin-top:84px;
-}
-
-.usa250-exclusive-head{
-  text-align:center;
-  max-width:980px;
-  margin:0 auto 34px;
-}
-
-.usa250-exclusive-stars{
-  margin-bottom:10px;
-  color:var(--gold);
-  font-size:18px;
-  letter-spacing:.34em;
-  line-height:1;
-}
-
-.usa250-exclusive-head h2{
-  margin:0 0 14px;
-  color:var(--navy);
-  font-size:clamp(34px, 3.6vw, 58px);
-  line-height:1.02;
-  letter-spacing:-.05em;
-}
-
-.usa250-flag-underline{
-  position:relative;
-  width:min(460px, 100%);
-  height:16px;
-  margin:18px auto 18px;
-  border-radius:999px;
-  overflow:hidden;
-  background:
-    linear-gradient(
-      90deg,
-      #244fb0 0%,
-      #244fb0 18%,
-      #d91f2d 18%,
-      #d91f2d 31%,
-      #ffffff 31%,
-      #ffffff 44%,
-      #d91f2d 44%,
-      #d91f2d 57%,
-      #ffffff 57%,
-      #ffffff 70%,
-      #d91f2d 70%,
-      #d91f2d 83%,
-      #ffffff 83%,
-      #ffffff 100%
-    );
-  box-shadow:0 10px 18px rgba(13,27,56,.08);
-  border:1px solid rgba(19,35,62,.08);
-}
-
-.usa250-flag-underline span{
-  position:absolute;
-  left:9%;
-  top:50%;
-  transform:translate(-50%, -50%);
-  color:var(--gold);
-  font-size:12px;
-  letter-spacing:.22em;
-  white-space:nowrap;
-}
-
-.usa250-product-grid{
-  display:grid;
-  grid-template-columns:repeat(4, 1fr);
-  gap:18px;
-}
-
-.usa250-product-card{
-  background:#fff;
-  border:1px solid var(--line);
-  border-bottom:5px solid var(--red);
-  border-radius:24px;
-  overflow:hidden;
-  box-shadow:0 18px 32px rgba(13,27,56,.08);
-  transition:transform .16s ease, box-shadow .16s ease;
-}
-
-.usa250-product-card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 24px 38px rgba(13,27,56,.13);
-}
-
-.usa250-product-image{
-  min-height:220px;
-  background:linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:18px;
-}
-
-.usa250-product-image img{
-  width:100%;
-  height:190px;
-  object-fit:contain;
-}
-
-.usa250-product-body{
-  padding:22px 20px 24px;
-}
-
-.usa250-product-body h3{
-  margin:0 0 10px;
-  color:var(--navy);
-  font-size:24px;
-  line-height:1.05;
-  letter-spacing:-.03em;
-}
-
-.usa250-product-body p{
-  margin:0;
-  color:var(--text-soft);
-  font-size:15px;
-  line-height:1.72;
-}
-
-@media (max-width:1100px){
-  .usa250-product-grid{
-    grid-template-columns:repeat(2, 1fr);
-  }
-}
-
-@media (max-width:700px){
-  .usa250-exclusive{
-    margin-top:64px;
-  }
-
-  .usa250-product-grid{
-    grid-template-columns:1fr;
-  }
-
-  .usa250-flag-underline{
-    height:14px;
-  }
-
-  .usa250-flag-underline span{
-    font-size:10px;
-    letter-spacing:.18em;
-  }
-}
-/* FUNDRAISING */
-.fundraising-left{
-  display:grid;
-  gap:18px;
-}
-
-.fundraising-layout{
-  align-items:start;
-}
-
-.fundraising-carousel-card{
-  position:relative;
-}
-
-.fund-carousel{
-  position:relative;
-  border-radius:24px;
-  overflow:hidden;
-  border-bottom:5px solid var(--red);
-  box-shadow:0 18px 36px rgba(5,12,28,.22);
-  background:rgba(255,255,255,.06);
-}
-
-.fund-slide{ display:none; }
-.fund-slide.is-active{ display:block; }
-
-.fund-slide img{
-  width:100%;
-  height:520px;
-  object-fit:cover;
-}
-
-.fund-carousel-btn{
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  width:46px;
-  height:46px;
-  border:none;
-  border-radius:999px;
-  background:rgba(10,30,70,.78);
-  color:#fff;
-  font-size:28px;
-  line-height:1;
-  cursor:pointer;
-  transition:transform .16s ease, background .16s ease;
-}
-
-.fund-carousel-btn:hover{
-  transform:translateY(-50%) scale(1.08);
-  background:rgba(10,30,70,.94);
-}
-
-.fund-carousel-btn.prev{ left:14px; }
-.fund-carousel-btn.next{ right:14px; }
-
-.fund-carousel-dots{
-  position:absolute;
-  left:50%;
-  bottom:16px;
-  transform:translateX(-50%);
-  display:flex;
-  gap:8px;
-}
-
-.fund-dot{
-  width:10px;
-  height:10px;
-  border:none;
-  border-radius:999px;
-  background:rgba(255,255,255,.46);
-  cursor:pointer;
-  transition:transform .16s ease, background .16s ease;
-}
-
-.fund-dot.is-active{
-  background:#fff;
-  transform:scale(1.18);
-}
-
-.fund-support-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:14px;
-}
-
-.fund-support-card{
-  display:flex;
-  gap:12px;
-  align-items:flex-start;
-  padding:16px;
-  border-radius:18px;
-  border:1px solid rgba(255,255,255,.12);
-  background:rgba(255,255,255,.08);
-  transition:transform .16s ease, background .16s ease, box-shadow .16s ease;
-}
-
-.fund-support-card:hover{
-  transform:translateY(-4px);
-  background:rgba(255,255,255,.12);
-  box-shadow:0 16px 28px rgba(0,0,0,.16);
-}
-
-.fund-support-icon{
-  width:40px;
-  height:40px;
-  border-radius:12px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:linear-gradient(180deg, rgba(225,31,45,.92), rgba(199,26,38,.95));
-  color:#fff;
-  font-size:18px;
-  font-weight:900;
-  flex:0 0 auto;
-}
-
-.fund-support-card strong{
-  display:block;
-  color:#fff;
-  font-size:15px;
-  margin-bottom:4px;
-}
-
-.fund-support-card span{
-  display:block;
-  color:rgba(255,255,255,.78);
-  font-size:13px;
-  line-height:1.5;
-}
-
-.fundraising-detail{
-  position:relative;
-}
-
-.fundraising-mini-grid{
-  display:grid;
-  grid-template-columns:repeat(2, 1fr);
-  gap:12px;
-  margin:24px 0 28px;
-}
-
-.fund-mini-card{
-  display:flex;
-  gap:12px;
-  align-items:flex-start;
-  padding:14px;
-  border-radius:18px;
-  border:1px solid rgba(255,255,255,.12);
-  background:rgba(255,255,255,.08);
-  transition:transform .16s ease, background .16s ease, box-shadow .16s ease;
-}
-
-.fund-mini-card:hover{
-  transform:translateY(-4px);
-  background:rgba(255,255,255,.12);
-  box-shadow:0 16px 28px rgba(0,0,0,.16);
-}
-
-.fund-mini-icon{
-  width:42px;
-  height:42px;
-  border-radius:12px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:linear-gradient(180deg, rgba(225,31,45,.92), rgba(199,26,38,.95));
-  color:#fff;
-  font-size:18px;
-  font-weight:900;
-  flex:0 0 auto;
-  box-shadow:0 10px 18px rgba(225,31,45,.16);
-}
-
-.fund-mini-card strong{
-  display:block;
-  color:#fff;
-  font-size:15px;
-  margin-bottom:4px;
-}
-
-.fund-mini-card span{
-  display:block;
-  color:rgba(255,255,255,.78);
-  font-size:13px;
-  line-height:1.5;
-}
-
-/* ABOUT */
-.about-layout{
-  align-items:start;
-}
-
-.about-photo-card{
-  border-radius:26px;
-  overflow:hidden;
-  box-shadow:0 18px 36px rgba(13,27,56,.10);
-  border-bottom:5px solid var(--blue-accent);
-  background:#f7f8fb;
-}
-
-.about-photo-card img{
-  width:100%;
-  height:100%;
-  min-height:540px;
-  object-fit:cover;
-}
-
-.stats-grid{
-  display:grid;
-  grid-template-columns:repeat(2, 1fr);
-  gap:16px;
-  margin-top:26px;
-}
-
-.stat-box{
-  background:#fff;
-  border:1px solid var(--line);
-  border-bottom:5px solid var(--blue-accent);
-  border-radius:22px;
-  padding:26px 22px;
-  box-shadow:var(--shadow-soft);
-  min-height:154px;
-  transition:transform .16s ease, box-shadow .16s ease;
-}
-
-.stat-box:hover{
-  transform:translateY(-4px);
-  box-shadow:0 20px 30px rgba(13,27,56,.12);
-}
-
-.stat-box strong{
-  display:block;
-  margin-bottom:8px;
-  font-size:34px;
-  line-height:1;
-  font-weight:900;
-  color:var(--red);
-  letter-spacing:-.03em;
-}
-
-.stat-box span{
-  display:block;
-  color:var(--text);
-  font-size:15px;
-  font-weight:800;
-  line-height:1.55;
-}
-
-.stat-box-feature{
-  background:#fff;
-}
-
-/* CLOSING CTA */
-.closing-cta{
-  position:relative;
-  overflow:visible;
-  background:linear-gradient(180deg, var(--red) 0%, var(--red-dark) 100%);
-  color:#fff;
-  padding:112px 0 84px;
-  z-index:2;
-}
-
-.closing-top-wave-wrap{
-  position:absolute;
-  top:-74px;
-  left:0;
-  right:0;
-  height:76px;
-  z-index:3;
-  pointer-events:none;
-  line-height:0;
-  overflow:visible;
-}
-
-.closing-top-wave-svg{
-  display:block;
-  width:100%;
-  height:100%;
-}
-
-.closing-top-wave-svg path{
-  fill:var(--red);
-}
-
-.closing-wave-stars{
-  position:absolute;
-  left:0;
-  right:0;
-  top:0;
-  bottom:auto;
-  height:76px;
-  z-index:4;
-  pointer-events:none;
-}
-
-.closing-wave-stars span{
-  position:absolute;
-  color:var(--gold);
-  font-size:18px;
-  line-height:1;
-  transform:translate(-50%, -50%);
-  text-shadow:0 2px 8px rgba(10,30,70,.12);
-}
-
-/* tuned so stars sit on the actual wave line */
-.closing-wave-stars span:nth-child(1){ left:8%;  top:33px; }
-.closing-wave-stars span:nth-child(2){ left:21%; top:28px; }
-.closing-wave-stars span:nth-child(3){ left:34%; top:23px; }
-.closing-wave-stars span:nth-child(4){ left:50%; top:20px; }
-.closing-wave-stars span:nth-child(5){ left:66%; top:23px; }
-.closing-wave-stars span:nth-child(6){ left:79%; top:29px; }
-.closing-wave-stars span:nth-child(7){ left:92%; top:35px; }
-
-.closing-cta-row{
-  position:relative;
-  z-index:2;
-  display:grid;
-  grid-template-columns:1.12fr .88fr;
-  gap:26px;
-  align-items:center;
-}
-
-.closing-copy h2{
-  color:#fff;
-  max-width:760px;
-}
-
-.closing-copy p{
-  margin:0;
-  color:rgba(255,255,255,.90);
-  font-size:17px;
-  line-height:1.75;
-  max-width:720px;
-}
-
-.closing-buttons{
-  justify-content:flex-end;
-}
-
-.closing-bottom-divider{
-  position:absolute;
-  left:0;
-  right:0;
-  bottom:0;
-  height:6px;
-  background:linear-gradient(90deg, rgba(255,255,255,.55) 0%, rgba(217,164,32,.95) 50%, rgba(255,255,255,.55) 100%);
-}
-
-/* APP SECTION */
-.app-section{
-  position:relative;
-  background:#ffffff;
-  overflow:hidden;
-  padding:0;
-}
-
-.app-shell{
-  padding:58px 0 66px;
-}
-
-.app-grid{
-  display:grid;
-  grid-template-columns:1.12fr .88fr;
-  gap:40px;
-  align-items:center;
-}
-
-.app-kicker{
-  background:#fff;
-  color:var(--red);
-  border:1px solid rgba(225,31,45,.12);
-  box-shadow:none;
-}
-
-.app-heading{
-  max-width:700px;
-  font-size:clamp(38px, 4vw, 70px);
-  line-height:.98;
-  letter-spacing:-.05em;
-}
-
-.app-heading-flash{
-  animation:appFlash 1.2s ease-in-out infinite alternate;
-}
-
-@keyframes appFlash{
-  0%{
-    color:var(--gold);
-    text-shadow:0 0 0 rgba(217,164,32,0);
-  }
-  100%{
-    color:var(--red);
-    text-shadow:0 0 16px rgba(225,31,45,.12);
-  }
-}
-
-.app-lead{
-  margin:0 0 28px;
-  font-size:18px;
-  line-height:1.85;
-  color:var(--text-soft);
-  max-width:700px;
-}
-
-.app-points{
-  display:grid;
-  gap:18px;
-  margin-bottom:28px;
-}
-
-.app-point{
-  display:grid;
-  grid-template-columns:64px 1fr;
-  gap:16px;
-  align-items:start;
-  padding:0 0 20px;
-  border-bottom:1px solid rgba(19,35,62,.10);
-}
-
-.app-point-icon{
-  width:56px;
-  height:56px;
-  border-radius:16px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:linear-gradient(180deg, var(--red) 0%, var(--red-dark) 100%);
-  color:#fff;
-  font-size:22px;
-  font-weight:900;
-  box-shadow:0 12px 20px rgba(225,31,45,.14);
-}
-
-.app-point strong{
-  display:block;
-  margin-bottom:4px;
-  font-size:19px;
-  color:var(--text);
-  letter-spacing:-.02em;
-}
-
-.app-point span{
-  display:block;
-  font-size:15px;
-  line-height:1.7;
-  color:var(--text-soft);
-  max-width:520px;
-}
-
-.app-store-row{
-  display:flex;
-  flex-wrap:wrap;
-  gap:16px;
-  margin:0 0 30px;
-}
-
-.app-store-inline{
-  display:flex;
-  align-items:center;
-  gap:14px;
-  min-height:86px;
-  padding:14px 18px;
-  border:1px solid rgba(19,35,62,.12);
-  border-radius:18px;
-  background:#fff;
-  box-shadow:0 10px 18px rgba(13,27,56,.04);
-  transition:transform .16s ease, box-shadow .16s ease, border-color .16s ease;
-}
-
-.app-store-inline:hover{
-  transform:translateY(-4px);
-  box-shadow:0 18px 28px rgba(13,27,56,.08);
-  border-color:rgba(19,35,62,.18);
-}
-
-.app-store-inline-icon{
-  width:56px;
-  height:56px;
-  border-radius:16px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:linear-gradient(180deg, #e2b43b 0%, var(--gold-dark) 100%);
-  color:var(--navy);
-  font-size:30px;
-  font-weight:900;
-  flex:0 0 auto;
-}
-
-.app-store-inline-icon-play{
-  font-size:22px;
-}
-
-.app-store-inline-copy strong{
-  display:block;
-  margin-bottom:4px;
-  font-size:18px;
-  line-height:1.3;
-  color:var(--text);
-  letter-spacing:-.02em;
-}
-
-.app-store-inline-copy small{
-  display:block;
-  font-size:14px;
-  line-height:1.55;
-  color:var(--text-soft);
-}
-
-.app-buttons{
-  margin-top:6px;
-}
-
-.app-visual{
-  display:flex;
-  justify-content:center;
-}
-
-.app-visual-shell{
-  position:relative;
-  width:min(100%, 470px);
-  min-height:auto;
-  padding:18px 18px 18px;
-  border-radius:30px;
-  background:
-    radial-gradient(900px 420px at 24% 0%, rgba(255,255,255,.98), transparent 62%),
-    linear-gradient(180deg, #f7f9fc 0%, #edf2f8 100%);
-  border:1px solid rgba(19,35,62,.10);
-  box-shadow:0 24px 42px rgba(13,27,56,.10);
-  overflow:hidden;
-}
-
-.app-phone-stars{
-  position:absolute;
-  top:16px;
-  right:18px;
-  color:var(--gold);
-  font-size:18px;
-  letter-spacing:.32em;
-  line-height:1;
-}
-
-.app-phone-showcase{
-  width:100%;
-  min-height:auto;
-  border-radius:22px;
-  background:
-    linear-gradient(135deg, rgba(10,30,70,.02), rgba(36,79,176,.05)),
-    #ffffff;
-  border:1px solid rgba(19,35,62,.10);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:12px 12px 18px;
-}
-
-.app-phone-showcase img{
-  width:100%;
-  max-width:300px;
-  height:auto;
-  object-fit:contain;
-}
-
-.app-flag-strip{
-  position:relative;
-  margin:12px 10px 0;
-  height:12px;
-  border-radius:999px;
-  overflow:hidden;
-  background:
-    linear-gradient(
-      90deg,
-      #244fb0 0%,
-      #244fb0 16%,
-
-      #d91f2d 16%,
-      #d91f2d 28%,
-
-      #ffffff 28%,
-      #ffffff 40%,
-
-      #d91f2d 40%,
-      #d91f2d 52%,
-
-      #ffffff 52%,
-      #ffffff 64%,
-
-      #d91f2d 64%,
-      #d91f2d 76%,
-
-      #ffffff 76%,
-      #ffffff 88%,
-
-      #d91f2d 88%,
-      #d91f2d 100%
-    );
-  box-shadow:0 -1px 0 rgba(19,35,62,.04);
-}
-
-.app-flag-strip span{
-  position:absolute;
-  left:8%;
-  top:50%;
-  transform:translate(-50%, -50%);
-  color:var(--gold);
-  font-size:12px;
-  letter-spacing:.34em;
-  white-space:nowrap;
-  pointer-events:none;
-}
-
-.app-flag-strip::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(
-    120deg,
-    transparent 30%,
-    rgba(255,255,255,.35) 50%,
-    transparent 70%
-  );
-  opacity:0;
-  transition:opacity .3s ease, transform .5s ease;
-}
-
-.app-flag-strip:hover::after{
-  opacity:1;
-  transform:translateX(20%);
-}
-
-.app-footer-divider{
-  width:100%;
-  height:6px;
-  background:linear-gradient(90deg, rgba(255,255,255,.55) 0%, rgba(217,164,32,.95) 50%, rgba(255,255,255,.55) 100%);
-}
-
-/* FOOTER */
-.site-footer{
-  background:#06152f;
-  color:#fff;
-  padding:28px 0;
-}
-
-.footer-row{
-  display:grid;
-  grid-template-columns:1fr auto auto;
-  gap:24px;
-  align-items:center;
-}
-
-.footer-brand{
-  display:flex;
-  align-items:center;
-  gap:14px;
-}
-
-.footer-brand img{
-  height:52px;
-  width:auto;
-}
-
-.footer-brand p{
-  margin:0;
-  color:rgba(255,255,255,.76);
-  font-size:14px;
-  font-weight:700;
-}
-
-.footer-links{
-  display:flex;
-  flex-wrap:wrap;
-  gap:16px;
-}
-
-.footer-links a{
-  color:rgba(255,255,255,.86);
-  font-size:14px;
-  font-weight:800;
-}
-
-.footer-social{
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
-
-.footer-social a{
-  width:34px;
-  height:34px;
-  border-radius:999px;
-  background:rgba(255,255,255,.08);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  transition:background .16s ease, transform .16s ease;
-}
-
-.footer-social a:hover{
-  background:rgba(255,255,255,.16);
-  transform:translateY(-2px);
-}
-
-.footer-social svg{
-  width:17px;
-  height:17px;
-  fill:#fff;
-}
-
-/* RESPONSIVE */
-@media (max-width:1200px){
-  .states-grid-nine{
-    grid-template-columns:repeat(5, 1fr);
-  }
-}
-
-@media (max-width:1100px){
-  .two-col,
-  .usa250-grid,
-  .closing-cta-row,
-  .footer-row,
-  .app-grid{
-    grid-template-columns:1fr;
-  }
-
-  .product-grid{ grid-template-columns:repeat(2, 1fr); }
-  .states-grid{ grid-template-columns:repeat(4, 1fr); }
-  .closing-buttons{ justify-content:flex-start; }
-
-  .usa250-visual{
-    min-height:480px;
-    margin-top:18px;
-  }
-
-  .about-photo-card img{
-    min-height:380px;
-  }
-
-  .app-visual{
-    justify-content:flex-start;
-  }
-}
-
-@media (max-width:900px){
-  .menu-toggle{ display:inline-block; }
-
-  .site-nav{
-    display:none;
-    position:absolute;
-    top:136px;
-    left:16px;
-    right:16px;
-    background:#fff;
-    border:1px solid rgba(19,35,62,.10);
-    border-radius:18px;
-    padding:14px;
-    box-shadow:0 18px 38px rgba(13,28,56,.12);
-    flex-direction:column;
-    align-items:stretch;
-    gap:8px;
-  }
-
-  .site-nav.is-open{ display:flex; }
-
-  .site-nav a{
-    padding:12px 14px;
-    border-radius:12px;
-  }
-
-  .site-nav a:hover{
-    background:#f6f6f4;
-  }
-
-  .hero{
-    min-height:740px;
-  }
-
-  .hero-inner{
-    min-height:740px;
-    padding:112px 0 96px;
-  }
-
-  .hero-stats{
-    grid-template-columns:1fr;
-    max-width:420px;
-  }
-
-  .fund-support-grid,
-  .fundraising-mini-grid,
-  .stats-grid{
-    grid-template-columns:1fr;
-  }
-
-  .usa250-cta-overlay{
-    min-width:280px;
-  }
-
-  .app-store-row{
-    flex-direction:column;
-  }
-
-  .states-grid-nine{
-    grid-template-columns:repeat(3, 1fr);
-  }
-
-  .products-section{
-    padding-top:144px;
-  }
-}
-
-@media (max-width:700px){
-  .header-topbar::before,
-  .header-topbar::after{
-    display:none;
-  }
-
-  .header-topbar-row{
-    flex-direction:column;
-    align-items:flex-start;
-    justify-content:center;
-    padding:10px 0;
-  }
-
-  .brand img{ height:58px; }
-
-  .hero{
-    min-height:680px;
-  }
-
-  .hero-inner{
-    min-height:680px;
-    padding:96px 0 82px;
-  }
-
-  .hero h1{
-    font-size:clamp(34px, 10vw, 52px);
-  }
-
-  .hero-text{
-    font-size:16px;
-  }
-
-  .states-grid,
-  .states-grid-nine{
-    grid-template-columns:repeat(2, 1fr);
-  }
-
-  .product-grid{ grid-template-columns:1fr; }
-
-  .section{
-    padding:78px 0;
-  }
-
-  .button-row{
-    flex-direction:column;
-    align-items:stretch;
-  }
-
-  .footer-brand{
-    flex-direction:column;
-    align-items:flex-start;
-  }
-
-  .hero-wave svg,
-  .section-wave svg{
-    height:68px;
-  }
-
-  .closing-top-wave-wrap{
-    top:-62px;
-    height:64px;
-  }
-
-  .closing-top-wave-svg{
-    height:64px;
-  }
-
-  .closing-wave-stars{
-    height:64px;
-  }
-
-  .closing-wave-stars span{
-    font-size:14px;
-  }
-
-  .closing-wave-stars span:nth-child(1){ left:7%; top:29px; }
-  .closing-wave-stars span:nth-child(2){ left:21%; top:24px; }
-  .closing-wave-stars span:nth-child(3){ left:35%; top:20px; }
-  .closing-wave-stars span:nth-child(4){ left:50%; top:18px; }
-  .closing-wave-stars span:nth-child(5){ left:65%; top:20px; }
-  .closing-wave-stars span:nth-child(6){ left:79%; top:25px; }
-  .closing-wave-stars span:nth-child(7){ left:93%; top:30px; }
-
-  .products-promo-badge{
-    padding:16px 18px 14px;
-  }
-
-  .products-promo-badge p{
-    font-size:13px;
-  }
-
-  .products-promo-stars{
-    font-size:16px;
-    gap:8px;
-  }
-
-  .usa250-section{
-    padding-top:110px;
-  }
-
-  .usa250-copy h3{
-    font-size:clamp(30px, 8vw, 46px);
-  }
-
-  .usa250-stat-card strong{
-    font-size:52px;
-  }
-
-  .usa250-cta{
-    font-size:16px;
-    min-height:64px;
-  }
-
-  .usa250-cta-overlay{
-    left:50%;
-    right:auto;
-    width:calc(100% - 30px);
-    min-width:0;
-  }
-
-  .hero-stars,
-  .dark-stars{
-    display:none;
-  }
-
-  .fund-slide img{
-    height:360px;
-  }
-
-  .about-photo-card img{
-    min-height:300px;
-  }
-
-  .footer-social{
-    justify-content:flex-start;
-  }
-
-  .app-visual-shell{
-    width:100%;
-    padding:16px;
-  }
-
-  .app-phone-showcase img{
-    max-width:260px;
-  }
-
-  .app-phone-stars{
-    font-size:16px;
-    right:14px;
-    top:14px;
-  }
-
-  .app-flag-strip span{
-    font-size:10px;
-    letter-spacing:.26em;
-  }
-}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bellino Fireworks | 250+ Fireworks Locations Across 9 States</title>
+  <meta
+    name="description"
+    content="Bellino Fireworks serves families across 9 states with 250+ retail fireworks locations. Find a location near you and learn about fundraising programs for schools, teams, churches, and nonprofits."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="icon" type="image/png" href="images/bellino-fav-icon.png" />
+  <link rel="apple-touch-icon" href="images/bellino-fav-icon.png" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="header-topbar">
+      <div class="container header-topbar-row">
+        <div class="countdown-wrap" aria-live="polite">
+          <span class="countdown-stars" aria-hidden="true">★ ★</span>
+          <span class="countdown-label">Countdown to July 4th</span>
+          <span class="countdown-value" id="july4Countdown">Loading...</span>
+          <span class="countdown-stars" aria-hidden="true">★ ★</span>
+        </div>
+
+        <div class="header-social" aria-label="Social media">
+          <a href="#" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3H13.5V9.3c0-.9.3-1.6 1.7-1.6H16.8V5.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V11H7.6v3h2.5v8h3.4z"/></svg>
+          </a>
+          <a href="#" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9z"/><path d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/><path d="M17.6 6.4a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>
+          </a>
+          <a href="#" target="_blank" rel="noopener" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.2c.7 1.1 1.8 1.9 3.2 2v2.8c-1.3 0-2.5-.4-3.5-1.1v6.1c0 3.2-2.6 5.8-5.8 5.8S4.7 18.2 4.7 15s2.6-5.8 5.8-5.8c.4 0 .8 0 1.2.1v3c-.4-.2-.8-.3-1.2-.3-1.5 0-2.8 1.2-2.8 2.8s1.2 2.8 2.8 2.8 2.8-1.2 2.8-2.8V2h3.1c0 1.1.3 2.2 1 3.2z"/></svg>
+          </a>
+          <a href="#" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2s-.2-1.6-.9-2.3c-.8-.9-1.7-.9-2.2-1C15.7 3.6 12 3.6 12 3.6h0s-3.7 0-6.5.3c-.5.1-1.4.1-2.2 1C2.6 5.6 2.4 7.2 2.4 7.2S2.1 9.1 2.1 11v1.8c0 1.9.3 3.8.3 3.8s.2 1.6.9 2.3c.8.9 1.9.9 2.4 1 1.7.2 6.3.3 6.3.3s3.7 0 6.5-.3c.5-.1 1.4-.1 2.2-1 .7-.7.9-2.3.9-2.3s.3-1.9.3-3.8V11c0-1.9-.3-3.8-.3-3.8zM10 15.3V8.7l6 3.3-6 3.3z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container header-main">
+      <a class="brand" href="#top" aria-label="Bellino Fireworks home">
+        <img src="images/bellino-high-res.png" alt="Bellino Fireworks" />
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <a href="#top">Home</a>
+        <a href="#locations">Locations</a>
+        <a href="#products">Products</a>
+        <a href="#fundraising">Fundraising</a>
+        <a href="#about">About</a>
+        <a class="header-cta" href="#locations">Find a Location</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-stars hero-stars-left" aria-hidden="true">★ ★ ★</div>
+      <div class="hero-stars hero-stars-right" aria-hidden="true">★ ★</div>
+
+      <div class="hero-slides" aria-hidden="true">
+        <div class="hero-slide is-active" style="background-image:url('images/fireworks-world-hero.jpg');"></div>
+        <div class="hero-slide" style="background-image:url('images/bellino-hero2.jpg');"></div>
+        <div class="hero-slide" style="background-image:url('images/hero-2.jpg.png');"></div>
+      </div>
+
+      <div class="hero-overlay" aria-hidden="true"></div>
+
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <div class="hero-copy-rotator" data-hero-copy>
+            <div class="hero-copy-slide is-active">
+              <p class="section-kicker section-kicker-dark">Serving Families Across 9 States</p>
+              <h1>Big Summer Nights Start With the Right Fireworks</h1>
+              <p class="hero-text">
+                Bellino Fireworks serves families across Nebraska, Iowa, Arizona, Texas,
+                Oklahoma, South Dakota, Kansas, Arkansas, and Illinois with 250+ retail locations,
+                seasonal favorites, and fundraising programs built for community groups.
+              </p>
+            </div>
+
+            <div class="hero-copy-slide">
+              <p class="section-kicker section-kicker-dark">Seasonal Shopping Made Easy</p>
+              <h1>Find Fireworks Near You Without the Guesswork</h1>
+              <p class="hero-text">
+                From neighborhood stands to larger seasonal markets, Bellino makes it easier
+                to shop close to home with strong selection and familiar locations.
+              </p>
+            </div>
+
+            <div class="hero-copy-slide">
+              <p class="section-kicker section-kicker-dark">Built for Groups Too</p>
+              <h1>Retail Fireworks and Fundraising Programs That Fit Summer</h1>
+              <p class="hero-text">
+                Bellino also helps schools, teams, churches, and nonprofits create stronger
+                seasonal fundraising opportunities during one of the busiest buying windows of the year.
+              </p>
+            </div>
+          </div>
+
+          <div class="button-row hero-buttons">
+            <a class="btn btn-primary" href="#locations">Find a Location</a>
+            <a class="btn btn-outline-light" href="#fundraising">Explore Fundraising</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <strong>250+</strong>
+              <span>Retail Locations</span>
+            </div>
+            <div class="hero-stat">
+              <strong>9</strong>
+              <span>States Served</span>
+            </div>
+            <div class="hero-stat">
+              <strong>Seasonal</strong>
+              <span>Retail + Group Programs</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-wave" aria-hidden="true">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+          <path d="M0,38 C205,92 414,110 708,82 C962,58 1182,12 1440,44 L1440,120 L0,120 Z"></path>
+        </svg>
+      </div>
+    </section>
+
+    <section class="states-band">
+      <div class="container">
+        <div class="states-grid states-grid-nine">
+          <a class="state-card" href="/fireworks-nebraska/"><img src="images/Nebraska.png" alt="Nebraska" /><span>Nebraska</span></a>
+          <a class="state-card" href="/fireworks-iowa/"><img src="images/Iowa-1.png" alt="Iowa" /><span>Iowa</span></a>
+          <a class="state-card" href="/fireworks-arizona/"><img src="images/Arizona.png" alt="Arizona" /><span>Arizona</span></a>
+          <a class="state-card" href="/fireworks-texas/"><img src="images/texas-1.png" alt="Texas" /><span>Texas</span></a>
+          <a class="state-card" href="/fireworks-oklahoma/"><img src="images/OKC.png" alt="Oklahoma" /><span>Oklahoma</span></a>
+          <a class="state-card" href="/fireworks-south-dakota/"><img src="images/South-Dakota.png" alt="South Dakota" /><span>South Dakota</span></a>
+          <a class="state-card" href="/fireworks-kansas/"><img src="images/Kansas.png" alt="Kansas" /><span>Kansas</span></a>
+          <a class="state-card" href="/fireworks-arkansas/"><img src="images/arkansas.png" alt="Arkansas" /><span>Arkansas</span></a>
+          <a class="state-card" href="/fireworks-illinois/"><img src="images/illinois.png" alt="Illinois" /><span>Illinois</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-white locator-section" id="locations">
+      <div class="container two-col">
+        <div class="content-block locator-copy">
+          <p class="section-kicker">Store Locator</p>
+          <h2>Find a Bellino Fireworks Location Near You</h2>
+          <p class="section-lead">
+            Search by city or zip to find the closest Bellino Fireworks stand,
+            tent, or retail location. This section is ready for your live locator embed.
+          </p>
+
+          <ul class="feature-list">
+            <li>Fast location search by market</li>
+            <li>Built for shoppers ready to buy</li>
+            <li>Perfect place for your real locator tool</li>
+          </ul>
+
+          <div class="button-row locator-buttons">
+            <a class="btn btn-primary" href="#products">Browse Products</a>
+            <a class="btn btn-outline-dark" href="#fundraising">Fundraising Info</a>
+          </div>
+        </div>
+
+        <div class="locator-panel">
+          <div class="locator-panel-head">
+            <strong>Bellino Store Locator</strong>
+            <span>Embed your locator here</span>
+          </div>
+
+          <div class="locator-panel-map">
+            <div class="locator-placeholder">
+              <strong>Locator Area</strong>
+              <p>Replace this block with your actual map or store locator output.</p>
+            </div>
+          </div>
+
+          <div class="locator-panel-bottom">
+            <div>
+              <strong>Need fireworks near you?</strong>
+              <p>Use the locator to find nearby hours, availability, and the closest stand or store.</p>
+            </div>
+            <a class="btn btn-primary btn-full" href="#top">Shop Nearby</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark products-section" id="products">
+      <div class="dark-stars dark-stars-left" aria-hidden="true">★ ★</div>
+      <div class="dark-stars dark-stars-right" aria-hidden="true">★ ★ ★</div>
+
+      <div class="products-promo-wrap">
+        <div class="products-promo-badge">
+          <div class="products-promo-stars" aria-hidden="true">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+          <p>Home of the BUY 1 GET 3 FREE</p>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="section-head center-head products-head-large">
+          <p class="section-kicker section-kicker-dark">Featured Product Types</p>
+          <h2>Built for Families, Parties, and Big Finale Moments</h2>
+          <p class="section-lead center-copy section-lead-dark">
+            Bellino Fireworks offers product mixes that make it easier to shop by
+            experience, not just by shelf label.
+          </p>
+        </div>
+
+        <div class="product-grid">
+          <article class="product-card">
+            <div class="product-image-wrap"><img src="images/family-bellino-2.png" alt="Family fireworks fun" /></div>
+            <div class="product-card-body">
+              <h3>Family Favorites</h3>
+              <p>Fountains, novelties, and crowd-pleasers that work great for all ages.</p>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image-wrap"><img src="images/44Magnum.png" alt="Big assortment fireworks" /></div>
+            <div class="product-card-body">
+              <h3>Assortments</h3>
+              <p>Great all-in-one options when you want variety without overcomplicating it.</p>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image-wrap"><img src="images/stretching-the-limit.png" alt="Finale fireworks product" /></div>
+            <div class="product-card-body">
+              <h3>Finale Pieces</h3>
+              <p>Big impact products built for the kind of finish people remember.</p>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image-wrap"><img src="images/buy1product.png" alt="Aerial fireworks assortment" /></div>
+            <div class="product-card-body">
+              <h3>Aerial Effects</h3>
+              <p>For the bigger sky moments when you want your backyard show to feel huge.</p>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image-wrap"><img src="images/buy1product.png" alt="Artillery shell fireworks" /></div>
+            <div class="product-card-body">
+              <h3>Artillery Shells</h3>
+              <p>Strong breaks and louder sky moments for shoppers wanting more punch.</p>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image-wrap"><img src="images/44Magnum.png" alt="Multi-shot cake fireworks" /></div>
+            <div class="product-card-body">
+              <h3>Multi-Shot Cakes</h3>
+              <p>Easy-to-light favorites that keep the show moving without constant reset.</p>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image-wrap"><img src="images/stretching-the-limit.png" alt="Premium fireworks selection" /></div>
+            <div class="product-card-body">
+              <h3>Premium Picks</h3>
+              <p>Higher-impact options for customers looking to step up their display.</p>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image-wrap"><img src="images/family-bellino-2.png" alt="Backyard celebration fireworks" /></div>
+            <div class="product-card-body">
+              <h3>Backyard Bundles</h3>
+              <p>Balanced product mixes built for neighborhood celebrations and family nights.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="button-row button-row-center">
+          <a class="btn btn-primary" href="#locations">Find Products Near You</a>
+          <a class="btn btn-outline-light" href="#fundraising">Learn About Fundraising</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section usa250-section">
+      <div class="usa250-badge-bridge-wrap">
+        <div class="usa250-badge-bridge">
+          <div class="usa250-mini-stars" aria-hidden="true">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+          <p>Celebrating America’s 250th Anniversary</p>
+        </div>
+      </div>
+
+      <div class="container usa250-shell">
+        <div class="usa250-grid">
+          <div class="usa250-copy">
+            <h3>A Bigger Summer Deserves a Bigger Celebration</h3>
+            <p>
+              Community events, family gatherings, and neighborhood celebrations are going to be bigger than normal.
+              Bellino Fireworks is built to serve shoppers and groups looking to make the season count.
+            </p>
+
+            <div class="usa250-bottom-ribbon">
+              <span>Making Summer Bigger Since 1974</span>
+            </div>
+
+            <div class="usa250-stat-card usa250-stat-card-inline">
+              <div class="usa250-stat-stars" aria-hidden="true">
+                <span>★</span><span>★</span><span>★</span>
+              </div>
+              <strong>250+</strong>
+              <p>Retail locations positioned to serve communities across 9 states.</p>
+            </div>
+          </div>
+
+          <div class="usa250-visual">
+            <div class="usa250-photo-panel">
+              <div class="usa250-photo-overlay"></div>
+            </div>
+
+            <a class="usa250-cta usa250-cta-overlay" href="#locations">
+              <span class="usa250-cta-icon">⌖</span>
+              <span>Find Fireworks Near You</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="usa250-exclusive">
+          <div class="usa250-exclusive-head">
+            <div class="usa250-exclusive-stars" aria-hidden="true">★ ★ ★</div>
+            <h2>Exclusive Products for America’s 250th Birthday</h2>
+            <p class="section-lead center-copy">
+              Patriotic favorites and premium picks built for the biggest celebration summer of the generation.
+            </p>
+            <div class="usa250-flag-underline" aria-hidden="true">
+              <span>★ ★ ★</span>
+            </div>
+          </div>
+
+          <div class="usa250-product-grid">
+            <article class="usa250-product-card">
+              <div class="usa250-product-image">
+                <img src="images/stretching-the-limit.png" alt="America 250 exclusive finale product" />
+              </div>
+              <div class="usa250-product-body">
+                <h3>Patriot Finale</h3>
+                <p>Big ending energy with a stronger red, white, and blue visual feel built for headline moments.</p>
+              </div>
+            </article>
+
+            <article class="usa250-product-card">
+              <div class="usa250-product-image">
+                <img src="images/buy1product.png" alt="America 250 exclusive celebration assortment" />
+              </div>
+              <div class="usa250-product-body">
+                <h3>Freedom Assortment</h3>
+                <p>A balanced mix for families wanting one patriotic bundle that covers the whole celebration.</p>
+              </div>
+            </article>
+
+            <article class="usa250-product-card">
+              <div class="usa250-product-image">
+                <img src="images/44Magnum.png" alt="America 250 premium shell kit" />
+              </div>
+              <div class="usa250-product-body">
+                <h3>Liberty Shell Kit</h3>
+                <p>Higher-impact shells for shoppers looking to make the 250th feel bigger, louder, and more memorable.</p>
+              </div>
+            </article>
+
+            <article class="usa250-product-card">
+              <div class="usa250-product-image">
+                <img src="images/family-bellino-2.png" alt="America 250 backyard celebration pack" />
+              </div>
+              <div class="usa250-product-body">
+                <h3>Backyard Celebration Pack</h3>
+                <p>Built for neighborhood parties, family cookouts, and the kind of summer night people remember.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <div class="usa250-gold-divider" aria-hidden="true"></div>
+    </section>
+
+    <section class="section section-dark fundraising-section" id="fundraising">
+      <div class="dark-stars dark-stars-left" aria-hidden="true">★ ★</div>
+      <div class="dark-stars dark-stars-right" aria-hidden="true">★ ★ ★</div>
+
+      <div class="container two-col fundraising-layout">
+        <div class="fundraising-left">
+          <div class="fundraising-carousel-card">
+            <div class="fund-carousel" data-fund-carousel>
+              <div class="fund-slide is-active">
+                <img src="images/fundraising-group-1.jpg" alt="Bellino Fireworks fundraising group" />
+              </div>
+              <div class="fund-slide">
+                <img src="images/girls-omaha-fireworks.jpg" alt="Bellino family fireworks celebration" />
+              </div>
+              <div class="fund-slide">
+                <img src="images/brian-athletics.jpg" alt="Bellino fireworks retail scene" />
+              </div>
+
+              <button class="fund-carousel-btn prev" type="button" aria-label="Previous image" data-fund-prev>‹</button>
+              <button class="fund-carousel-btn next" type="button" aria-label="Next image" data-fund-next>›</button>
+
+              <div class="fund-carousel-dots" aria-label="Carousel pagination">
+                <button class="fund-dot is-active" type="button" aria-label="Go to slide 1"></button>
+                <button class="fund-dot" type="button" aria-label="Go to slide 2"></button>
+                <button class="fund-dot" type="button" aria-label="Go to slide 3"></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="fund-support-grid">
+            <div class="fund-support-card">
+              <div class="fund-support-icon">★</div>
+              <div>
+                <strong>Seasonal Opportunity</strong>
+                <span>Short sales window, strong summer demand.</span>
+              </div>
+            </div>
+            <div class="fund-support-card">
+              <div class="fund-support-icon">✓</div>
+              <div>
+                <strong>Simple to Promote</strong>
+                <span>Clear message for groups, parents, and supporters.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-block content-block-dark fundraising-detail">
+          <p class="section-kicker section-kicker-dark">Fundraising Programs</p>
+          <h2>Fireworks Fundraising for Schools, Teams, Churches, and Nonprofits</h2>
+          <p class="section-lead section-lead-dark">
+            Bellino Fireworks helps community groups turn one of the biggest sales
+            seasons of the year into a real fundraising opportunity.
+          </p>
+          <p>
+            We help simplify the process so your group can stay focused on promotion,
+            participation, and results.
+          </p>
+
+          <ul class="feature-list feature-list-dark">
+            <li>Built around proven seasonal demand</li>
+            <li>Structured for schools, teams, churches, and nonprofits</li>
+            <li>Designed to help groups raise meaningful funds in a short window</li>
+          </ul>
+
+          <div class="fundraising-mini-grid">
+            <div class="fund-mini-card">
+              <div class="fund-mini-icon">★</div>
+              <div>
+                <strong>Seasonal Demand</strong>
+                <span>Built around the highest buying window of the year.</span>
+              </div>
+            </div>
+            <div class="fund-mini-card">
+              <div class="fund-mini-icon">⌖</div>
+              <div>
+                <strong>Local Reach</strong>
+                <span>Programs that connect directly with your community.</span>
+              </div>
+            </div>
+            <div class="fund-mini-card">
+              <div class="fund-mini-icon">✓</div>
+              <div>
+                <strong>Simple Structure</strong>
+                <span>Clear setup, strong visibility, straightforward process.</span>
+              </div>
+            </div>
+            <div class="fund-mini-card">
+              <div class="fund-mini-icon">✦</div>
+              <div>
+                <strong>Strong Support</strong>
+                <span>Better materials, cleaner positioning, more confidence.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="button-row">
+            <a class="btn btn-gold" href="fundraising.html">Get Fundraising Info</a>
+            <a class="btn btn-outline-light" href="#locations">Find a Nearby Location</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-wave section-wave-bottom dark-wave" aria-hidden="true">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+          <path d="M0,52 C180,96 392,114 716,86 C1018,60 1212,18 1440,54 L1440,120 L0,120 Z"></path>
+        </svg>
+      </div>
+    </section>
+
+    <section class="section section-white about-section" id="about">
+      <div class="container two-col about-layout">
+        <div class="content-block">
+          <p class="section-kicker">About Bellino</p>
+          <h2>A Fireworks Tradition Built Around Access, Value, and Big Summer Nights</h2>
+          <p class="section-lead">
+            Bellino Fireworks serves families across multiple states with a broad
+            seasonal footprint designed to make shopping easy when demand is highest.
+          </p>
+          <p>
+            From neighborhood retail stands to large seasonal markets, the goal is
+            simple: help customers celebrate with confidence and help communities
+            connect with a trusted fireworks retailer.
+          </p>
+
+          <div class="stats-grid">
+            <div class="stat-box">
+              <strong>250+</strong>
+              <span>Retail Locations</span>
+            </div>
+            <div class="stat-box">
+              <strong>9</strong>
+              <span>States Served</span>
+            </div>
+            <div class="stat-box">
+              <strong>Seasonal</strong>
+              <span>Retail + Fundraising Focus</span>
+            </div>
+            <div class="stat-box stat-box-feature">
+              <strong>Community</strong>
+              <span>Built for families, groups, and summer traditions</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-photo-card">
+          <img src="images/family-tradition-bellino-fireworks.jpg" alt="Bellino Fireworks family celebration" />
+        </div>
+      </div>
+    </section>
+
+    <section class="closing-cta">
+      <div class="closing-top-wave-wrap" aria-hidden="true">
+        <svg class="closing-top-wave-svg" viewBox="0 0 1440 76" preserveAspectRatio="none">
+          <path d="M0,76 L0,34 C180,8 408,6 718,18 C1018,30 1220,56 1440,42 L1440,76 Z"></path>
+        </svg>
+
+        <div class="closing-wave-stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+      </div>
+
+      <div class="container closing-cta-row">
+        <div class="closing-copy">
+          <h2>Ready to Find Fireworks Near You?</h2>
+          <p>
+            Use the locator to find your closest Bellino Fireworks location and start planning your celebration.
+          </p>
+        </div>
+
+        <div class="button-row closing-buttons">
+          <a class="btn btn-gold" href="#locations">Find a Location</a>
+          <a class="btn btn-outline-light" href="#fundraising">Fundraising Programs</a>
+        </div>
+      </div>
+
+      <div class="closing-bottom-divider" aria-hidden="true"></div>
+    </section>
+
+    <section class="app-section" id="app">
+      <div class="container app-shell">
+        <div class="app-grid">
+          <div class="app-copy">
+            <p class="section-kicker app-kicker">Stay Connected</p>
+            <h2 class="app-heading">Download Our <span class="app-heading-flash">App</span></h2>
+            <p class="app-lead">
+              Get Bellino Fireworks in your pocket with a cleaner way to browse products,
+              explore what’s available, and stay closer to the action all summer long.
+            </p>
+
+            <div class="app-points">
+              <div class="app-point">
+                <div class="app-point-icon">⌖</div>
+                <div>
+                  <strong>Find Products Faster</strong>
+                  <span>Quick browsing and easier product discovery wherever you are.</span>
+                </div>
+              </div>
+
+              <div class="app-point">
+                <div class="app-point-icon">★</div>
+                <div>
+                  <strong>Tap Into the Boom</strong>
+                  <span>Built for shoppers who want a simpler way to view Bellino items in action.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="app-store-row">
+              <a class="app-store-inline" href="#" aria-label="Download on Apple App Store">
+                <span class="app-store-inline-icon"></span>
+                <span class="app-store-inline-copy">
+                  <strong>Apple Store</strong>
+                  <small>Available on Apple App Store</small>
+                </span>
+              </a>
+
+              <a class="app-store-inline" href="#" aria-label="Download on Google Play">
+                <span class="app-store-inline-icon app-store-inline-icon-play">▶</span>
+                <span class="app-store-inline-copy">
+                  <strong>Google Play</strong>
+                  <small>Available on Google Play Store</small>
+                </span>
+              </a>
+            </div>
+
+            <div class="button-row app-buttons">
+              <a class="btn btn-primary" href="#">Watch the Demo</a>
+              <a class="btn btn-outline-dark" href="#">See App Details</a>
+            </div>
+          </div>
+
+          <div class="app-visual">
+            <div class="app-visual-shell">
+              <div class="app-phone-stars" aria-hidden="true">★ ★ ★</div>
+              <div class="app-phone-showcase">
+                <img src="images/app-hand.png" alt="Bellino Fireworks app in hand" />
+              </div>
+              <div class="app-flag-strip" aria-hidden="true">
+                <span>★ ★ ★</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="app-footer-divider" aria-hidden="true"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <div class="footer-brand">
+        <img src="images/bellino-high-res.png" alt="Bellino Fireworks" />
+        <p>© <span id="year"></span> Bellino Fireworks</p>
+      </div>
+
+      <nav class="footer-links">
+        <a href="#top">Home</a>
+        <a href="#locations">Locations</a>
+        <a href="#products">Products</a>
+        <a href="#fundraising">Fundraising</a>
+        <a href="#about">About</a>
+      </nav>
+
+      <div class="footer-social" aria-label="Social media">
+        <a href="#" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3H13.5V9.3c0-.9.3-1.6 1.7-1.6H16.8V5.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V11H7.6v3h2.5v8h3.4z"/></svg>
+        </a>
+        <a href="#" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9z"/><path d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/><path d="M17.6 6.4a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>
+        </a>
+        <a href="#" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.2c.7 1.1 1.8 1.9 3.2 2v2.8c-1.3 0-2.5-.4-3.5-1.1v6.1c0 3.2-2.6 5.8-5.8 5.8S4.7 18.2 4.7 15s2.6-5.8 5.8-5.8c.4 0 .8 0 1.2.1v3c-.4-.2-.8-.3-1.2-.3-1.5 0-2.8 1.2-2.8 2.8s1.2 2.8 2.8 2.8 2.8-1.2 2.8-2.8V2h3.1c0 1.1.3 2.2 1 3.2z"/></svg>
+        </a>
+        <a href="#" target="_blank" rel="noopener" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2s-.2-1.6-.9-2.3c-.8-.9-1.7-.9-2.2-1C15.7 3.6 12 3.6 12 3.6h0s-3.7 0-6.5.3c-.5.1-1.4.1-2.2 1C2.6 5.6 2.4 7.2 2.4 7.2S2.1 9.1 2.1 11v1.8c0 1.9.3 3.8.3 3.8s.2 1.6.9 2.3c.8.9 1.9.9 2.4 1 1.7.2 6.3.3 6.3.3s3.7 0 6.5-.3c.5-.1 1.4-.1 2.2-1 .7-.7.9-2.3.9-2.3s.3-1.9.3-3.8V11c0-1.9-.3-3.8-.3-3.8zM10 15.3V8.7l6 3.3-6 3.3z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
