@@ -1,424 +1,537 @@
-<!-- locations.html (FULL) -->
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bellino Fireworks Locations | Find a Bellino Fireworks Stand Near You</title>
+  <meta
+    name="description"
+    content="Find a Bellino Fireworks location near you across 9 states. Search by city or zip, browse state pages, and shop a family-owned fireworks company known for strong value, huge inflatables, Bellino flags, and summer tradition."
+  />
 
-  <title>Find a Bellino Fireworks Location Near You | 250+ Retail Locations</title>
-  <meta name="description" content="Use the Bellino Fireworks store locator to find a stand, tent, or retail location near you. Search by city or zip, view hours and details, and plan your visit for the 4th of July season." />
-  <meta name="robots" content="index,follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
 
-  <meta property="og:title" content="Find a Bellino Fireworks Location Near You">
-  <meta property="og:description" content="Search 250+ Bellino Fireworks locations across multiple states. Plan your visit for the 4th of July season.">
-  <meta property="og:type" content="website">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="images/bellino-fav-icon.png" />
+  <link rel="apple-touch-icon" href="images/bellino-fav-icon.png" />
+  <link rel="stylesheet" href="styles.css/styles.css" />
 </head>
-
 <body class="locations-page">
-
-  <!-- =====================================================
-       JULY 4 COUNTDOWN STRIP (SITEWIDE)
-       Uses .july-countdown + .july-* classes (matches styles.css + main.js)
-  ====================================================== -->
-  <section class="july-countdown" data-july-ticker aria-label="Countdown to July 4th">
-    <div class="wrap july-row">
-      <div class="july-left">
-        <span class="july-badge">Countdown to July 4th</span>
-        <div class="july-title">Beat the rush — plan your visit.</div>
-        <div class="july-sub">Locations fill up fast near the holiday.</div>
-      </div>
-
-      <div class="july-right" aria-live="polite">
-        <div class="july-box">
-          <div class="july-num" data-tt-days>—</div>
-          <div class="july-lbl">Days</div>
+  <header class="site-header" id="top">
+    <div class="header-topbar">
+      <div class="container header-topbar-row">
+        <div class="countdown-wrap" aria-live="polite">
+          <span class="countdown-stars" aria-hidden="true">★ ★</span>
+          <span class="countdown-label">Countdown to July 4th</span>
+          <span class="countdown-value" id="july4Countdown">Loading...</span>
+          <span class="countdown-stars" aria-hidden="true">★ ★</span>
         </div>
-        <div class="july-box">
-          <div class="july-num" data-tt-hours>—</div>
-          <div class="july-lbl">Hours</div>
-        </div>
-        <div class="july-box">
-          <div class="july-num" data-tt-mins>—</div>
-          <div class="july-lbl">Mins</div>
-        </div>
-        <div class="july-box">
-          <div class="july-num" data-tt-secs>—</div>
-          <div class="july-lbl">Secs</div>
-        </div>
-      </div>
 
-      <div class="july-cta">
-        <a class="btn btn-buy" href="#locator">Open Locator</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================
-       HEADER (SITEWIDE - SAME)
-  ========================== -->
-  <header class="header" id="top">
-    <div class="wrap header-row">
-      <a class="logo" href="index.html#top" aria-label="Bellino Fireworks home">
-        <img src="images/nowin.svg" alt="Bellino Fireworks" />
-      </a>
-
-      <button class="nav-toggle" type="button"
-        aria-label="Open menu"
-        aria-expanded="false"
-        aria-controls="site-nav"
-        data-nav-toggle>
-        <span></span><span></span><span></span>
-      </button>
-
-      <nav class="nav" id="site-nav" data-nav>
-        <a class="nav-link" href="index.html#top">Home</a>
-        <span class="dot">•</span>
-        <a class="nav-link is-active" href="locations.html" aria-current="page">Locations</a>
-        <span class="dot">•</span>
-        <a class="nav-link" href="index.html#products">Our Products</a>
-        <span class="dot">•</span>
-        <a class="nav-link" href="fundraising.html">Fundraising</a>
-        <span class="dot">•</span>
-        <a class="nav-link" href="about.html">About</a>
-
-        <div class="nav-social" aria-label="Social media">
-          <a class="icon-link" href="#" target="_blank" rel="noopener" aria-label="Facebook">
+        <div class="header-social" aria-label="Social media">
+          <a href="#" target="_blank" rel="noopener" aria-label="Facebook">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3H13.5V9.3c0-.9.3-1.6 1.7-1.6H16.8V5.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V11H7.6v3h2.5v8h3.4z"/></svg>
           </a>
-          <a class="icon-link" href="#" target="_blank" rel="noopener" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9z"/><path d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/><path d="M17.6 6.4a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>
+          <a href="#" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9z"/><path d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/><path d="M17.6 6.4a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>
           </a>
-          <a class="icon-link" href="#" target="_blank" rel="noopener" aria-label="TikTok">
+          <a href="#" target="_blank" rel="noopener" aria-label="TikTok">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.2c.7 1.1 1.8 1.9 3.2 2v2.8c-1.3 0-2.5-.4-3.5-1.1v6.1c0 3.2-2.6 5.8-5.8 5.8S4.7 18.2 4.7 15s2.6-5.8 5.8-5.8c.4 0 .8 0 1.2.1v3c-.4-.2-.8-.3-1.2-.3-1.5 0-2.8 1.2-2.8 2.8s1.2 2.8 2.8 2.8 2.8-1.2 2.8-2.8V2h3.1c0 1.1.3 2.2 1 3.2z"/></svg>
           </a>
-          <a class="icon-link" href="#" target="_blank" rel="noopener" aria-label="YouTube">
+          <a href="#" target="_blank" rel="noopener" aria-label="YouTube">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2s-.2-1.6-.9-2.3c-.8-.9-1.7-.9-2.2-1C15.7 3.6 12 3.6 12 3.6h0s-3.7 0-6.5.3c-.5.1-1.4.1-2.2 1C2.6 5.6 2.4 7.2 2.4 7.2S2.1 9.1 2.1 11v1.8c0 1.9.3 3.8.3 3.8s.2 1.6.9 2.3c.8.9 1.9.9 2.4 1 1.7.2 6.3.3 6.3.3s3.7 0 6.5-.3c.5-.1 1.4-.1 2.2-1 .7-.7.9-2.3.9-2.3s.3-1.9.3-3.8V11c0-1.9-.3-3.8-.3-3.8zM10 15.3V8.7l6 3.3-6 3.3z"/></svg>
           </a>
         </div>
-      </nav>
+      </div>
+    </div>
 
-      <a class="btn btn-buy" href="#locator">Find a Location</a>
+    <div class="container header-main">
+      <a class="brand" href="index.html#top" aria-label="Bellino Fireworks home">
+        <img src="images/bellino-high-res.png" alt="Bellino Fireworks" />
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <a href="index.html#top">Home</a>
+        <a href="locations.html" aria-current="page">Locations</a>
+        <a href="product.html">Products</a>
+        <a href="fundraising.html">Fundraising</a>
+        <a href="about.html">About</a>
+        <a class="header-cta" href="#locator">Find a Location</a>
+      </nav>
     </div>
   </header>
 
   <main>
+    <section class="locations-hero-v2">
+      <div class="container locations-hero-v2-grid">
+        <div class="locations-hero-v2-copy">
+          <p class="section-kicker">Bellino Locations</p>
+          <h1>Find a Bellino Fireworks location near you.</h1>
+          <p class="locations-hero-v2-text">
+            Bellino Fireworks has grown from one stand in Papillion into a multi-state summer presence with 300+ locations across 9 states.
+            Use the locator to find the closest Bellino stand, tent, or store near you, or jump into your state page for local information.
+          </p>
 
-    <!-- =========================
-         LOCATIONS HERO (UNIQUE)
-    ========================== -->
-    <section class="loc-hero" aria-label="Store locator hero">
-      <div class="loc-hero-bg" aria-hidden="true"></div>
-      <div class="loc-hero-shade" aria-hidden="true"></div>
-
-      <div class="wrap loc-hero-inner">
-        <div class="loc-hero-grid">
-          <div class="loc-hero-left">
-            <div class="loc-pill">Store Locator</div>
-
-            <h1 class="loc-h1">
-              Find a Bellino Fireworks Location
-              <span class="loc-accent">Near You</span>
-            </h1>
-
-            <p class="loc-sub">
-              Search by city or zip to find the closest Bellino Fireworks stand, tent, or retail partner.
-              Hours and inventory can vary — this is the easiest way to plan your stop.
-            </p>
-
-            <div class="loc-actions">
-              <a class="btn btn-cta" href="#locator">Open the Locator</a>
-              <a class="btn btn-outline" href="fundraising.html">Fundraising Programs</a>
-            </div>
-
-            <div class="loc-badges" role="list">
-              <div class="loc-badge" role="listitem"><span class="dot-bullet"></span> 250+ locations</div>
-              <div class="loc-badge" role="listitem"><span class="dot-bullet"></span> Multiple states served</div>
-              <div class="loc-badge" role="listitem"><span class="dot-bullet"></span> Peak season: late June → July 4</div>
-            </div>
+          <div class="button-row locations-hero-v2-buttons">
+            <a class="btn btn-primary" href="#locator">Use the Locator</a>
+            <a class="btn btn-outline-dark" href="#state-pages">Browse State Pages</a>
           </div>
 
-          <aside class="loc-hero-right">
-            <div class="loc-card">
-              <div class="loc-card-top">
-                <div class="loc-card-badge">Quick tips</div>
-                <div class="loc-card-title">Go in with a plan</div>
-              </div>
-
-              <div class="loc-card-body">
-                <div class="loc-tip">
-                  <div class="loc-tip-icon">🕒</div>
-                  <div>
-                    <div class="loc-tip-h">Best time to shop</div>
-                    <div class="loc-tip-p">Earlier in the day, earlier in the season.</div>
-                  </div>
-                </div>
-
-                <div class="loc-tip">
-                  <div class="loc-tip-icon">🎆</div>
-                  <div>
-                    <div class="loc-tip-h">Fast build</div>
-                    <div class="loc-tip-p">Assortment → favorites → finale piece.</div>
-                  </div>
-                </div>
-
-                <div class="loc-tip">
-                  <div class="loc-tip-icon">📍</div>
-                  <div>
-                    <div class="loc-tip-h">Use the map</div>
-                    <div class="loc-tip-p">Find the closest option before you drive.</div>
-                  </div>
-                </div>
-
-                <a class="btn btn-buywide" href="#locator">Jump to Locator</a>
-              </div>
-
-              <div class="loc-card-foot">
-                <span class="dot-bullet"></span>
-                Tip: On July 3–4, popular spots get busy — shop early if you can.
-              </div>
+          <div class="locations-hero-v2-quick">
+            <div class="locations-hero-v2-quick-card">
+              <strong>300+</strong>
+              <span>Bellino locations across the summer season</span>
             </div>
-          </aside>
+            <div class="locations-hero-v2-quick-card">
+              <strong>9</strong>
+              <span>States where Bellino serves shoppers</span>
+            </div>
+            <div class="locations-hero-v2-quick-card">
+              <strong>35+</strong>
+              <span>Years of family-owned fireworks experience</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="locations-hero-v2-side">
+          <div class="locations-hero-v2-photo" style="background-image:url('images/fireworks-world-hero.jpg');"></div>
+
+          <div class="locations-hero-v2-info">
+            <div class="locations-hero-v2-info-card">
+              <span>What Bellino is known for</span>
+              <strong>Huge inflatables, Bellino flags, and real summer presence</strong>
+              <p>When people pull into a Bellino location, it should feel like they found the real thing, not just another random stand.</p>
+            </div>
+
+            <div class="locations-hero-v2-info-card">
+              <span>Why people come back</span>
+              <strong>Value people remember</strong>
+              <p>Bellino built its name on recognizable value, strong seasonal setup, and the original home of the Buy 1 Get 3 Free.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="locations-hero-v2-wave" aria-hidden="true">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+          <path d="M0,38 C205,92 414,110 708,82 C962,58 1182,12 1440,44 L1440,120 L0,120 Z"></path>
+        </svg>
+      </div>
+    </section>
+
+    <section class="locations-states-band-v2">
+      <div class="container">
+        <div class="locations-states-head">
+          <h2>Bellino across 9 states</h2>
+          <p>Search the locator below or head straight into your state page.</p>
+        </div>
+
+        <div class="states-grid states-grid-nine">
+          <a class="state-card" href="/fireworks-nebraska/"><img src="images/Nebraska.png" alt="Nebraska" /><span>Nebraska</span></a>
+          <a class="state-card" href="/fireworks-iowa/"><img src="images/Iowa-1.png" alt="Iowa" /><span>Iowa</span></a>
+          <a class="state-card" href="/fireworks-arizona/"><img src="images/Arizona.png" alt="Arizona" /><span>Arizona</span></a>
+          <a class="state-card" href="/fireworks-texas/"><img src="images/texas-1.png" alt="Texas" /><span>Texas</span></a>
+          <a class="state-card" href="/fireworks-oklahoma/"><img src="images/OKC.png" alt="Oklahoma" /><span>Oklahoma</span></a>
+          <a class="state-card" href="/fireworks-south-dakota/"><img src="images/South-Dakota.png" alt="South Dakota" /><span>South Dakota</span></a>
+          <a class="state-card" href="/fireworks-kansas/"><img src="images/Kansas.png" alt="Kansas" /><span>Kansas</span></a>
+          <a class="state-card" href="/fireworks-arkansas/"><img src="images/arkansas.png" alt="Arkansas" /><span>Arkansas</span></a>
+          <a class="state-card" href="/fireworks-illinois/"><img src="images/illinois.png" alt="Illinois" /><span>Illinois</span></a>
         </div>
       </div>
     </section>
 
-    <!-- =========================
-         STATES STRIP (REUSE INDEX CLASSES)
-    ========================== -->
-    <section class="states" aria-label="States we serve">
-      <div class="wrap states-row">
-        <a class="state state-link" href="/fireworks-nebraska/" aria-label="Fireworks in Nebraska">
-          <img src="images/nebraska.png" alt="Nebraska"><div>Nebraska</div>
-        </a>
-        <a class="state state-link" href="/fireworks-iowa/" aria-label="Fireworks in Iowa">
-          <img src="images/Iowa-1.png" alt="Iowa"><div>Iowa</div>
-        </a>
-        <a class="state state-link" href="arizona.html" aria-label="Fireworks in Arizona">
-          <img src="images/Arizona.png" alt="Arizona"><div>Arizona</div>
-        </a>
-        <a class="state state-link" href="/fireworks-texas/" aria-label="Fireworks in Texas">
-          <img src="images/texas-1.png" alt="Texas"><div>Texas</div>
-        </a>
-        <a class="state state-link" href="/fireworks-oklahoma/" aria-label="Fireworks in Oklahoma">
-          <img src="images/OKC.png" alt="Oklahoma"><div>Oklahoma</div>
-        </a>
-        <a class="state state-link" href="/fireworks-south-dakota/" aria-label="Fireworks in South Dakota">
-          <img src="images/South-Dakota.png" alt="South Dakota"><div>South Dakota</div>
-        </a>
-        <a class="state state-link" href="/fireworks-kansas/" aria-label="Fireworks in Kansas">
-          <img src="images/Kansas.png" alt="Kansas"><div>Kansas</div>
-        </a>
+    <section class="locations-marquee" aria-label="Bellino location highlights">
+      <div class="locations-marquee-track">
+        <div class="locations-marquee-group">
+          <span>Find By City Or Zip</span>
+          <span class="locations-marquee-swoosh" aria-hidden="true"></span>
+          <span>300+ Locations Across 9 States</span>
+          <span class="locations-marquee-swoosh" aria-hidden="true"></span>
+          <span>Huge Inflatables & Bellino Flags</span>
+          <span class="locations-marquee-swoosh" aria-hidden="true"></span>
+          <span>Original Home Of Buy 1 Get 3 Free</span>
+          <span class="locations-marquee-swoosh" aria-hidden="true"></span>
+          <span>Find By City Or Zip</span>
+          <span class="locations-marquee-swoosh" aria-hidden="true"></span>
+          <span>300+ Locations Across 9 States</span>
+          <span class="locations-marquee-swoosh" aria-hidden="true"></span>
+          <span>Huge Inflatables & Bellino Flags</span>
+          <span class="locations-marquee-swoosh" aria-hidden="true"></span>
+          <span>Original Home Of Buy 1 Get 3 Free</span>
+        </div>
+
+        <div class="locations-marquee-group" aria-hidden="true">
+          <span>Find By City Or Zip</span>
+          <span class="locations-marquee-swoosh"></span>
+          <span>300+ Locations Across 9 States</span>
+          <span class="locations-marquee-swoosh"></span>
+          <span>Huge Inflatables & Bellino Flags</span>
+          <span class="locations-marquee-swoosh"></span>
+          <span>Original Home Of Buy 1 Get 3 Free</span>
+          <span class="locations-marquee-swoosh"></span>
+          <span>Find By City Or Zip</span>
+          <span class="locations-marquee-swoosh"></span>
+          <span>300+ Locations Across 9 States</span>
+          <span class="locations-marquee-swoosh"></span>
+          <span>Huge Inflatables & Bellino Flags</span>
+          <span class="locations-marquee-swoosh"></span>
+          <span>Original Home Of Buy 1 Get 3 Free</span>
+        </div>
       </div>
     </section>
 
-    <!-- =========================
-         LOCATOR WRAP (ACF PLACEHOLDER)
-    ========================== -->
-    <section class="section loc-shell" id="locator" aria-label="Store locator section">
-      <div class="wrap">
-        <div class="loc-shell-head">
-          <div class="loc-kicker">Store Locator</div>
-          <h2 class="loc-h2">Search by City or Zip</h2>
-          <p class="loc-p">
-            This is where your big ACF/WP locator embed will live. We’re building the page around it so it looks premium on day one.
+    <section class="locations-hub" id="locator">
+      <div class="container locations-hub-grid">
+        <div class="locations-hub-copy">
+          <p class="section-kicker">Bellino Locator</p>
+          <h2>Search by city or zip and find the closest Bellino setup.</h2>
+          <p>
+            Whether you are heading out for fireworks tonight, checking what is closest to home, or trying to find Bellino while traveling,
+            this is where people should be able to search fast and get where they need to go.
+          </p>
+          <p>
+            Bellino locations stretch across multiple states, but the goal is still simple: make it easy to find a real Bellino location,
+            shop with confidence, and get back to enjoying the summer.
+          </p>
+
+          <div class="locations-hub-list">
+            <div class="locations-hub-item">
+              <strong>Search nearby fast</strong>
+              <p>Use city or zip to find the closest Bellino stand, tent, or retail location without guessing.</p>
+            </div>
+            <div class="locations-hub-item">
+              <strong>Built for summer traffic</strong>
+              <p>Perfect for mobile users, road traffic, and last-minute shoppers trying to find Bellino before the rush.</p>
+            </div>
+            <div class="locations-hub-item">
+              <strong>Connected to every state page</strong>
+              <p>The main locator works hand in hand with the Nebraska, Iowa, Texas, Oklahoma, Kansas, Arizona, Arkansas, Illinois, and South Dakota pages.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="locations-hub-locator">
+          <div class="locations-hub-locator-top">
+            <span>Locator Embed</span>
+            <strong>Find your nearest Bellino Fireworks location</strong>
+            <p>Drop your live locator, API finder, map, or location search tool into this section.</p>
+          </div>
+
+          <div class="locations-hub-locator-map">
+            <div class="locations-hub-placeholder">
+              <strong>Live Locator Area</strong>
+              <p>
+                This section is built for your real Bellino location finder so shoppers can search by city, zip, or market and go straight to the nearest location.
+              </p>
+            </div>
+          </div>
+
+          <div class="locations-hub-locator-bottom">
+            <div class="locations-hub-actions">
+              <a class="btn btn-primary" href="#state-pages">Browse State Pages</a>
+              <a class="btn btn-outline-dark" href="about.html">About Bellino</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="locations-destinations section section-white" id="state-pages">
+      <div class="container">
+        <div class="locations-destinations-head">
+          <p class="section-kicker">State Pages</p>
+          <h2>Browse Bellino by state.</h2>
+          <p>
+            Every state page helps shoppers find Bellino faster and gives each market its own place to grow.
           </p>
         </div>
 
-        <div class="loc-layout">
-          <!-- LEFT: FILTERS / GUIDE -->
-          <aside class="loc-side">
-            <div class="loc-side-card">
-              <div class="loc-side-badge">Start here</div>
-              <h3 class="loc-side-h">Quick filters (optional)</h3>
-              <p class="loc-side-p">These can be wired later. Right now they’re designed to frame the locator.</p>
+        <div class="locations-destination-grid">
+          <a class="locations-destination-card" href="fireworks-nebraska.html">
+            <div class="locations-destination-top">
+              <img src="images/Nebraska.png" alt="Nebraska" />
+              <strong>Nebraska</strong>
+            </div>
+            <p>Bellino roots, Papillion history, and one of the strongest parts of the Bellino footprint.</p>
+            <div class="locations-destination-link">
+              <span>Explore Nebraska</span>
+              <small>★</small>
+            </div>
+          </a>
 
-              <div class="loc-filters" role="list">
-                <button class="loc-filter" type="button" data-loc-filter="open-now">Open now</button>
-                <button class="loc-filter" type="button" data-loc-filter="closest">Closest to me</button>
-                <button class="loc-filter" type="button" data-loc-filter="retail">Retail stores</button>
-                <button class="loc-filter" type="button" data-loc-filter="tents">Tents & stands</button>
+          <a class="locations-destination-card" href="/fireworks-iowa/">
+            <div class="locations-destination-top">
+              <img src="images/Iowa-1.png" alt="Iowa" />
+              <strong>Iowa</strong>
+            </div>
+            <p>A major Bellino market with strong seasonal traffic and deep summer shopping demand.</p>
+            <div class="locations-destination-link">
+              <span>Explore Iowa</span>
+              <small>★</small>
+            </div>
+          </a>
+
+          <a class="locations-destination-card" href="/fireworks-arizona/">
+            <div class="locations-destination-top">
+              <img src="images/Arizona.png" alt="Arizona" />
+              <strong>Arizona</strong>
+            </div>
+            <p>A different kind of Bellino market, but still part of the same recognizable summer brand.</p>
+            <div class="locations-destination-link">
+              <span>Explore Arizona</span>
+              <small>★</small>
+            </div>
+          </a>
+
+          <a class="locations-destination-card" href="/fireworks-texas/">
+            <div class="locations-destination-top">
+              <img src="images/texas-1.png" alt="Texas" />
+              <strong>Texas</strong>
+            </div>
+            <p>A big state, strong buying season, and an important part of Bellino’s growing footprint.</p>
+            <div class="locations-destination-link">
+              <span>Explore Texas</span>
+              <small>★</small>
+            </div>
+          </a>
+
+          <a class="locations-destination-card" href="/fireworks-oklahoma/">
+            <div class="locations-destination-top">
+              <img src="images/OKC.png" alt="Oklahoma" />
+              <strong>Oklahoma</strong>
+            </div>
+            <p>Another Bellino market where shoppers want local access, local visibility, and a clean way to find locations.</p>
+            <div class="locations-destination-link">
+              <span>Explore Oklahoma</span>
+              <small>★</small>
+            </div>
+          </a>
+
+          <a class="locations-destination-card" href="/fireworks-south-dakota/">
+            <div class="locations-destination-top">
+              <img src="images/South-Dakota.png" alt="South Dakota" />
+              <strong>South Dakota</strong>
+            </div>
+            <p>Part of the Midwest Bellino story and still an important market in the larger footprint.</p>
+            <div class="locations-destination-link">
+              <span>Explore South Dakota</span>
+              <small>★</small>
+            </div>
+          </a>
+
+          <a class="locations-destination-card" href="/fireworks-kansas/">
+            <div class="locations-destination-top">
+              <img src="images/Kansas.png" alt="Kansas" />
+              <strong>Kansas</strong>
+            </div>
+            <p>A solid Bellino state page built to support local traffic and stronger market presence.</p>
+            <div class="locations-destination-link">
+              <span>Explore Kansas</span>
+              <small>★</small>
+            </div>
+          </a>
+
+          <a class="locations-destination-card" href="/fireworks-arkansas/">
+            <div class="locations-destination-top">
+              <img src="images/arkansas.png" alt="Arkansas" />
+              <strong>Arkansas</strong>
+            </div>
+            <p>Part of Bellino’s expanded footprint and worth building out with the same premium feel as the rest.</p>
+            <div class="locations-destination-link">
+              <span>Explore Arkansas</span>
+              <small>★</small>
+            </div>
+          </a>
+
+          <a class="locations-destination-card" href="/fireworks-illinois/">
+            <div class="locations-destination-top">
+              <img src="images/illinois.png" alt="Illinois" />
+              <strong>Illinois</strong>
+            </div>
+            <p>Another Bellino state page built to help local shoppers find locations and connect into the bigger Bellino brand.</p>
+            <div class="locations-destination-link">
+              <span>Explore Illinois</span>
+              <small>★</small>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="locations-app-section">
+      <div class="locations-app-wave locations-app-wave-top" aria-hidden="true">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+          <path d="M0,0 L0,66 C186,102 408,110 722,88 C1020,68 1224,26 1440,48 L1440,0 Z"></path>
+        </svg>
+      </div>
+
+      <div class="container locations-app-grid">
+        <div class="locations-app-copy">
+          <p class="section-kicker section-kicker-dark">Bellino App</p>
+          <h2>More than just a location finder.</h2>
+          <p>
+            The Bellino app should give people more than directions. It should keep them connected to Bellino products,
+            fireworks videos, effects, seasonal shopping, and the overall Bellino experience all summer long.
+          </p>
+          <p>
+            For somebody already looking for Bellino locations, the app makes even more sense. They are already in shopping mode,
+            already looking for Bellino, and already one step away from using it.
+          </p>
+
+          <div class="locations-app-points">
+            <div class="locations-app-point">
+              <div class="locations-app-point-icon">⌖</div>
+              <div>
+                <strong>Find Bellino faster</strong>
+                <span>Use the app to search locations while you are already out, already driving, or already shopping.</span>
               </div>
-
-              <div class="loc-side-mini">
-                <div class="mini-point"><span class="dot-bullet"></span> Hours can vary by location</div>
-                <div class="mini-point"><span class="dot-bullet"></span> Inventory changes fast near the 4th</div>
-                <div class="mini-point"><span class="dot-bullet"></span> Shop earlier for best selection</div>
-              </div>
-
-              <a class="btn btn-outline" href="fundraising.html">Fundraising Info</a>
             </div>
 
-            <div class="loc-side-card loc-side-card--alt">
-              <h3 class="loc-side-h">Planning a bigger show?</h3>
-              <p class="loc-side-p">Start with an assortment, then add crowd favorites and a finale piece.</p>
-              <a class="btn btn-cta" href="index.html#products">Browse Product Types</a>
-            </div>
-          </aside>
-
-          <!-- RIGHT: LOCATOR PLACEHOLDER -->
-          <div class="loc-main">
-            <div class="loc-embed-card" aria-label="ACF locator embed placeholder">
-              <div class="loc-embed-head">
-                <div class="loc-embed-title">Locator Embed</div>
-                <div class="loc-embed-note">Placeholder for your ACF Store Locator output</div>
-              </div>
-
-              <div class="loc-embed-body" id="acf-locator">
-                <!-- =====================================================
-                     ACF / WP STORE LOCATOR PLACEHOLDER
-                     Replace this entire block with your locator shortcode/embed.
-                     Example (WP): [wpsl] or your ACF template output.
-                ====================================================== -->
-                <div class="loc-placeholder">
-                  <div class="loc-placeholder-icon">📍</div>
-                  <div class="loc-placeholder-h">Your map + search UI goes here</div>
-                  <div class="loc-placeholder-p">
-                    This card is intentionally sized to feel like a “hero” element on the page.
-                    When the locator loads, everything around it already looks dialed.
-                  </div>
-
-                  <div class="loc-placeholder-row">
-                    <div class="loc-chip">Search by Zip</div>
-                    <div class="loc-chip">Search by City</div>
-                    <div class="loc-chip">Filter by State</div>
-                    <div class="loc-chip">Click pins for details</div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="loc-embed-foot">
-                <div class="loc-embed-foot-left">
-                  <div class="lf-strong">4th of July Season</div>
-                  <div class="lf-muted">Save time — locate your nearest stand before you drive.</div>
-                </div>
-                <a class="btn btn-buywide" href="#top">Back to Top</a>
+            <div class="locations-app-point">
+              <div class="locations-app-point-icon">★</div>
+              <div>
+                <strong>Browse products and effects</strong>
+                <span>Let people explore Bellino fireworks, check out what stands out, and stay closer to the product lineup.</span>
               </div>
             </div>
 
-            <div class="loc-bottom-band">
-              <div class="loc-bottom-card">
-                <div class="loc-bottom-kicker">Heads up</div>
-                <div class="loc-bottom-h">July 3–4 gets busy.</div>
-                <div class="loc-bottom-p">If you want the best selection, shop earlier in the week.</div>
+            <div class="locations-app-point">
+              <div class="locations-app-point-icon">▶</div>
+              <div>
+                <strong>Watch fireworks and stay connected</strong>
+                <span>Videos, product content, and Bellino updates help make the app part of the full summer experience.</span>
               </div>
-              <div class="loc-bottom-card">
-                <div class="loc-bottom-kicker">For groups</div>
-                <div class="loc-bottom-h">Need to raise money?</div>
-                <div class="loc-bottom-p">Our fundraising program is built for peak seasonal demand.</div>
-                <a class="btn btn-outline" href="fundraising.html">See Fundraising</a>
-              </div>
+            </div>
+          </div>
+
+          <div class="button-row">
+            <a class="btn btn-gold" href="#">Download the App</a>
+            <a class="btn btn-outline-light" href="#locator">Use the Locator</a>
+          </div>
+        </div>
+
+        <div class="locations-app-visual">
+          <div class="locations-app-shell">
+            <div class="locations-app-stars" aria-hidden="true">★ ★ ★</div>
+            <div class="locations-app-phone">
+              <img src="images/app-hand.png" alt="Bellino Fireworks app in hand" />
+            </div>
+            <div class="locations-app-flag" aria-hidden="true">
+              <span>★ ★ ★</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="locations-app-wave locations-app-wave-bottom" aria-hidden="true">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+          <path d="M0,34 C200,82 426,106 724,82 C1014,58 1214,18 1440,48 L1440,120 L0,120 Z"></path>
+        </svg>
+      </div>
+    </section>
+
+    <section class="locations-footprint section section-white">
+      <div class="container locations-footprint-grid">
+        <div class="locations-footprint-copy">
+          <p class="section-kicker">Bellino Footprint</p>
+          <h2>From one stand in Papillion to a 9-state season.</h2>
+          <p>
+            Bellino did not get here by accident. The company grew because people recognized the name, remembered the value,
+            and came back for the same summer experience year after year.
+          </p>
+          <p>
+            Today Bellino locations stretch across 9 states, but the identity is still the same: family-owned, hands-on,
+            easy to recognize, and built for the busiest part of the summer season.
+          </p>
+
+          <div class="locations-footprint-points">
+            <div class="locations-footprint-point">
+              <strong>Started in Papillion</strong>
+              <p>What began with one stand grew into a much larger seasonal footprint without losing the family-built backbone.</p>
+            </div>
+            <div class="locations-footprint-point">
+              <strong>Recognizable every summer</strong>
+              <p>Huge inflatables, Bellino flags, and a strong location presence helped Bellino stand out year after year.</p>
+            </div>
+            <div class="locations-footprint-point">
+              <strong>Built for real shoppers</strong>
+              <p>This page, the state pages, and the locator all work together to help people find Bellino quickly and shop with confidence.</p>
             </div>
           </div>
         </div>
 
+        <div class="locations-footprint-photo" style="background-image:url('images/bellino-hero2.jpg');"></div>
       </div>
     </section>
 
-    <!-- =========================
-         LOCATIONS FAQ (UNIQUE)
-    ========================== -->
-    <section class="section loc-faq" aria-label="Locations FAQ">
-      <div class="wrap">
-        <div class="loc-faq-head">
-          <div class="loc-kicker">FAQ</div>
-          <h2 class="loc-h2">Quick Questions About Locations</h2>
-          <p class="loc-p">Fast answers so you know what to expect before you arrive.</p>
+    <section class="locations-final">
+      <div class="locations-final-top-wave" aria-hidden="true">
+        <svg viewBox="0 0 1440 76" preserveAspectRatio="none">
+          <path d="M0,76 L0,34 C180,8 408,6 718,18 C1018,30 1220,56 1440,42 L1440,76 Z"></path>
+        </svg>
+
+        <div class="locations-final-stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
         </div>
-
-        <div class="loc-faq-grid">
-          <details class="loc-faq-item">
-            <summary>Do all locations carry the same items?</summary>
-            <div class="loc-faq-a">
-              Inventory can vary by location. Some spots may carry more family favorites, while others have expanded selections.
-              Use the locator details to plan your visit.
-            </div>
-          </details>
-
-          <details class="loc-faq-item">
-            <summary>Are hours the same at every stand?</summary>
-            <div class="loc-faq-a">
-              Hours vary by location and local rules. Near the holiday, many stands run extended hours.
-              Always check the location details in the locator.
-            </div>
-          </details>
-
-          <details class="loc-faq-item">
-            <summary>What’s the best day to shop?</summary>
-            <div class="loc-faq-a">
-              The earlier you shop, the better the selection. July 3–4 is the busiest.
-              If you can, shop earlier in the week or earlier in the day.
-            </div>
-          </details>
-
-          <details class="loc-faq-item">
-            <summary>Can I find locations outside Nebraska?</summary>
-            <div class="loc-faq-a">
-              Yes. Bellino serves multiple states. Use the states strip above or visit your state page to learn more and find nearby locations.
-            </div>
-          </details>
-        </div>
-
-        <div class="loc-final-cta">
-          <div class="loc-final-card">
-            <div class="loc-final-left">
-              <div class="loc-kicker">Ready?</div>
-              <h3 class="loc-final-h">Open the locator and pick your stop.</h3>
-              <p class="loc-final-p">Fast search. Clear info. Better planning for a better night.</p>
-            </div>
-            <div class="loc-final-right">
-              <a class="btn btn-cta" href="#locator">Open Locator</a>
-              <a class="btn btn-outline" href="arizona.html">Arizona Page</a>
-            </div>
-          </div>
-        </div>
-
       </div>
-    </section>
 
+      <div class="container locations-final-grid">
+        <div class="locations-final-copy">
+          <h2>Ready to find your Bellino location?</h2>
+          <p>
+            Search nearby, browse your state page, or download the app and keep Bellino with you all summer long.
+          </p>
+        </div>
+
+        <div class="button-row locations-final-actions">
+          <a class="btn btn-gold" href="#locator">Use the Locator</a>
+          <a class="btn btn-outline-light" href="#state-pages">Browse States</a>
+        </div>
+      </div>
+
+      <div class="locations-final-divider" aria-hidden="true"></div>
+    </section>
   </main>
 
-  <!-- =========================
-       FOOTER (SITEWIDE - SAME)
-  ========================== -->
-  <footer class="footer">
-    <div class="wrap footer-row">
-      <div class="foot-left">
-        <img src="images/nowin.svg" alt="Bellino Fireworks">
-        <div class="copy">© <span id="year"></span> Bellino Fireworks</div>
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <div class="footer-brand">
+        <img src="images/bellino-high-res.png" alt="Bellino Fireworks" />
+        <p>© <span id="year"></span> Bellino Fireworks</p>
       </div>
 
-      <div class="foot-right">
+      <nav class="footer-links">
         <a href="index.html#top">Home</a>
         <a href="locations.html">Locations</a>
-        <a href="index.html#products">Products</a>
+        <a href="product.html">Products</a>
         <a href="fundraising.html">Fundraising</a>
         <a href="about.html">About</a>
-      </div>
+      </nav>
 
-      <div class="foot-social" aria-label="Social media">
-        <a class="icon-link" href="#" target="_blank" rel="noopener" aria-label="Facebook">
+      <div class="footer-social" aria-label="Social media">
+        <a href="#" target="_blank" rel="noopener" aria-label="Facebook">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3H13.5V9.3c0-.9.3-1.6 1.7-1.6H16.8V5.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V11H7.6v3h2.5v8h3.4z"/></svg>
         </a>
-        <a class="icon-link" href="#" target="_blank" rel="noopener" aria-label="Instagram">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9z"/><path d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/><path d="M17.6 6.4a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>
+        <a href="#" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9z"/><path d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/><path d="M17.6 6.4a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>
         </a>
-        <a class="icon-link" href="#" target="_blank" rel="noopener" aria-label="TikTok">
+        <a href="#" target="_blank" rel="noopener" aria-label="TikTok">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.2c.7 1.1 1.8 1.9 3.2 2v2.8c-1.3 0-2.5-.4-3.5-1.1v6.1c0 3.2-2.6 5.8-5.8 5.8S4.7 18.2 4.7 15s2.6-5.8 5.8-5.8c.4 0 .8 0 1.2.1v3c-.4-.2-.8-.3-1.2-.3-1.5 0-2.8 1.2-2.8 2.8s1.2 2.8 2.8 2.8 2.8-1.2 2.8-2.8V2h3.1c0 1.1.3 2.2 1 3.2z"/></svg>
         </a>
-        <a class="icon-link" href="#" target="_blank" rel="noopener" aria-label="YouTube">
+        <a href="#" target="_blank" rel="noopener" aria-label="YouTube">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2s-.2-1.6-.9-2.3c-.8-.9-1.7-.9-2.2-1C15.7 3.6 12 3.6 12 3.6h0s-3.7 0-6.5.3c-.5.1-1.4.1-2.2 1C2.6 5.6 2.4 7.2 2.4 7.2S2.1 9.1 2.1 11v1.8c0 1.9.3 3.8.3 3.8s.2 1.6.9 2.3c.8.9 1.9.9 2.4 1 1.7.2 6.3.3 6.3.3s3.7 0 6.5-.3c.5-.1 1.4-.1 2.2-1 .7-.7.9-2.3.9-2.3s.3-1.9.3-3.8V11c0-1.9-.3-3.8-.3-3.8zM10 15.3V8.7l6 3.3-6 3.3z"/></svg>
         </a>
       </div>
     </div>
   </footer>
 
-  <!-- IMPORTANT: use ONE js file sitewide -->
-  <script src="main.js"></script>
+  <script src="main.js/main.js"></script>
 </body>
 </html>
