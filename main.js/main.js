@@ -98,7 +98,7 @@ function startHeroSlider() {
   }
 
   if (heroImageSlides.length > 1) {
-    heroInterval = setInterval(nextHeroSlide, 5000);
+    heroInterval = setInterval(nextHeroSlide, 12000);
   }
 }
 
@@ -154,16 +154,16 @@ function updateJuly4Countdown() {
 updateJuly4Countdown();
 setInterval(updateJuly4Countdown, 1000);
 
-/* Fundraising carousel */
-const fundCarousel = document.querySelector("[data-fund-carousel]");
-
-if (fundCarousel) {
+/* Fundraising carousels */
+document.querySelectorAll("[data-fund-carousel]").forEach((fundCarousel) => {
   const slides = fundCarousel.querySelectorAll(".fund-slide");
   const dots = fundCarousel.querySelectorAll(".fund-dot");
   const prevBtn = fundCarousel.querySelector("[data-fund-prev]");
   const nextBtn = fundCarousel.querySelector("[data-fund-next]");
   let currentIndex = 0;
   let autoplay;
+
+  if (!slides.length) return;
 
   function showFundSlide(index) {
     slides.forEach((slide, i) => {
@@ -224,7 +224,7 @@ if (fundCarousel) {
 
   showFundSlide(0);
   startAutoplay();
-}
+});
 
 /* Nebraska city filter */
 const neFilterButtons = document.querySelectorAll(".ne-filter-btn");
